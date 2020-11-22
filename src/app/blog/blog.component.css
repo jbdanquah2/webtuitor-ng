@@ -1,0 +1,33 @@
+body {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .blog-post,
+  .blog-home,
+  .top-header {
+    background: rgba(250, 250, 250, 0.8);
+  }
+  
+  @media only screen and (min-width: 720px) {
+  
+    body {
+      background: rgba(173, 165, 165, 0.3);
+    }
+   
+    #admin-create-form {
+      margin-top: 20px;
+    }
+  
+    #admin-create-form input[type="text"],
+    #admin-create-form button {
+      width: 400px !important;
+      font-size: 1.2em;
+      padding: 10px 15px;
+    }
+  
+    #admin-create-form input[type="file"] {
+      width: 400px !important;
+      padding-bottom: 10px!important;
+    }
+   
+  }

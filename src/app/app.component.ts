@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  `
 })
 export class AppComponent {
-  title = 'webtuitor2';
+  constructor(private titleService: Title) {}
+
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
 }
