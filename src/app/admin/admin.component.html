@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<!-- Page Content -->
+<div class="container-fluid">
+  <div class="admin-home">
+    <div class="row">
+      <div class="col-md-3 sd">
+        <admin-sidebar></admin-sidebar>
+      </div>
+      <div class="col-md-8 ">
+        <form method="GET" id="admin-create-form" action="">
+          <div class="form-group">
+            <input id="title" name="title" type="text" class="form-control-lg" placeholder="Blog title">
+          </div>
+          <div class="form-group">
+            <input id="description" name="description" type="text" class="form-control-lg" placeholder="Description">
+          </div>
+          <div class="form-group">
+            <input id="title-image" name="title-image" type="file" class="form-control-file" placeholder="Title image">
+          </div>
+          <div class="form-group">
+            <button name="submit" type="submit" class="form-control-lg btn-danger"
+              aria-placeholder="submit form">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->

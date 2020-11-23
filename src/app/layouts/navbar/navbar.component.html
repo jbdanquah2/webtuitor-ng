@@ -1,30 +1,39 @@
 <!-- top search button -->
 <div id="top-search-box" class="card-body bg-light ">
-    <div class="input-group">
-      <input type="text" class="form-contro pl-4" placeholder="Search for...">
-      <span class="input-group-append">
-        <button class="btn btn-danger" type="button">Search!</button>
-      </span>
-    </div>
+  <div class="input-group">
+    <input type="text" class="form-contro pl-4" placeholder="Search for...">
+    <span class="input-group-append">
+      <button class="btn btn-danger" type="button">Search!</button>
+    </span>
   </div>
+</div>
 <!-- </div> -->
 
 <!-- navigation / menu -->
-<nav class="navbar navbar-expand-lg sticky-top navbar-light ">
-<a class="navbar-brand img-fluid p-0" href="/"><img width="100" height="40"
+<nav class="navbar navbar-expand-lg sticky-to navbar-light ">
+  <a class="navbar-brand img-fluid p-0" href="/"><img width="100" height="40"
       src="assets/img/linkedin_banner_image_1.png" alt="company log"></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-  <div class="navbar-nav ml-auto">   
-      <a class="nav-link active" href="" >Home </a> 
-      <a class="nav-link active" href="" >Blog </a> 
-      <a class="nav-link active" href="" >About </a> 
-      <a class="nav-link active" href="" >Login </a> 
-     
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <div class="dropdown">
+        <a [routerLink]="['/home']" routerLinkActive="Active" class="nav-link dropdown-toggle" data-toggle="dropdown">
+          How-To</a><span class="caret"></span> 
+        <ul class="dropdown-menu">
+          <li><a href="#">Design Illustration</a></li>
+          <li><a href="#">Code</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Computer Skills</a></li>
+          <li><a href="#">Microsoft Excel</a></li>
+        </ul>
+      </div>
+      <a [routerLink]="['/blog']" routerLinkActive="Active" class="nav-link ">Courses </a>
+      <a class="nav-link " href="">Guides </a>
+      <a class="nav-link " href="">Find A Mentor </a>
+      <a class="nav-link " href="">Login </a>
+    </div>
   </div>
-</div>
 </nav>
-
