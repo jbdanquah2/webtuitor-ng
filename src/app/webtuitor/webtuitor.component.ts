@@ -7,5 +7,5 @@ import { Component } from "@angular/core";
     
 })
 export class WebtuitorComponent {
-    title ='kjkdjfkdf'
+    title ='Webtuitor | Home'
 }

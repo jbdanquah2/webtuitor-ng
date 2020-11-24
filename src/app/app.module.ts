@@ -8,8 +8,8 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { WebtuitorComponent } from './webtuitor/webtuitor.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
-import { BlogComponent } from './blog/blog.component';
-import { BlogPostComponent } from './blog/blog-post/blog-post.component';
+import { CourseComponent } from './course/course.component';
+import { CoursePostComponent } from './course/course-post/course-post.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminSidebarComponent } from './layouts/admin/admin-sidebar.component';
 
@@ -20,8 +20,8 @@ import { AdminSidebarComponent } from './layouts/admin/admin-sidebar.component';
     SidebarComponent,
     FooterComponent,
     WebtuitorComponent,
-    BlogComponent,
-    BlogPostComponent,
+    CourseComponent,
+    CoursePostComponent,
     AdminComponent,
     AdminSidebarComponent
   ],

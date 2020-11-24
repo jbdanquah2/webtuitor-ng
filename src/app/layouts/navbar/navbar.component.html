@@ -1,11 +1,14 @@
 <!-- top search button -->
 <div id="top-search-box" class="card-body bg-light ">
-  <div class="input-group">
-    <input type="text" class="form-contro pl-4" placeholder="Search for...">
-    <span class="input-group-append">
+  <div class="input-group ">
+    <a class="d-none d-lg-block btn btn-xs btn-outline-dark text-white mr-4">Learning is a spice of life!</a>
+    <input type="text" class="form-control pl-4" placeholder="Search WebTuitor...">
+    <span class="input-group-append mr-4">
       <button class="btn btn-danger" type="button">Search!</button>
     </span>
+    <a class="nav-lin ml-auto btn btn-xs btn-outline-dark" href="">Sign In </a>
   </div>
+
 </div>
 <!-- </div> -->
 
@@ -19,9 +22,12 @@
   </button>
   <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
+      <a [routerLink]="['/home']" routerLinkActive="Active" class="nav-link">
+        Home</a>
       <div class="dropdown">
-        <a [routerLink]="['/home']" routerLinkActive="Active" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          How-To</a><span class="caret"></span> 
+        <a href="" [routerLink]="['/how-to']" routerLinkActive="Active" class="nav-link dropdown-toggle"
+          data-toggle="dropdown">
+          How-To</a><span class="caret"></span>
         <ul class="dropdown-menu">
           <li><a href="#">Design Illustration</a></li>
           <li><a href="#">Code</a></li>
@@ -30,10 +36,41 @@
           <li><a href="#">Microsoft Excel</a></li>
         </ul>
       </div>
-      <a [routerLink]="['/blog']" routerLinkActive="Active" class="nav-link ">Courses </a>
-      <a class="nav-link " href="">Guides </a>
-      <a class="nav-link " href="">Find A Mentor </a>
-      <a class="nav-link " href="">Login </a>
+      <div class="dropdown">
+        <a [routerLink]="['/courses']" routerLinkActive="Active" class="nav-link dropdown-toggle"
+          data-toggle="dropdown">Courses </a><span class="caret"></span>
+        <ul class="dropdown-menu">
+          <li><a href="#">Design Illustration</a></li>
+          <li><a href="#">Code</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Computer Skills</a></li>
+          <li><a href="#">Microsoft Excel</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a [routerLink]="['/courses']" routerLinkActive="Activ" class="nav-link dropdown-toggle"
+          data-toggle="dropdown">Guides </a><span class="caret"></span>
+        <ul class="dropdown-menu">
+          <li><a href="#">Design Illustration</a></li>
+          <li><a href="#">Code</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Computer Skills</a></li>
+          <li><a href="#">Microsoft Excel</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a [routerLink]="['/courses']" routerLinkActive="Activ" class="nav-link dropdown-toggle"
+          data-toggle="dropdown">Find A Mentor </a><span class="caret"></span>
+        <ul class="dropdown-menu">
+          <li><a href="#">Design Illustration</a></li>
+          <li><a href="#">Code</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Computer Skills</a></li>
+          <li><a href="#">Microsoft Excel</a></li>
+        </ul>
+      </div>
+      <!-- <a class="nav-link" href="">Login </a> -->
     </div>
   </div>
 </nav>
+<hr class="m-0 p-0">

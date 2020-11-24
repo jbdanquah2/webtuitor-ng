@@ -8,7 +8,7 @@ html {
     display: none!important;
 }
 .home {
-    background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Terms_re_6ak4.svg') center bottom; 
+    background: rgba(250, 250, 250, 0.8); 
     background-repeat: no-repeat;
 }
 
@@ -40,7 +40,7 @@ html {
     padding: 20px 15px;
     text-align: justify;
     font-weight: 400;
-    background:  rgba(108, 99, 255, 0.4) ;
+    background:  #f8f2f2;
 }
 
 .notice span {
@@ -91,7 +91,7 @@ iframe {
 @media only screen and (min-width: 720px) {
     
     .home {
-        background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Terms_re_6ak4.svg') top right; 
+        /* background: rgba(255, 255, 255, 0.99) url('../../assets/img/undraw_dev_productivity_umsq.svg') right bottom;  */
     }
     .register {
         background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right; 
@@ -111,6 +111,11 @@ iframe {
     #top-search-box {
         display: none;
     }
+
+    /* #row2 {
+        /* background: #fff url('../../assets/img/undraw_coding_6mjf.svg') 100% 70%;
+        background-repeat: no-repeat; */
+    /* } */ 
 }
 /* 
 footer {
