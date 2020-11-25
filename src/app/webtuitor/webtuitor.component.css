@@ -11,6 +11,13 @@ html {
     background: rgba(250, 250, 250, 0.8); 
     background-repeat: no-repeat;
 }
+.demo-img, .demo-img2 {
+    position: relative;
+    top: -25px;
+    width: 300px;
+    /* height: 400px; */
+    /* width: auto; */
+}
 
 .register {
     background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right; 
@@ -29,35 +36,35 @@ html {
     padding-top: 15%;
 }
 
-.reg-notice {
+.reg-notice {   
   padding: 0 15px;
   padding-top: 60px;
   margin-left: 20px;
-  color: #f8f2f2;
+  color: #fdfdfd;
 }
 
 .notice {
-    padding: 20px 15px;
-    text-align: justify;
-    font-weight: 400;
-    background:  #f8f2f2;
+    margin-top: auto;
+    /* left: 100px; */
+    position: relative;
+    font-size: xx-large;
+    padding: 40px;
+    letter-spacing: 0.1em;
+    /* text-align: justify; */
+    font-weight: 600;
+    background:  #fdfdfd;
+    cursor: pointer;
 }
 
 .notice span {
     margin-top: 10px;
     padding: 10px;
     display: block;
-    background: rgba(199, 61, 61, 0.6) ;
+    /* background: rgba(199, 61, 61, 0.6) ; */
 }
 
 h1,h2,h3 {
     font-family: 'Grandstander', cursive;
-}
-
-.bookme {
-    width: 150px;
-    background:  rgba(108, 99, 255, 0.3)!important;
-    border: 1px solid rgba(108, 99, 255, 0.9)!important ;
 }
 
 .bookme:hover {
@@ -87,11 +94,27 @@ h1,h2,h3 {
 iframe {
     opacity: 0.8;
 }
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
 
 @media only screen and (min-width: 720px) {
     
-    .home {
+    /* .home {
         /* background: rgba(255, 255, 255, 0.99) url('../../assets/img/undraw_dev_productivity_umsq.svg') right bottom;  */
+    /* } */ 
+    .demo-img {
+        margin-top: 100px;
+        margin-left: 0px !important;
+        width: 600px !important;
+    }
+    .demo-img2 {
+        margin-top: 50px;
+        margin-left: -25px;
+        width: 400px !important;
     }
     .register {
         background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right; 
@@ -100,6 +123,19 @@ iframe {
     .home, .register {
         background-repeat: no-repeat;
         background-attachment: fixed;
+    }
+
+    .notice {
+        margin-top: auto;
+        left: 100px;
+        position: relative;
+        font-size: xx-large;
+        padding: 40px;
+        letter-spacing: 0.2em;
+        /* text-align: justify; */
+        font-weight: 600;
+        background:  #fdfdfd;
+        cursor: pointer;
     }
 
     .reg-notice {
@@ -112,14 +148,5 @@ iframe {
         display: none;
     }
 
-    /* #row2 {
-        /* background: #fff url('../../assets/img/undraw_coding_6mjf.svg') 100% 70%;
-        background-repeat: no-repeat; */
-    /* } */ 
+    
 }
-/* 
-footer {
-    position: fixed !important;
-    width: 100% !important;
-    bottom: 0;
-} */
