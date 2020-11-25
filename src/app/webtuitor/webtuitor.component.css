@@ -15,82 +15,62 @@ html {
     position: relative;
     top: -25px;
     width: 300px;
-    /* height: 400px; */
-    /* width: auto; */
 }
-
 .register {
     background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right; 
     background-repeat: no-repeat;
 }
-
-
 .about {
     background: rgba(199, 61, 61, 0.7) url('../../assets/img/undraw_Freelancer_re_irh4.svg') top left;
     background-repeat: no-repeat;
 
     min-height: 100vh !important;
 }
-
 .about .container h4 {
     padding-top: 15%;
 }
-
 .reg-notice {   
   padding: 0 15px;
   padding-top: 60px;
   margin-left: 20px;
   color: #fdfdfd;
 }
-
 .notice {
     margin-top: auto;
-    /* left: 100px; */
     position: relative;
-    font-size: xx-large;
+    font-size: x-large;
     padding: 40px;
     letter-spacing: 0.1em;
-    /* text-align: justify; */
     font-weight: 600;
     background:  #fdfdfd;
     cursor: pointer;
 }
-
 .notice span {
     margin-top: 10px;
     padding: 10px;
     display: block;
-    /* background: rgba(199, 61, 61, 0.6) ; */
 }
-
 h1,h2,h3 {
     font-family: 'Grandstander', cursive;
 }
-
 .bookme:hover {
     background:  rgba(108, 99, 255, 0.8)!important;
     width: 160px;
 }
-
 .guide {
     padding: 25px 10px;
     margin-bottom: 10%;
-    /* border: solid rgba(216, 210, 210, 0.8); */
     background:  rgba(216, 210, 210, 0.2) ;
     border-radius: 5px;
 }
-
 #howitworks {
     font-size: 2rem;
     font-weight: 700;
     padding-bottom: 10px;
-    /* margin-top: 100px; */
 }
-
 #list li {
     margin: 15px;
 }
-
 iframe {
     opacity: 0.8;
 }
@@ -100,12 +80,8 @@ summary {
     padding: .5em;
 }
 
-
 @media only screen and (min-width: 720px) {
     
-    /* .home {
-        /* background: rgba(255, 255, 255, 0.99) url('../../assets/img/undraw_dev_productivity_umsq.svg') right bottom;  */
-    /* } */ 
     .demo-img {
         margin-top: 100px;
         margin-left: 0px !important;
@@ -119,12 +95,10 @@ summary {
     .register {
         background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right; 
     }
-
     .home, .register {
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
-
     .notice {
         margin-top: auto;
         left: 100px;
@@ -132,18 +106,15 @@ summary {
         font-size: xx-large;
         padding: 40px;
         letter-spacing: 0.2em;
-        /* text-align: justify; */
         font-weight: 600;
         background:  #fdfdfd;
         cursor: pointer;
     }
-
     .reg-notice {
         padding: 0 15px;
         margin-left: 10%;
         color: #f8f2f2;
-      }
-      
+      }  
     #top-search-box {
         display: none;
     }
