@@ -1,140 +1,171 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@100&display=swap');
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 #top-search-box {
-    display: none!important;
+  display: none !important;
 }
-.home {
-    background: rgba(250, 250, 250, 0.8); 
-    background-repeat: no-repeat;
-}
-.demo-img, .demo-img2 {
-    position: relative;
-    top: -25px;
-    width: 300px;
-}
-.register {
-    background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right; 
-    background-repeat: no-repeat;
-}
-.about {
-    background: rgba(199, 61, 61, 0.7) url('../../assets/img/undraw_Freelancer_re_irh4.svg') top left;
-    background-repeat: no-repeat;
 
-    min-height: 100vh !important;
+.home {
+  background: rgba(250, 250, 250, 0.8);
+  background-repeat: no-repeat;
 }
+
+.demo-img,
+.demo-img2 {
+  position: relative;
+  top: -25px;
+  width: 300px;
+
+}
+
+.demo-img2 {
+  z-index: -1;
+}
+
+.register {
+  background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right;
+  background-repeat: no-repeat;
+}
+
+.about {
+  background: rgba(199, 61, 61, 0.7) url('../../assets/img/undraw_Freelancer_re_irh4.svg') top left;
+  background-repeat: no-repeat;
+
+  min-height: 100vh !important;
+}
+
 .about .container h4 {
-    padding-top: 15%;
+  padding-top: 15%;
 }
-.reg-notice {   
+
+.reg-notice {
   padding: 0 15px;
   padding-top: 60px;
   margin-left: 20px;
   color: #fdfdfd;
 }
+
 .notice {
-    margin-top: auto;
-    position: relative;
-    font-size: x-large;
-    padding: 40px;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    background:  #fdfdfd;
-    cursor: pointer;
+  margin-top: auto;
+  position: relative;
+  font-size: x-large;
+  padding: 40px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  background: #fdfdfd;
+  cursor: pointer;
 }
+
 .notice span {
-    margin-top: 10px;
-    padding: 10px;
-    display: block;
+  margin-top: 10px;
+  padding: 10px;
+  display: block;
 }
-h1,h2,h3 {
-    font-family: 'Grandstander', cursive;
+
+h1,
+h2,
+h3 {
+  font-family: 'Grandstander', cursive;
 }
+
 .bookme:hover {
-    background:  rgba(108, 99, 255, 0.8)!important;
-    width: 160px;
+  background: rgba(108, 99, 255, 0.8) !important;
+  width: 160px;
 }
+
 .guide {
-    padding: 25px 10px;
-    margin-bottom: 10%;
-    background:  rgba(216, 210, 210, 0.2) ;
-    border-radius: 5px;
+  padding: 25px 10px;
+  margin-bottom: 10%;
+  background: rgba(216, 210, 210, 0.2);
+  border-radius: 5px;
 }
+
 #howitworks {
-    font-size: 2rem;
-    font-weight: 700;
-    padding-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 10px;
 }
+
 #list li {
-    margin: 15px;
+  margin: 15px;
 }
+
 iframe {
-    opacity: 0.8;
+  opacity: 0.8;
 }
+
 summary {
-    font-weight: bold;
-    margin: -.5em -.5em 0;
-    padding: .5em;
+  font-weight: bold;
+  margin: -.5em -.5em 0;
+  padding: .5em;
 }
 
 .nav-tabs li a.nav-link {
- margin-right: 5px;
- padding: 15px 5px;
- color: #797979;
- text-decoration: none;
- font-weight: 600 !important;
+  margin-right: 5px;
+  padding: 15px 5px;
+  color: #797979;
+  text-decoration: none;
+  font-weight: 600 !important;
 }
 
 .nav-tabs li a.nav-link:hover {
-    color: #7b7dc5;
+  color: #7b7dc5;
 }
 
 @media only screen and (min-width: 720px) {
 
-    .contentAds {
-        margin: 0 auto;
-        font-size: xx-large;
-        margin: 100px 0 0 0;
-        padding: 5px 80px 5px 2px;
-        text-align: justify;
-    }
-    .demo-img {
-        margin-top: 100px;
-        margin-left: 0px !important;
-        width: 600px !important;
-    }
-    .demo-img2 {
-        margin-top: 50px;
-        margin-left: -25px;
-        width: 400px !important;
-    }
-    .register {
-        background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right; 
-    }
-    .home, .register {
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    .notice {
-        margin-top: auto;
-        left: 100px;
-        position: relative;
-        font-size: xx-large;
-        padding: 40px;
-        letter-spacing: 0.2em;
-        font-weight: 600;
-        background:  #fdfdfd;
-        cursor: pointer;
-    }
-    .reg-notice {
-        padding: 0 15px;
-        margin-left: 10%;
-        color: #f8f2f2;
-      }  
-    #top-search-box {
-        display: none;
-    }
+  .contentAds {
+    margin: 0 auto;
+    font-size: xx-large;
+    margin: 100px 0 0 0;
+    padding: 5px 80px 5px 2px;
+    text-align: justify;
+  }
+
+  .demo-img {
+    margin-top: 100px;
+    margin-left: 0px !important;
+    width: 600px !important;
+  }
+
+  .demo-img2 {
+    margin-top: 50px;
+    margin-left: -25px;
+    width: 400px !important;
+  }
+
+  .register {
+    background: rgba(199, 61, 61, 0.8) url('../../assets/img/undraw_Relaxing_at_home_re_mror.svg') top right;
+  }
+
+  .home,
+  .register {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .notice {
+    margin-top: auto;
+    left: 100px;
+    position: relative;
+    font-size: xx-large;
+    padding: 40px;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    background: #fdfdfd;
+    cursor: pointer;
+  }
+
+  .reg-notice {
+    padding: 0 15px;
+    margin-left: 10%;
+    color: #f8f2f2;
+  }
+
+  #top-search-box {
+    display: none;
+  }
 }
