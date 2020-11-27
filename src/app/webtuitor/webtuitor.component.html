@@ -1,7 +1,7 @@
 <div class=" home text-whie pb-5">
-  <div class="container">
+  <div class="container ">
     <div class="row ">
-      <div class="col-md-6 d-flex justify-content-center bg-light flex-column">
+      <div class="col-md-6 d-flex p-lg-5 p-sm-3 justify-content-center bg-light flex-column">
         <h4 class="notice border mt-4 shadow">Hi there, WebTuitor makes it easy!
           <br><br>
           Learn by doing
@@ -32,10 +32,45 @@
   </div>
 
 
-  <div class="container">
+  <div id="newCourses" class="container">
     <div class="row">
-      <div class="col-md-8">kjk</div>
-      <div class="col-md-4">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs mt-5">
+          <li class="nav-item">
+            <a class="nav-link active" href="#newCourses">New Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#howto">Popular How-Tos</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link d-none d-lg-block" href="#">New Guides</a>
+          </li>
+        </ul>
+        <course-tab></course-tab>
+        <a href="">View all courses</a>
+      </div> 
+      <div class="col-md-3">
+        <img class="demo-img2" src="../../assets/img/undraw_coding_6mjf.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div id="howto" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs mt-5"> 
+          <li class="nav-item">
+            <a class="nav-link" href="#newCourses">New Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#howto">Popular How-Tos</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link d-none d-lg-block" href="#">New Guides</a>
+          </li>
+        </ul>
+        <howto-tab></howto-tab>
+      </div> 
+      <div class="col-md-3">
         <img class="demo-img2" src="../../assets/img/undraw_coding_6mjf.svg" alt="">
       </div>
     </div>

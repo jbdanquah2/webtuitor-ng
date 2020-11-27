@@ -12,6 +12,10 @@ import { CourseComponent } from './course/course.component';
 import { CoursePostComponent } from './course/course-post/course-post.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminSidebarComponent } from './layouts/admin/admin-sidebar.component';
+import { CourseTabComponent } from './webtuitor/nav-tabs/courses-tab.component';
+import { CourseService } from './course/course.service';
+import { HowtoService } from './howto/howto.service';
+import { HowtoComponent } from './webtuitor/nav-tabs/howto-tab.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +27,16 @@ import { AdminSidebarComponent } from './layouts/admin/admin-sidebar.component';
     CourseComponent,
     CoursePostComponent,
     AdminComponent,
-    AdminSidebarComponent
+    AdminSidebarComponent,
+    CourseTabComponent,
+    HowtoComponent 
+    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ Title ],
+  providers: [ Title,CourseService, HowtoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

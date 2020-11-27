@@ -80,6 +80,18 @@ summary {
     padding: .5em;
 }
 
+.nav-tabs li a.nav-link {
+ margin-right: 15px;
+ padding: 15px 25px;
+ color: #797979;
+ text-decoration: none;
+ font-weight: 600 !important;
+}
+
+.nav-tabs li a.nav-link:hover {
+    color: #7b7dc5;
+}
+
 @media only screen and (min-width: 720px) {
     
     .demo-img {
@@ -118,6 +130,7 @@ summary {
     #top-search-box {
         display: none;
     }
+    
 
     
 }
