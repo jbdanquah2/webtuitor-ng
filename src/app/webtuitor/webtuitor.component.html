@@ -32,8 +32,6 @@
       </div>
     </div>
   </div>
-
-
   <div id="new-courses" class="container mb-5">
     <div class="row">
       <div class="col-md-12">
@@ -45,7 +43,7 @@
             <a class="nav-link" href="/home#howto">Popular How-Tos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#">eBooks</a>
+            <a class="nav-link" href="/home#ebook">eBooks</a>
           </li>
         </ul>
         <course-tab></course-tab>
@@ -76,7 +74,7 @@
             <a class="nav-link active" href="/home#howto">Popular How-Tos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#"> eBooks</a>
+            <a class="nav-link" href="/home#ebook"> eBooks</a>
           </li>
         </ul>
         <howto-tab></howto-tab>
@@ -96,3 +94,37 @@
       </div>
     </div>
   </div>
+
+  <div id="ebook" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs mt-5">
+          <li class="nav-item">
+            <a class="nav-link" href="/home#new-courses">Popular Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/home#howto">Popular How-Tos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active p-2" href="/home#ebook"> eBooks</a>
+          </li>
+        </ul>
+        <ebook-tab></ebook-tab>
+        <a [routerLink]="['/courses']" class="float-right">View all courses</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <img class="demo-img2" src="../../assets/img/undraw_coding_6mjf.svg" alt="">
+      </div>
+      <div class="col-md-8">
+        <div class="contentAds">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          corrupti odio, reiciendis natus minima voluptas perspiciatis unde pariatur corporis excepturi asperiores
+          perferendis!
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
