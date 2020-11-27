@@ -16,13 +16,13 @@ html {
 .demo-img,
 .demo-img2 {
   position: relative;
-  top: -25px;
+  top: -5px;
   width: 300px;
 
 }
 
-.demo-img2 {
-  z-index: -1;
+.view-link {
+  z-index: +9999!important;
 }
 
 .register {
