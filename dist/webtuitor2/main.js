@@ -3482,6 +3482,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _course_course_post_course_post_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./course/course-post/course-post.component */ "./src/app/course/course-post/course-post.component.ts");
 /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
 /* harmony import */ var _layouts_admin_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./layouts/admin/admin-sidebar.component */ "./src/app/layouts/admin/admin-sidebar.component.ts");
+/* harmony import */ var _webtuitor_nav_tabs_courses_tab_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./webtuitor/nav-tabs/courses-tab.component */ "./src/app/webtuitor/nav-tabs/courses-tab.component.ts");
+/* harmony import */ var _course_course_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./course/course.service */ "./src/app/course/course.service.ts");
+/* harmony import */ var _howto_howto_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./howto/howto.service */ "./src/app/howto/howto.service.ts");
+/* harmony import */ var _webtuitor_nav_tabs_howto_tab_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./webtuitor/nav-tabs/howto-tab.component */ "./src/app/webtuitor/nav-tabs/howto-tab.component.ts");
+
+
+
+
 
 
 
@@ -3510,13 +3518,15 @@ var AppModule = /** @class */ (function () {
                 _course_course_component__WEBPACK_IMPORTED_MODULE_10__["CourseComponent"],
                 _course_course_post_course_post_component__WEBPACK_IMPORTED_MODULE_11__["CoursePostComponent"],
                 _admin_admin_component__WEBPACK_IMPORTED_MODULE_12__["AdminComponent"],
-                _layouts_admin_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_13__["AdminSidebarComponent"]
+                _layouts_admin_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_13__["AdminSidebarComponent"],
+                _webtuitor_nav_tabs_courses_tab_component__WEBPACK_IMPORTED_MODULE_14__["CourseTabComponent"],
+                _webtuitor_nav_tabs_howto_tab_component__WEBPACK_IMPORTED_MODULE_17__["HowtoComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_4__["appRoutes"])
             ],
-            providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["Title"]],
+            providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["Title"], _course_course_service__WEBPACK_IMPORTED_MODULE_15__["CourseService"], _howto_howto_service__WEBPACK_IMPORTED_MODULE_16__["HowtoService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
@@ -3618,6 +3628,142 @@ var CourseComponent = /** @class */ (function () {
     return CourseComponent;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/course/course.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/course/course.service.ts ***!
+  \******************************************/
+/*! exports provided: CourseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseService", function() { return CourseService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var CourseService = /** @class */ (function () {
+    function CourseService() {
+    }
+    CourseService.prototype.getCourses = function () {
+        return Courses;
+    };
+    CourseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], CourseService);
+    return CourseService;
+}());
+
+var Courses = [
+    {
+        id: 1,
+        name: 'Angular 2',
+        img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
+        published: '20th Oct, 2020',
+        totalTime: '2 hours',
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? \n        Illum maiores cum dolorum error sit odit.",
+        content: ''
+    },
+    {
+        id: 2,
+        name: 'Vuejs',
+        img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
+        published: '9th Sept, 2019',
+        totalTime: '4 hours',
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? \n        Illum maiores cum dolorum error sit odit.",
+        content: ''
+    },
+    {
+        id: 3,
+        name: 'React Native',
+        img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
+        published: '10th Jan, 2020',
+        totalTime: '3.5 hours',
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? \n        Illum maiores cum dolorum error sit odit.",
+        content: ''
+    },
+    {
+        id: 4,
+        name: 'Node.Js',
+        img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
+        published: '27th Jan, 2020',
+        totalTime: '2.5 hours',
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? \n     Illum maiores cum dolorum error sit odit.",
+        content: ''
+    }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/howto/howto.service.ts":
+/*!****************************************!*\
+  !*** ./src/app/howto/howto.service.ts ***!
+  \****************************************/
+/*! exports provided: HowtoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HowtoService", function() { return HowtoService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var HowtoService = /** @class */ (function () {
+    function HowtoService() {
+    }
+    HowtoService.prototype.getHowtos = function () {
+        return Howtos;
+    };
+    HowtoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], HowtoService);
+    return HowtoService;
+}());
+
+var Howtos = [
+    {
+        id: 1,
+        name: 'How to create your API with Nodejs and Express',
+        img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
+        published: '20th Oct, 2020',
+        totalTime: '2 hours',
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? \n        Illum maiores cum dolorum error sit odit.",
+        content: ''
+    },
+    {
+        id: 2,
+        name: 'Creating your first webpage',
+        img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
+        published: '9th Sept, 2019',
+        totalTime: '4 hours',
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? \n        Illum maiores cum dolorum error sit odit.",
+        content: ''
+    },
+    {
+        id: 3,
+        name: 'How to create a image compressor with Nodejs and Express',
+        img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
+        published: '10th Jan, 2020',
+        totalTime: '3.5 hours',
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? \n        Illum maiores cum dolorum error sit odit.",
+        content: ''
+    },
+    {
+        id: 4,
+        name: 'How to grade your students with Microsoft Excel',
+        img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
+        published: '27th Jan, 2020',
+        totalTime: '2.5 hours',
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? \n     Illum maiores cum dolorum error sit odit.",
+        content: ''
+    }
+];
 
 
 /***/ }),
@@ -3724,7 +3870,7 @@ module.exports = ".top-header {\r\n  height: 56px;\r\n}\r\n\r\n#main-logo {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- top search button -->\r\n\r\n<div id=\"top-search-box\" class=\"card-body bg-light\">\r\n  <img id=\"main-logo\" class=\"\" src=\"assets/icons/WebTuitor_logo_final.png\" alt=\"company logo\">\r\n  <div class=\"input-group \">\r\n    <a class=\"d-none d-lg-block btn btn-xs btn-outline-light mr-4\">Learning is a spice of life!</a>\r\n    <input type=\"text\" class=\"form-control pl-4\" placeholder=\"Search WebTuitor...\">\r\n    <span class=\"input-group-append m\">\r\n      <button id=\"search-go\" class=\"btn btn-danger\" type=\"button\">Go!</button>\r\n    </span>\r\n    <a class=\"nav-lin ml-auto btn btn-xs btn-outline-light\" href=\"\">Sign In </a>\r\n  </div>\r\n\r\n</div>\r\n<!-- </div> -->\r\n\r\n<!-- navigation / menu -->\r\n<nav class=\"navbar navbar-expand-lg sticky-to navbar-light shadow\">\r\n  <a class=\"navbar-brand img-fluid p-0\" href=\"/\"><img width=\"100\" height=\"40\"\r\n      src=\"assets/icons/WebTuitor_Logo2.png\" alt=\"company log\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\"\r\n    aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse \" id=\"navbarNavAltMarkup\">\r\n    <div class=\"navbar-nav ml-auto\">\r\n      <a [routerLink]=\"['/home']\" routerLinkActive=\"Active\" class=\"nav-link mr-4\">\r\n        Home</a>\r\n      <div class=\"dropdown\">\r\n        <a href=\"\" [routerLink]=\"['/how-to']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggle\"\r\n          data-toggle=\"dropdown\">\r\n          How-To</a><span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/courses']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggle\"\r\n          data-toggle=\"dropdown\">Courses </a><span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/courses']\" routerLinkActive=\"Activ\" class=\"nav-link dropdown-toggle\"\r\n          data-toggle=\"dropdown\">Guides </a><span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/courses']\" routerLinkActive=\"Activ\" class=\"nav-link dropdown-toggle\"\r\n          data-toggle=\"dropdown\">Find A Mentor </a><span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul>\r\n      </div>\r\n      <a [routerLink]=\"['/contact']\" routerLinkActive=\"Active\" class=\"nav-link mr-4\">\r\n        Contact</a>\r\n    </div>\r\n  </div>\r\n</nav>\r\n<hr class=\"m-0 p-0\">\r\n"
+module.exports = "<!-- top search button -->\r\n\r\n<div id=\"top-search-box\" class=\"card-body bg-light\">\r\n  <img id=\"main-logo\" class=\"\" src=\"assets/icons/WebTuitor_logo_final.png\" alt=\"company logo\">\r\n  <div class=\"input-group \">\r\n    <a class=\"d-none d-lg-block btn btn-xs btn-outline-light mr-4\">Learning is a spice of life!</a>\r\n    <input type=\"text\" class=\"form-control pl-4\" placeholder=\"Search WebTuitor...\">\r\n    <span class=\"input-group-append m\">\r\n      <button id=\"search-go\" class=\"btn btn-danger\" type=\"button\">Go!</button>\r\n    </span>\r\n    <a class=\"nav-lin ml-auto btn btn-xs btn-outline-light\" href=\"\">Sign In </a>\r\n  </div>\r\n\r\n</div>\r\n<!-- </div> -->\r\n\r\n<!-- navigation / menu -->\r\n<nav class=\"navbar navbar-expand-lg sticky-top navbar-light shadow\">\r\n  <a class=\"navbar-brand img-fluid p-0\" href=\"/\"><img width=\"100\" height=\"40\"\r\n      src=\"assets/icons/WebTuitor_Logo2.png\" alt=\"company log\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\"\r\n    aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse \" id=\"navbarNavAltMarkup\">\r\n    <div class=\"navbar-nav ml-auto\">\r\n      <a [routerLink]=\"['/home']\" routerLinkActive=\"Active\" class=\"nav-link mr-4\">\r\n        Home</a>\r\n      <div class=\"dropdown\">\r\n        <a href=\"\" [routerLink]=\"['/how-to']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggle\"\r\n          data-toggle=\"dropdown\">\r\n          How-To</a><span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/courses']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggle\"\r\n          data-toggle=\"dropdown\">Courses </a><span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/courses']\" routerLinkActive=\"Activ\" class=\"nav-link dropdown-toggle\"\r\n          data-toggle=\"dropdown\">eBooks </a><span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/courses']\" routerLinkActive=\"Activ\" class=\"nav-link dropdown-toggle\"\r\n          data-toggle=\"dropdown\">Find A Mentor </a><span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul>\r\n      </div>\r\n      <a [routerLink]=\"['/contact']\" routerLinkActive=\"Active\" class=\"nav-link mr-4\">\r\n        Contact</a>\r\n    </div>\r\n  </div>\r\n</nav>\r\n<hr class=\"m-0 p-0\">\r\n"
 
 /***/ }),
 
@@ -3830,6 +3976,93 @@ var appRoutes = [
 
 /***/ }),
 
+/***/ "./src/app/webtuitor/nav-tabs/courses-tab.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/webtuitor/nav-tabs/courses-tab.component.ts ***!
+  \*************************************************************/
+/*! exports provided: CourseTabComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseTabComponent", function() { return CourseTabComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _course_course_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../course/course.service */ "./src/app/course/course.service.ts");
+
+
+
+var CourseTabComponent = /** @class */ (function () {
+    function CourseTabComponent(courseService) {
+        this.courseService = courseService;
+    }
+    CourseTabComponent.prototype.ngOnInit = function () {
+        this.courses = this.courseService.getCourses();
+    };
+    CourseTabComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'course-tab',
+            template: "\n    <div class=\"card-group\">\n        <div *ngFor=\"let course of courses\" class=\"card\">\n        <img heigt=\"200\" class=\"card-img-top\" [src]=\"course.img\" alt=\"Card image cap\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title\">{{course.name}}</h5>\n            <p class=\"card-text\">{{course.description}}</p>\n            <button class=\"btn btn-md btn-outline-info\">Start</button>\n            <p class=\"card-text\">\n                <span><small class=\"text-muted\">{{course.published}}</small></span>&nbsp;&nbsp;&nbsp;\n                <span class=\"text-right\"><small class=\"text-muted\">{{course.totalTime}}</small></span>\n        </p>\n        </div>\n        </div>\n    </div>",
+            styles: [__webpack_require__(/*! ./nav-tab.component.css */ "./src/app/webtuitor/nav-tabs/nav-tab.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_course_course_service__WEBPACK_IMPORTED_MODULE_2__["CourseService"]])
+    ], CourseTabComponent);
+    return CourseTabComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/webtuitor/nav-tabs/howto-tab.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/webtuitor/nav-tabs/howto-tab.component.ts ***!
+  \***********************************************************/
+/*! exports provided: HowtoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HowtoComponent", function() { return HowtoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_howto_howto_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/howto/howto.service */ "./src/app/howto/howto.service.ts");
+
+
+
+var HowtoComponent = /** @class */ (function () {
+    function HowtoComponent(howtoService) {
+        this.howtoService = howtoService;
+    }
+    HowtoComponent.prototype.ngOnInit = function () {
+        this.howtos = this.howtoService.getHowtos();
+    };
+    HowtoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'howto-tab',
+            template: "\n    <div class=\"card-group\">\n        <div *ngFor=\"let howto of howtos\" class=\"card\">\n        <img heigt=\"200\" class=\"card-img-top\" [src]=\"howto.img\" alt=\"Card image cap\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title\">{{howto.name}}</h5>\n            <p class=\"card-text\">{{howto.description}}</p>\n            <button class=\"btn btn-md btn-outline-info\">Start</button>\n            <p class=\"card-text\">\n                <span><small class=\"text-muted\">{{howto.published}}</small></span>&nbsp;&nbsp;&nbsp;\n                <span class=\"text-right\"><small class=\"text-muted\">{{howto.totalTime}}</small></span>\n        </p>\n        </div>\n        </div>\n    </div>",
+            styles: [__webpack_require__(/*! ./nav-tab.component.css */ "./src/app/webtuitor/nav-tabs/nav-tab.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_howto_howto_service__WEBPACK_IMPORTED_MODULE_2__["HowtoService"]])
+    ], HowtoComponent);
+    return HowtoComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/webtuitor/nav-tabs/nav-tab.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/webtuitor/nav-tabs/nav-tab.component.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".card {\r\n    border-top-right-radius: 0;\r\n    border-top-left-radius: 0;\r\n    /* margin-top: 10px; */\r\n}\r\n.card-group {\r\n    border: 1px solid #dedede;\r\n    padding: 0;\r\n}\r\n.card:last-child {\r\n    margin-bottom: 0;\r\n}\r\n.card {\r\n    border-top: none !important;\r\n}\r\n.card:hover {\r\n    background: #d6d6d6;\r\n    transition: all 1.1s ease;\r\n    -webkit-transition: all 1.1s ease;\r\n    /* -webkit-transition: background-color 0.8s;\r\n  -moz-transition: background-color 0.8s;\r\n  -o-transition: background-color 0.8s;\r\n  transition: background-color 0.8s; */\r\n}\r\n@media only screen and (min-width: 720px) {\r\n    .card {\r\n        border-top: none !important;\r\n    }\r\n    .card-group {\r\n        border: none;\r\n    }\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2VidHVpdG9yL25hdi10YWJzL25hdi10YWIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLDJCQUEyQjtJQUMzQiwwQkFBMEI7SUFDMUIsdUJBQXVCO0NBQzFCO0FBQ0Q7SUFDSSwwQkFBMEI7SUFDMUIsV0FBVztDQUNkO0FBQ0Q7SUFDSSxpQkFBaUI7Q0FDcEI7QUFDRDtJQUNJLDRCQUE0QjtDQUMvQjtBQUNEO0lBQ0ksb0JBQW9CO0lBQ3BCLDBCQUEwQjtJQUMxQixrQ0FBa0M7SUFDbEM7Ozt1Q0FHbUM7Q0FDdEM7QUFFRDtJQUNJO1FBQ0ksNEJBQTRCO0tBQy9CO0lBQ0Q7UUFDSSxhQUFhO0tBQ2hCO0NBQ0oiLCJmaWxlIjoic3JjL2FwcC93ZWJ0dWl0b3IvbmF2LXRhYnMvbmF2LXRhYi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmQge1xyXG4gICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDA7XHJcbiAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAwO1xyXG4gICAgLyogbWFyZ2luLXRvcDogMTBweDsgKi9cclxufVxyXG4uY2FyZC1ncm91cCB7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjZGVkZWRlO1xyXG4gICAgcGFkZGluZzogMDtcclxufVxyXG4uY2FyZDpsYXN0LWNoaWxkIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDA7XHJcbn1cclxuLmNhcmQge1xyXG4gICAgYm9yZGVyLXRvcDogbm9uZSAhaW1wb3J0YW50O1xyXG59XHJcbi5jYXJkOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQ6ICNkNmQ2ZDY7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMS4xcyBlYXNlO1xyXG4gICAgLXdlYmtpdC10cmFuc2l0aW9uOiBhbGwgMS4xcyBlYXNlO1xyXG4gICAgLyogLXdlYmtpdC10cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuOHM7XHJcbiAgLW1vei10cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuOHM7XHJcbiAgLW8tdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAwLjhzO1xyXG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMC44czsgKi9cclxufVxyXG5cclxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA3MjBweCkge1xyXG4gICAgLmNhcmQge1xyXG4gICAgICAgIGJvcmRlci10b3A6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIH1cclxuICAgIC5jYXJkLWdyb3VwIHtcclxuICAgICAgICBib3JkZXI6IG5vbmU7XHJcbiAgICB9XHJcbn0iXX0= */"
+
+/***/ }),
+
 /***/ "./src/app/webtuitor/webtuitor.component.css":
 /*!***************************************************!*\
   !*** ./src/app/webtuitor/webtuitor.component.css ***!
@@ -3837,7 +4070,7 @@ var appRoutes = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@100&display=swap');\r\n\r\nhtml {\r\n    height: 100%;\r\n}\r\n\r\n#top-search-box {\r\n    display: none!important;\r\n}\r\n\r\n.home {\r\n    background: rgba(250, 250, 250, 0.8); \r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.demo-img, .demo-img2 {\r\n    position: relative;\r\n    top: -25px;\r\n    width: 300px;\r\n}\r\n\r\n.register {\r\n    background: rgba(199, 61, 61, 0.8) url('undraw_Relaxing_at_home_re_mror.svg') top right; \r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.about {\r\n    background: rgba(199, 61, 61, 0.7) url('undraw_Freelancer_re_irh4.svg') top left;\r\n    background-repeat: no-repeat;\r\n\r\n    min-height: 100vh !important;\r\n}\r\n\r\n.about .container h4 {\r\n    padding-top: 15%;\r\n}\r\n\r\n.reg-notice {   \r\n  padding: 0 15px;\r\n  padding-top: 60px;\r\n  margin-left: 20px;\r\n  color: #fdfdfd;\r\n}\r\n\r\n.notice {\r\n    margin-top: auto;\r\n    position: relative;\r\n    font-size: x-large;\r\n    padding: 40px;\r\n    letter-spacing: 0.1em;\r\n    font-weight: 600;\r\n    background:  #fdfdfd;\r\n    cursor: pointer;\r\n}\r\n\r\n.notice span {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    display: block;\r\n}\r\n\r\nh1,h2,h3 {\r\n    font-family: 'Grandstander', cursive;\r\n}\r\n\r\n.bookme:hover {\r\n    background:  rgba(108, 99, 255, 0.8)!important;\r\n    width: 160px;\r\n}\r\n\r\n.guide {\r\n    padding: 25px 10px;\r\n    margin-bottom: 10%;\r\n    background:  rgba(216, 210, 210, 0.2) ;\r\n    border-radius: 5px;\r\n}\r\n\r\n#howitworks {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n#list li {\r\n    margin: 15px;\r\n}\r\n\r\niframe {\r\n    opacity: 0.8;\r\n}\r\n\r\nsummary {\r\n    font-weight: bold;\r\n    margin: -.5em -.5em 0;\r\n    padding: .5em;\r\n}\r\n\r\n@media only screen and (min-width: 720px) {\r\n    \r\n    .demo-img {\r\n        margin-top: 100px;\r\n        margin-left: 0px !important;\r\n        width: 600px !important;\r\n    }\r\n    .demo-img2 {\r\n        margin-top: 50px;\r\n        margin-left: -25px;\r\n        width: 400px !important;\r\n    }\r\n    .register {\r\n        background: rgba(199, 61, 61, 0.8) url('undraw_Relaxing_at_home_re_mror.svg') top right; \r\n    }\r\n    .home, .register {\r\n        background-repeat: no-repeat;\r\n        background-attachment: fixed;\r\n    }\r\n    .notice {\r\n        margin-top: auto;\r\n        left: 100px;\r\n        position: relative;\r\n        font-size: xx-large;\r\n        padding: 40px;\r\n        letter-spacing: 0.2em;\r\n        font-weight: 600;\r\n        background:  #fdfdfd;\r\n        cursor: pointer;\r\n    }\r\n    .reg-notice {\r\n        padding: 0 15px;\r\n        margin-left: 10%;\r\n        color: #f8f2f2;\r\n      }  \r\n    #top-search-box {\r\n        display: none;\r\n    }\r\n\r\n    \r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2VidHVpdG9yL3dlYnR1aXRvci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDJGQUEyRjs7QUFFM0Y7SUFDSSxhQUFhO0NBQ2hCOztBQUVEO0lBQ0ksd0JBQXdCO0NBQzNCOztBQUNEO0lBQ0kscUNBQXFDO0lBQ3JDLDZCQUE2QjtDQUNoQzs7QUFDRDtJQUNJLG1CQUFtQjtJQUNuQixXQUFXO0lBQ1gsYUFBYTtDQUNoQjs7QUFDRDtJQUNJLHdGQUF5RztJQUN6Ryw2QkFBNkI7Q0FDaEM7O0FBQ0Q7SUFDSSxpRkFBa0c7SUFDbEcsNkJBQTZCOztJQUU3Qiw2QkFBNkI7Q0FDaEM7O0FBQ0Q7SUFDSSxpQkFBaUI7Q0FDcEI7O0FBQ0Q7RUFDRSxnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixlQUFlO0NBQ2hCOztBQUNEO0lBQ0ksaUJBQWlCO0lBQ2pCLG1CQUFtQjtJQUNuQixtQkFBbUI7SUFDbkIsY0FBYztJQUNkLHNCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIscUJBQXFCO0lBQ3JCLGdCQUFnQjtDQUNuQjs7QUFDRDtJQUNJLGlCQUFpQjtJQUNqQixjQUFjO0lBQ2QsZUFBZTtDQUNsQjs7QUFDRDtJQUNJLHFDQUFxQztDQUN4Qzs7QUFDRDtJQUNJLCtDQUErQztJQUMvQyxhQUFhO0NBQ2hCOztBQUNEO0lBQ0ksbUJBQW1CO0lBQ25CLG1CQUFtQjtJQUNuQix1Q0FBdUM7SUFDdkMsbUJBQW1CO0NBQ3RCOztBQUNEO0lBQ0ksZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQixxQkFBcUI7Q0FDeEI7O0FBQ0Q7SUFDSSxhQUFhO0NBQ2hCOztBQUNEO0lBQ0ksYUFBYTtDQUNoQjs7QUFDRDtJQUNJLGtCQUFrQjtJQUNsQixzQkFBc0I7SUFDdEIsY0FBYztDQUNqQjs7QUFFRDs7SUFFSTtRQUNJLGtCQUFrQjtRQUNsQiw0QkFBNEI7UUFDNUIsd0JBQXdCO0tBQzNCO0lBQ0Q7UUFDSSxpQkFBaUI7UUFDakIsbUJBQW1CO1FBQ25CLHdCQUF3QjtLQUMzQjtJQUNEO1FBQ0ksd0ZBQXlHO0tBQzVHO0lBQ0Q7UUFDSSw2QkFBNkI7UUFDN0IsNkJBQTZCO0tBQ2hDO0lBQ0Q7UUFDSSxpQkFBaUI7UUFDakIsWUFBWTtRQUNaLG1CQUFtQjtRQUNuQixvQkFBb0I7UUFDcEIsY0FBYztRQUNkLHNCQUFzQjtRQUN0QixpQkFBaUI7UUFDakIscUJBQXFCO1FBQ3JCLGdCQUFnQjtLQUNuQjtJQUNEO1FBQ0ksZ0JBQWdCO1FBQ2hCLGlCQUFpQjtRQUNqQixlQUFlO09BQ2hCO0lBQ0g7UUFDSSxjQUFjO0tBQ2pCOzs7Q0FHSiIsImZpbGUiOiJzcmMvYXBwL3dlYnR1aXRvci93ZWJ0dWl0b3IuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgdXJsKCdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PUdyYW5kc3RhbmRlcjp3Z2h0QDEwMCZkaXNwbGF5PXN3YXAnKTtcclxuXHJcbmh0bWwge1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcblxyXG4jdG9wLXNlYXJjaC1ib3gge1xyXG4gICAgZGlzcGxheTogbm9uZSFpbXBvcnRhbnQ7XHJcbn1cclxuLmhvbWUge1xyXG4gICAgYmFja2dyb3VuZDogcmdiYSgyNTAsIDI1MCwgMjUwLCAwLjgpOyBcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbn1cclxuLmRlbW8taW1nLCAuZGVtby1pbWcyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHRvcDogLTI1cHg7XHJcbiAgICB3aWR0aDogMzAwcHg7XHJcbn1cclxuLnJlZ2lzdGVyIHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMTk5LCA2MSwgNjEsIDAuOCkgdXJsKCcuLi8uLi9hc3NldHMvaW1nL3VuZHJhd19SZWxheGluZ19hdF9ob21lX3JlX21yb3Iuc3ZnJykgdG9wIHJpZ2h0OyBcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbn1cclxuLmFib3V0IHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMTk5LCA2MSwgNjEsIDAuNykgdXJsKCcuLi8uLi9hc3NldHMvaW1nL3VuZHJhd19GcmVlbGFuY2VyX3JlX2lyaDQuc3ZnJykgdG9wIGxlZnQ7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG5cclxuICAgIG1pbi1oZWlnaHQ6IDEwMHZoICFpbXBvcnRhbnQ7XHJcbn1cclxuLmFib3V0IC5jb250YWluZXIgaDQge1xyXG4gICAgcGFkZGluZy10b3A6IDE1JTtcclxufVxyXG4ucmVnLW5vdGljZSB7ICAgXHJcbiAgcGFkZGluZzogMCAxNXB4O1xyXG4gIHBhZGRpbmctdG9wOiA2MHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gIGNvbG9yOiAjZmRmZGZkO1xyXG59XHJcbi5ub3RpY2Uge1xyXG4gICAgbWFyZ2luLXRvcDogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGZvbnQtc2l6ZTogeC1sYXJnZTtcclxuICAgIHBhZGRpbmc6IDQwcHg7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMC4xZW07XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgYmFja2dyb3VuZDogICNmZGZkZmQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLm5vdGljZSBzcGFuIHtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuaDEsaDIsaDMge1xyXG4gICAgZm9udC1mYW1pbHk6ICdHcmFuZHN0YW5kZXInLCBjdXJzaXZlO1xyXG59XHJcbi5ib29rbWU6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZDogIHJnYmEoMTA4LCA5OSwgMjU1LCAwLjgpIWltcG9ydGFudDtcclxuICAgIHdpZHRoOiAxNjBweDtcclxufVxyXG4uZ3VpZGUge1xyXG4gICAgcGFkZGluZzogMjVweCAxMHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTAlO1xyXG4gICAgYmFja2dyb3VuZDogIHJnYmEoMjE2LCAyMTAsIDIxMCwgMC4yKSA7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbn1cclxuI2hvd2l0d29ya3Mge1xyXG4gICAgZm9udC1zaXplOiAycmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAxMHB4O1xyXG59XHJcbiNsaXN0IGxpIHtcclxuICAgIG1hcmdpbjogMTVweDtcclxufVxyXG5pZnJhbWUge1xyXG4gICAgb3BhY2l0eTogMC44O1xyXG59XHJcbnN1bW1hcnkge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBtYXJnaW46IC0uNWVtIC0uNWVtIDA7XHJcbiAgICBwYWRkaW5nOiAuNWVtO1xyXG59XHJcblxyXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDcyMHB4KSB7XHJcbiAgICBcclxuICAgIC5kZW1vLWltZyB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTAwcHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDBweCAhaW1wb3J0YW50O1xyXG4gICAgICAgIHdpZHRoOiA2MDBweCAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG4gICAgLmRlbW8taW1nMiB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogNTBweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogLTI1cHg7XHJcbiAgICAgICAgd2lkdGg6IDQwMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbiAgICAucmVnaXN0ZXIge1xyXG4gICAgICAgIGJhY2tncm91bmQ6IHJnYmEoMTk5LCA2MSwgNjEsIDAuOCkgdXJsKCcuLi8uLi9hc3NldHMvaW1nL3VuZHJhd19SZWxheGluZ19hdF9ob21lX3JlX21yb3Iuc3ZnJykgdG9wIHJpZ2h0OyBcclxuICAgIH1cclxuICAgIC5ob21lLCAucmVnaXN0ZXIge1xyXG4gICAgICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1hdHRhY2htZW50OiBmaXhlZDtcclxuICAgIH1cclxuICAgIC5ub3RpY2Uge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IGF1dG87XHJcbiAgICAgICAgbGVmdDogMTAwcHg7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XHJcbiAgICAgICAgcGFkZGluZzogNDBweDtcclxuICAgICAgICBsZXR0ZXItc3BhY2luZzogMC4yZW07XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAgI2ZkZmRmZDtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB9XHJcbiAgICAucmVnLW5vdGljZSB7XHJcbiAgICAgICAgcGFkZGluZzogMCAxNXB4O1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxMCU7XHJcbiAgICAgICAgY29sb3I6ICNmOGYyZjI7XHJcbiAgICAgIH0gIFxyXG4gICAgI3RvcC1zZWFyY2gtYm94IHtcclxuICAgICAgICBkaXNwbGF5OiBub25lO1xyXG4gICAgfVxyXG5cclxuICAgIFxyXG59XHJcbiJdfQ== */"
+module.exports = "@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@100&display=swap');\r\n\r\nhtml {\r\n    height: 100%;\r\n}\r\n\r\n#top-search-box {\r\n    display: none!important;\r\n}\r\n\r\n.home {\r\n    background: rgba(250, 250, 250, 0.8); \r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.demo-img, .demo-img2 {\r\n    position: relative;\r\n    top: -25px;\r\n    width: 300px;\r\n}\r\n\r\n.register {\r\n    background: rgba(199, 61, 61, 0.8) url('undraw_Relaxing_at_home_re_mror.svg') top right; \r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.about {\r\n    background: rgba(199, 61, 61, 0.7) url('undraw_Freelancer_re_irh4.svg') top left;\r\n    background-repeat: no-repeat;\r\n\r\n    min-height: 100vh !important;\r\n}\r\n\r\n.about .container h4 {\r\n    padding-top: 15%;\r\n}\r\n\r\n.reg-notice {   \r\n  padding: 0 15px;\r\n  padding-top: 60px;\r\n  margin-left: 20px;\r\n  color: #fdfdfd;\r\n}\r\n\r\n.notice {\r\n    margin-top: auto;\r\n    position: relative;\r\n    font-size: x-large;\r\n    padding: 40px;\r\n    letter-spacing: 0.1em;\r\n    font-weight: 600;\r\n    background:  #fdfdfd;\r\n    cursor: pointer;\r\n}\r\n\r\n.notice span {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    display: block;\r\n}\r\n\r\nh1,h2,h3 {\r\n    font-family: 'Grandstander', cursive;\r\n}\r\n\r\n.bookme:hover {\r\n    background:  rgba(108, 99, 255, 0.8)!important;\r\n    width: 160px;\r\n}\r\n\r\n.guide {\r\n    padding: 25px 10px;\r\n    margin-bottom: 10%;\r\n    background:  rgba(216, 210, 210, 0.2) ;\r\n    border-radius: 5px;\r\n}\r\n\r\n#howitworks {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n#list li {\r\n    margin: 15px;\r\n}\r\n\r\niframe {\r\n    opacity: 0.8;\r\n}\r\n\r\nsummary {\r\n    font-weight: bold;\r\n    margin: -.5em -.5em 0;\r\n    padding: .5em;\r\n}\r\n\r\n.nav-tabs li a.nav-link {\r\n margin-right: 15px;\r\n padding: 15px 25px;\r\n color: #797979;\r\n text-decoration: none;\r\n font-weight: 600 !important;\r\n}\r\n\r\n.nav-tabs li a.nav-link:hover {\r\n    color: #7b7dc5;\r\n}\r\n\r\n@media only screen and (min-width: 720px) {\r\n\r\n    .contentAds {\r\n        margin: 0 auto;\r\n        font-size: xx-large;\r\n        margin: 100px 0 0 0;\r\n        padding: 5px 80px 5px 2px;\r\n        text-align: justify;\r\n    }\r\n    .demo-img {\r\n        margin-top: 100px;\r\n        margin-left: 0px !important;\r\n        width: 600px !important;\r\n    }\r\n    .demo-img2 {\r\n        margin-top: 50px;\r\n        margin-left: -25px;\r\n        width: 400px !important;\r\n    }\r\n    .register {\r\n        background: rgba(199, 61, 61, 0.8) url('undraw_Relaxing_at_home_re_mror.svg') top right; \r\n    }\r\n    .home, .register {\r\n        background-repeat: no-repeat;\r\n        background-attachment: fixed;\r\n    }\r\n    .notice {\r\n        margin-top: auto;\r\n        left: 100px;\r\n        position: relative;\r\n        font-size: xx-large;\r\n        padding: 40px;\r\n        letter-spacing: 0.2em;\r\n        font-weight: 600;\r\n        background:  #fdfdfd;\r\n        cursor: pointer;\r\n    }\r\n    .reg-notice {\r\n        padding: 0 15px;\r\n        margin-left: 10%;\r\n        color: #f8f2f2;\r\n      }  \r\n    #top-search-box {\r\n        display: none;\r\n    }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2VidHVpdG9yL3dlYnR1aXRvci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDJGQUEyRjs7QUFFM0Y7SUFDSSxhQUFhO0NBQ2hCOztBQUVEO0lBQ0ksd0JBQXdCO0NBQzNCOztBQUNEO0lBQ0kscUNBQXFDO0lBQ3JDLDZCQUE2QjtDQUNoQzs7QUFDRDtJQUNJLG1CQUFtQjtJQUNuQixXQUFXO0lBQ1gsYUFBYTtDQUNoQjs7QUFDRDtJQUNJLHdGQUF5RztJQUN6Ryw2QkFBNkI7Q0FDaEM7O0FBQ0Q7SUFDSSxpRkFBa0c7SUFDbEcsNkJBQTZCOztJQUU3Qiw2QkFBNkI7Q0FDaEM7O0FBQ0Q7SUFDSSxpQkFBaUI7Q0FDcEI7O0FBQ0Q7RUFDRSxnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixlQUFlO0NBQ2hCOztBQUNEO0lBQ0ksaUJBQWlCO0lBQ2pCLG1CQUFtQjtJQUNuQixtQkFBbUI7SUFDbkIsY0FBYztJQUNkLHNCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIscUJBQXFCO0lBQ3JCLGdCQUFnQjtDQUNuQjs7QUFDRDtJQUNJLGlCQUFpQjtJQUNqQixjQUFjO0lBQ2QsZUFBZTtDQUNsQjs7QUFDRDtJQUNJLHFDQUFxQztDQUN4Qzs7QUFDRDtJQUNJLCtDQUErQztJQUMvQyxhQUFhO0NBQ2hCOztBQUNEO0lBQ0ksbUJBQW1CO0lBQ25CLG1CQUFtQjtJQUNuQix1Q0FBdUM7SUFDdkMsbUJBQW1CO0NBQ3RCOztBQUNEO0lBQ0ksZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQixxQkFBcUI7Q0FDeEI7O0FBQ0Q7SUFDSSxhQUFhO0NBQ2hCOztBQUNEO0lBQ0ksYUFBYTtDQUNoQjs7QUFDRDtJQUNJLGtCQUFrQjtJQUNsQixzQkFBc0I7SUFDdEIsY0FBYztDQUNqQjs7QUFFRDtDQUNDLG1CQUFtQjtDQUNuQixtQkFBbUI7Q0FDbkIsZUFBZTtDQUNmLHNCQUFzQjtDQUN0Qiw0QkFBNEI7Q0FDNUI7O0FBRUQ7SUFDSSxlQUFlO0NBQ2xCOztBQUVEOztJQUVJO1FBQ0ksZUFBZTtRQUNmLG9CQUFvQjtRQUNwQixvQkFBb0I7UUFDcEIsMEJBQTBCO1FBQzFCLG9CQUFvQjtLQUN2QjtJQUNEO1FBQ0ksa0JBQWtCO1FBQ2xCLDRCQUE0QjtRQUM1Qix3QkFBd0I7S0FDM0I7SUFDRDtRQUNJLGlCQUFpQjtRQUNqQixtQkFBbUI7UUFDbkIsd0JBQXdCO0tBQzNCO0lBQ0Q7UUFDSSx3RkFBeUc7S0FDNUc7SUFDRDtRQUNJLDZCQUE2QjtRQUM3Qiw2QkFBNkI7S0FDaEM7SUFDRDtRQUNJLGlCQUFpQjtRQUNqQixZQUFZO1FBQ1osbUJBQW1CO1FBQ25CLG9CQUFvQjtRQUNwQixjQUFjO1FBQ2Qsc0JBQXNCO1FBQ3RCLGlCQUFpQjtRQUNqQixxQkFBcUI7UUFDckIsZ0JBQWdCO0tBQ25CO0lBQ0Q7UUFDSSxnQkFBZ0I7UUFDaEIsaUJBQWlCO1FBQ2pCLGVBQWU7T0FDaEI7SUFDSDtRQUNJLGNBQWM7S0FDakI7Q0FDSiIsImZpbGUiOiJzcmMvYXBwL3dlYnR1aXRvci93ZWJ0dWl0b3IuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgdXJsKCdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PUdyYW5kc3RhbmRlcjp3Z2h0QDEwMCZkaXNwbGF5PXN3YXAnKTtcclxuXHJcbmh0bWwge1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcblxyXG4jdG9wLXNlYXJjaC1ib3gge1xyXG4gICAgZGlzcGxheTogbm9uZSFpbXBvcnRhbnQ7XHJcbn1cclxuLmhvbWUge1xyXG4gICAgYmFja2dyb3VuZDogcmdiYSgyNTAsIDI1MCwgMjUwLCAwLjgpOyBcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbn1cclxuLmRlbW8taW1nLCAuZGVtby1pbWcyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHRvcDogLTI1cHg7XHJcbiAgICB3aWR0aDogMzAwcHg7XHJcbn1cclxuLnJlZ2lzdGVyIHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMTk5LCA2MSwgNjEsIDAuOCkgdXJsKCcuLi8uLi9hc3NldHMvaW1nL3VuZHJhd19SZWxheGluZ19hdF9ob21lX3JlX21yb3Iuc3ZnJykgdG9wIHJpZ2h0OyBcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbn1cclxuLmFib3V0IHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMTk5LCA2MSwgNjEsIDAuNykgdXJsKCcuLi8uLi9hc3NldHMvaW1nL3VuZHJhd19GcmVlbGFuY2VyX3JlX2lyaDQuc3ZnJykgdG9wIGxlZnQ7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG5cclxuICAgIG1pbi1oZWlnaHQ6IDEwMHZoICFpbXBvcnRhbnQ7XHJcbn1cclxuLmFib3V0IC5jb250YWluZXIgaDQge1xyXG4gICAgcGFkZGluZy10b3A6IDE1JTtcclxufVxyXG4ucmVnLW5vdGljZSB7ICAgXHJcbiAgcGFkZGluZzogMCAxNXB4O1xyXG4gIHBhZGRpbmctdG9wOiA2MHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gIGNvbG9yOiAjZmRmZGZkO1xyXG59XHJcbi5ub3RpY2Uge1xyXG4gICAgbWFyZ2luLXRvcDogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGZvbnQtc2l6ZTogeC1sYXJnZTtcclxuICAgIHBhZGRpbmc6IDQwcHg7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMC4xZW07XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgYmFja2dyb3VuZDogICNmZGZkZmQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLm5vdGljZSBzcGFuIHtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuaDEsaDIsaDMge1xyXG4gICAgZm9udC1mYW1pbHk6ICdHcmFuZHN0YW5kZXInLCBjdXJzaXZlO1xyXG59XHJcbi5ib29rbWU6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZDogIHJnYmEoMTA4LCA5OSwgMjU1LCAwLjgpIWltcG9ydGFudDtcclxuICAgIHdpZHRoOiAxNjBweDtcclxufVxyXG4uZ3VpZGUge1xyXG4gICAgcGFkZGluZzogMjVweCAxMHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTAlO1xyXG4gICAgYmFja2dyb3VuZDogIHJnYmEoMjE2LCAyMTAsIDIxMCwgMC4yKSA7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbn1cclxuI2hvd2l0d29ya3Mge1xyXG4gICAgZm9udC1zaXplOiAycmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAxMHB4O1xyXG59XHJcbiNsaXN0IGxpIHtcclxuICAgIG1hcmdpbjogMTVweDtcclxufVxyXG5pZnJhbWUge1xyXG4gICAgb3BhY2l0eTogMC44O1xyXG59XHJcbnN1bW1hcnkge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBtYXJnaW46IC0uNWVtIC0uNWVtIDA7XHJcbiAgICBwYWRkaW5nOiAuNWVtO1xyXG59XHJcblxyXG4ubmF2LXRhYnMgbGkgYS5uYXYtbGluayB7XHJcbiBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbiBwYWRkaW5nOiAxNXB4IDI1cHg7XHJcbiBjb2xvcjogIzc5Nzk3OTtcclxuIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuIGZvbnQtd2VpZ2h0OiA2MDAgIWltcG9ydGFudDtcclxufVxyXG5cclxuLm5hdi10YWJzIGxpIGEubmF2LWxpbms6aG92ZXIge1xyXG4gICAgY29sb3I6ICM3YjdkYzU7XHJcbn1cclxuXHJcbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNzIwcHgpIHtcclxuXHJcbiAgICAuY29udGVudEFkcyB7XHJcbiAgICAgICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICAgICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgICAgICBtYXJnaW46IDEwMHB4IDAgMCAwO1xyXG4gICAgICAgIHBhZGRpbmc6IDVweCA4MHB4IDVweCAycHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjoganVzdGlmeTtcclxuICAgIH1cclxuICAgIC5kZW1vLWltZyB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTAwcHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDBweCAhaW1wb3J0YW50O1xyXG4gICAgICAgIHdpZHRoOiA2MDBweCAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG4gICAgLmRlbW8taW1nMiB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogNTBweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogLTI1cHg7XHJcbiAgICAgICAgd2lkdGg6IDQwMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbiAgICAucmVnaXN0ZXIge1xyXG4gICAgICAgIGJhY2tncm91bmQ6IHJnYmEoMTk5LCA2MSwgNjEsIDAuOCkgdXJsKCcuLi8uLi9hc3NldHMvaW1nL3VuZHJhd19SZWxheGluZ19hdF9ob21lX3JlX21yb3Iuc3ZnJykgdG9wIHJpZ2h0OyBcclxuICAgIH1cclxuICAgIC5ob21lLCAucmVnaXN0ZXIge1xyXG4gICAgICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1hdHRhY2htZW50OiBmaXhlZDtcclxuICAgIH1cclxuICAgIC5ub3RpY2Uge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IGF1dG87XHJcbiAgICAgICAgbGVmdDogMTAwcHg7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XHJcbiAgICAgICAgcGFkZGluZzogNDBweDtcclxuICAgICAgICBsZXR0ZXItc3BhY2luZzogMC4yZW07XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAgI2ZkZmRmZDtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB9XHJcbiAgICAucmVnLW5vdGljZSB7XHJcbiAgICAgICAgcGFkZGluZzogMCAxNXB4O1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxMCU7XHJcbiAgICAgICAgY29sb3I6ICNmOGYyZjI7XHJcbiAgICAgIH0gIFxyXG4gICAgI3RvcC1zZWFyY2gtYm94IHtcclxuICAgICAgICBkaXNwbGF5OiBub25lO1xyXG4gICAgfVxyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -3848,7 +4081,7 @@ module.exports = "@import url('https://fonts.googleapis.com/css2?family=Grandsta
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\" home text-whie pb-5\">\r\n  <div class=\"container\">\r\n    <div class=\"row \">\r\n      <div class=\"col-md-6 d-flex justify-content-center bg-light flex-column\">\r\n        <h4 class=\"notice border mt-4 shadow\">Hi there, WebTuitor makes it easy!\r\n          <br><br>\r\n          Learn by doing\r\n          <br>\r\n          <a href=\"\"><button class=\"btn btn-md btn-outline-dark mt-3\">Get Started!</button></a>\r\n        </h4>\r\n        <img class=\"postion-fixed demo-img d-lg-none d-sm-block mb-4\" src=\"../../assets/img/undraw_pair_programming_njlp.svg\" alt=\"\">\r\n        <details open >\r\n          <summary class=\"mt-3\">How it works</summary>\r\n          <div class=\"guide\">\r\n            <h3 class=\"px-5\" id=\"howitworks\">How it works</h3>\r\n            <ul class=\"\" id=\"list\">\r\n              <li>Click here to book your name on calendar</li>\r\n              <li>Our team will contact you to confirm appointment</li>\r\n              <li>We assign a tutor to you</li>\r\n              <li>You pay our hourly service</li>\r\n              <li>Pay us $5 per every per hour spent with you</li>\r\n            </ul>\r\n          </div>\r\n        </details>\r\n        <h3>We are here for you</h3>\r\n        <a href=\"\"><button class=\"btn btn-sm btn-outline-dark\">Get Started!</button></a>\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <img class=\"postion-fixed demo-img d-none d-lg-block\" src=\"../../assets/img/undraw_pair_programming_njlp.svg\" alt=\"\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">kjk</div>\r\n      <div class=\"col-md-4\">\r\n        <img class=\"demo-img2\" src=\"../../assets/img/undraw_coding_6mjf.svg\" alt=\"\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n"
+module.exports = "<div class=\" home text-whie pb-5\">\r\n  <div class=\"container \">\r\n    <div class=\"row \">\r\n      <div class=\"col-md-6 d-flex p-lg-5 p-sm-3 justify-content-center bg-light flex-column\">\r\n        <h4 class=\"notice border mt-4 shadow\">Hi there, WebTuitor makes it easy!\r\n          <br><br>\r\n          Learn by doing\r\n          <br>\r\n          <a href=\"\"><button class=\"btn btn-md btn-outline-dark mt-3\">Get Started!</button></a>\r\n        </h4>\r\n        <img class=\"postion-fixed demo-img d-lg-none d-sm-block mb-4\"\r\n          src=\"../../assets/img/undraw_pair_programming_njlp.svg\" alt=\"\">\r\n        <details open>\r\n          <summary class=\"mt-3\">How it works</summary>\r\n          <div class=\"guide\">\r\n            <h3 class=\"px-5\" id=\"howitworks\">How it works</h3>\r\n            <ul class=\"\" id=\"list\">\r\n              <li>Click here to book your name on calendar</li>\r\n              <li>Our team will contact you to confirm appointment</li>\r\n              <li>We assign a tutor to you</li>\r\n              <li>You pay our hourly service</li>\r\n              <li>Pay us $5 per every per hour spent with you</li>\r\n            </ul>\r\n          </div>\r\n        </details>\r\n        <h3>We are here for you</h3>\r\n        <a href=\"\"><button class=\"btn btn-sm btn-outline-dark\">Get Started!</button></a>\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <img class=\"postion-fixed demo-img d-none d-lg-block\" src=\"../../assets/img/undraw_pair_programming_njlp.svg\"\r\n          alt=\"\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div id=\"newCourses\" class=\"container mb-5\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <ul class=\"nav nav-tabs mt-5\">\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link active\" href=\"#newCourses\">New Courses</a>\r\n          </li>\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link\" href=\"#howto\">Popular How-Tos</a>\r\n          </li>\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link d-none d-lg-block\" href=\"#\">New Guides</a>\r\n          </li>\r\n        </ul>\r\n        <course-tab></course-tab>\r\n        <a class=\"float-right\" href=\"/courses\">View all courses</a>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n        <img class=\"demo-img2\" src=\"../../assets/img/undraw_coding_6mjf.svg\" alt=\"\">\r\n      </div>\r\n      <div class=\"col-md-8\">\r\n        <div class=\"contentAds\">\r\n          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam\r\n          corrupti odio, reiciendis natus minima voluptas perspiciatis unde pariatur corporis excepturi asperiores\r\n          perferendis!\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div id=\"howto\" class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <ul class=\"nav nav-tabs mt-5\">\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link\" href=\"#newCourses\">New Courses</a>\r\n          </li>\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link active\" href=\"#howto\">Popular How-Tos</a>\r\n          </li>\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link d-none d-lg-block\" href=\"#\">New Guides</a>\r\n          </li>\r\n        </ul>\r\n        <howto-tab></howto-tab>\r\n        <a class=\"float-right\" href=\"/how-to\">View all courses</a>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n        <img class=\"demo-img2\" src=\"../../assets/img/undraw_coding_6mjf.svg\" alt=\"\">\r\n      </div>\r\n      <div class=\"col-md-8\">\r\n        <div class=\"contentAds\">\r\n          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam\r\n          corrupti odio, reiciendis natus minima voluptas perspiciatis unde pariatur corporis excepturi asperiores\r\n          perferendis!\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n"
 
 /***/ }),
 

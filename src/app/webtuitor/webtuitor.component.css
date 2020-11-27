@@ -93,7 +93,14 @@ summary {
 }
 
 @media only screen and (min-width: 720px) {
-    
+
+    .contentAds {
+        margin: 0 auto;
+        font-size: xx-large;
+        margin: 100px 0 0 0;
+        padding: 5px 80px 5px 2px;
+        text-align: justify;
+    }
     .demo-img {
         margin-top: 100px;
         margin-left: 0px !important;
@@ -130,7 +137,4 @@ summary {
     #top-search-box {
         display: none;
     }
-    
-
-    
 }
