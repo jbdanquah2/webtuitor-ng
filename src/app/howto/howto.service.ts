@@ -5,6 +5,9 @@ export class HowtoService {
     getHowtos() {
         return Howtos;
     }
+    getHowto(id:number) {      
+        return Howtos.find(howto => howto.id == id)
+    }
 }
 
 const Howtos = [

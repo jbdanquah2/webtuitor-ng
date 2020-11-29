@@ -5,7 +5,7 @@ import { EbookService } from 'src/app/ebook/ebook.service';
     selector: 'ebook-tab',
     template:`
     <div class="card-group">
-        <div [routerLink]="['/course/',ebook.id]" *ngFor="let ebook of ebooks" class="card">
+        <div [routerLink]="['/ebook/',ebook.id]" *ngFor="let ebook of ebooks" class="card">
         <img heigt="200" class="card-img-top" [src]="ebook.img" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{ebook.name}}</h5>

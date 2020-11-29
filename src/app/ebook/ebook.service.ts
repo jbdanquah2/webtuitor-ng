@@ -5,6 +5,9 @@ export class EbookService {
     getEbooks() {
         return Ebooks;
     }
+    getEbook(id:number) {      
+        return Ebooks.find(ebook => ebook.id == id)
+    }
 }
 
 const Ebooks = [
