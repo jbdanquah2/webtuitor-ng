@@ -18,6 +18,8 @@ import { HowtoService } from './howto/howto.service';
 import { HowtoComponent } from './webtuitor/nav-tabs/howto-tab.component';
 import { EbookService } from './ebook/ebook.service';
 import { EbookComponent } from './webtuitor/nav-tabs/ebook.component';
+import { Error404Component } from './errors/404.component';
+import { CourseRouteActivator } from './course/course-post/course-route-activator.service';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,14 @@ import { EbookComponent } from './webtuitor/nav-tabs/ebook.component';
     AdminSidebarComponent,
     CourseTabComponent,
     HowtoComponent, 
-    EbookComponent
+    EbookComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ Title,CourseService, HowtoService, EbookService ],
+  providers: [ Title,CourseService, HowtoService, EbookService, CourseRouteActivator ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
