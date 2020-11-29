@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { CourseService } from '../course.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector:'course-post',
@@ -8,5 +10,13 @@ import { Component } from "@angular/core";
     `]
 })
 export class CoursePostComponent {
+    course:any
+    constructor(private courseService: CourseService, private route: ActivatedRoute) {
 
+    }
+    ngOnInit(){
+        this.course = this.courseService.getCourse(this.route.snapshot.params['id'])
+        console.log(this.course);
+        
+    }
 }

@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute } from '@angular/router';
+import { CourseService } from './course.service';
 
 @Component({
     selector:'app-course',
@@ -6,5 +8,13 @@ import { Component } from "@angular/core";
     styleUrls:['course.component.css']
 })
 export class CourseComponent {
-    
+    courses:any
+    constructor(private courseService: CourseService, private route: ActivatedRoute) {
+
+    }
+    ngOnInit(id){
+        this.courses = this.courseService.getCourses()
+        console.log(this.courses);
+        
+    }
 }

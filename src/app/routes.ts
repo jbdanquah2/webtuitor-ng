@@ -7,7 +7,7 @@ import { WebtuitorComponent } from './webtuitor/webtuitor.component';
 export const appRoutes:Routes = [
     { path: 'home', component: WebtuitorComponent },
     { path: 'courses', component: CourseComponent },
-    { path: 'course/post', component: CoursePostComponent },
+    { path: 'course/:id', component: CoursePostComponent },
     { path: 'admin', component: AdminComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
 ]

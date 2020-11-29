@@ -11,23 +11,23 @@
       <div class="col-lg-8 blog-post p-4">
 
         <!-- Title -->
-        <h1 class="mt-4">Trends In Technology</h1>
+        <h1 class="mt-4">{{course.name}}</h1>
 
         <!-- Author -->
         <p class="lead">
           by
-          <a href="#">yjbdanquah</a>
+          <a href="#">{{course.created_by}}</a>
         </p>
 
         <hr>
 
         <!-- Date/Time -->
-        <p>Posted on January 1, 2019 at 12:00 PM</p>
+        <p>Posted on {{course.published}}</p>
 
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+        <img class="img-fluid rounded" [src]="course.img" alt="image">
 
         <hr>
 
@@ -101,10 +101,10 @@
 
       </div>
 
-      <!-- Sidebar Widgets Column -->
+      <!-- Sidebar Widgets Column
       <div class="col-md-4 sd">
         <app-sidebar></app-sidebar>
-      </div>
+      </div> -->
 
     </div>
     <!-- /.row -->
