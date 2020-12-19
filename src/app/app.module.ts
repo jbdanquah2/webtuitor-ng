@@ -15,11 +15,18 @@ import { AdminSidebarComponent } from './layouts/admin/admin-sidebar.component';
 import { CourseTabComponent } from './webtuitor/nav-tabs/courses-tab.component';
 import { CourseService } from './course/course.service';
 import { HowtoService } from './howto/howto.service';
-import { HowtoComponent } from './webtuitor/nav-tabs/howto-tab.component';
+import { HowtoComponent } from './howto/howto.component';
 import { EbookService } from './ebook/ebook.service';
-import { EbookComponent } from './webtuitor/nav-tabs/ebook.component';
+import { EbookTabComponent } from './webtuitor/nav-tabs/ebook-tab.component';
 import { Error404Component } from './errors/404.component';
 import { CourseRouteActivator } from './course/course-post/course-route-activator.service';
+import { EbookPostComponent } from './ebook/ebook-post/ebook-post.component';
+import { HowtoPostComponent } from './howto/howto-post/howto-post.component';
+import { EbookComponent } from './ebook/ebook.component';
+import { HowtoTabComponent } from './webtuitor/nav-tabs/howto-tab.component';
+import { EbookRouteActivator } from './ebook/ebook-post/ebook-route-activator.service';
+import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.service';
+
 
 @NgModule({
   declarations: [
@@ -33,15 +40,21 @@ import { CourseRouteActivator } from './course/course-post/course-route-activato
     AdminComponent,
     AdminSidebarComponent,
     CourseTabComponent,
-    HowtoComponent, 
+    HowtoComponent,
+    HowtoPostComponent,
+    HowtoTabComponent,
     EbookComponent,
-    Error404Component
+    EbookPostComponent,
+    EbookTabComponent,
+    Error404Component,
+
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ Title,CourseService, HowtoService, EbookService, CourseRouteActivator ],
+  providers: [ Title,CourseService, HowtoService, EbookService, CourseRouteActivator, EbookRouteActivator, 
+    HowtoRouteActivator],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

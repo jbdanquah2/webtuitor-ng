@@ -15,8 +15,7 @@ export class CoursePostComponent {
 
     }
     ngOnInit(){
-        this.course = this.courseService.getCourse(this.route.snapshot.params['id'])
-        console.log(this.course);
+        this.course = this.courseService.getCourse(this.route.snapshot.params['link'])
         
     }
 }

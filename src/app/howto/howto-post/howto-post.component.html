@@ -9,25 +9,25 @@
       <!-- <div class="col-md-1"></div> -->
       <!-- Post Content Column -->
       <div class="col-lg-8 blog-post p-4">
-        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/courses']">Courses</a> > <a [routerLink]="['/course',course.id]">{{course.name}}</a></p>
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/howtos']">How-To</a> > <a [routerLink]="['/howto',howto.id]">{{howto.name}}</a></p>
         <!-- Title -->
-        <h1 class="mt-4">{{course.name}}</h1>
+        <h1 class="mt-4">{{howto.name}}</h1>
 
         <!-- Author -->
         <p class="lead">
           by
-          <a href="#">{{course.created_by}}</a>
+          <a href="#">{{howto.created_by}}</a>
         </p>
 
         <hr>
 
         <!-- Date/Time -->
-        <p>Posted on {{course.published}}</p>
+        <p>Posted on {{howto.published}}</p>
 
         <hr>
 
         <!-- Preview Image -->
-        <img width="400" class="img-fluid rounded" [src]="course.img" alt="image">
+        <img width="400" class="img-fluid rounded" [src]="howto.img" alt="image">
 
         <hr>
 

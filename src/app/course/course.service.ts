@@ -5,14 +5,15 @@ export class CourseService {
     getCourses() {
         return Courses;
     }
-    getCourse(id:number) {      
-        return Courses.find(course => course.id == id)
+    getCourse(link:string) {      
+        return Courses.find(course => course.link == link)
     }
 }
 
 const Courses = [
     {
         id: 1,
+        link: 'angular-2',
         name: 'Angular 2',
         img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
         published: '20th Oct, 2020',
@@ -44,6 +45,7 @@ const Courses = [
     },
     {
         id: 2,
+        link: 'vuejs',
         name: 'Vuejs',
         img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
         published: '9th Sept, 2019',
@@ -54,6 +56,7 @@ const Courses = [
     },
     {
         id: 3,
+        link: 'react-native-basis',
         name: 'React Native',
         img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
         published: '10th Jan, 2020',
@@ -64,6 +67,7 @@ const Courses = [
     },
     {
         id: 4,
+        link: 'nodejs-basis',
         name: 'Node.Js',
         img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
         published: '27th Jan, 2020',

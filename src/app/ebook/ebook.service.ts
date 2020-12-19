@@ -5,15 +5,16 @@ export class EbookService {
     getEbooks() {
         return Ebooks;
     }
-    getEbook(id:number) {      
-        return Ebooks.find(ebook => ebook.id == id)
+    getEbook(link:string) {      
+        return Ebooks.find(ebook => ebook.link == link)
     }
 }
 
 const Ebooks = [
     {
         id: 1,
-        name: 'JavaScript, the good parts',
+        link: 'javascript-the-good-parts',
+        name: 'JavaScript the good parts',
         img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
         published: '4th Aug, 2004',
         totalTime: '5 hours read',
@@ -24,6 +25,7 @@ const Ebooks = [
     },
     {
         id: 2,
+        link: 'basics-of-vuejs',
         name: 'Basics of Vuejs',
         img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
         published: '1th Sept, 2012',
@@ -34,6 +36,7 @@ const Ebooks = [
     },
     {
         id: 3,
+        link: 'think-and-grow-rich',
         name: 'Think and grow rich',
         img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
         published: '9th Jun, 1990',
@@ -45,6 +48,7 @@ const Ebooks = [
     },
     {
         id: 4,
+        link: 'starting-a-new-online-business',
         name: 'Starting a new online business',
         img: '../../../assets/img/undraw_laravel_and_vue_59tp.svg',
         published: '21st Mar, 2015',
