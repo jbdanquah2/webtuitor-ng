@@ -53,8 +53,8 @@ nav {
 }
 
 .ml-auto a.Active {
-  margin: 0;
-  border-bottom: solid 1.5px #fefefe !important;
+  margin-bottom: 0;
+  border-bottom: solid 2px #fefefe !important;
   color: #acacac !important;
   font-weight: 600;
 }

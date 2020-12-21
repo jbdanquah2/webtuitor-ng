@@ -26,6 +26,9 @@ import { EbookComponent } from './ebook/ebook.component';
 import { HowtoTabComponent } from './webtuitor/nav-tabs/howto-tab.component';
 import { EbookRouteActivator } from './ebook/ebook-post/ebook-route-activator.service';
 import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.service';
+import { StringService } from './untility/string.service';
+import { MentorComponent } from './mentor/mentor.component';
+import { MentorService } from './mentor/mentor.service';
 
 
 @NgModule({
@@ -47,6 +50,7 @@ import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.se
     EbookPostComponent,
     EbookTabComponent,
     Error404Component,
+    MentorComponent,
 
   ],
   imports: [
@@ -54,7 +58,7 @@ import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.se
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ Title,CourseService, HowtoService, EbookService, CourseRouteActivator, EbookRouteActivator, 
-    HowtoRouteActivator],
+    HowtoRouteActivator, StringService, MentorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

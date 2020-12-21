@@ -1,0 +1,61 @@
+<!-- Page Content -->
+<div class="container-fluid">
+  <div class="blog-home">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <!-- Blog Entries Column -->
+      <div class="col-md-6 blog-home p-4">
+          <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/mentors']">Find Mentors</a></p>
+        <h3 class="my-4">{{title}}
+          <small>blog.WebTuitor</small>
+        </h3>
+
+        <!-- Blog Post -->
+        <div [routerLink]="['/mentors/',mentor.link]" *ngFor="let mentor of mentors" class="car mb-4 mcard">
+          <div>
+            <img width="300" class="car-img-top mcardpic" [src]="mentor.img" alt="Card image cap">
+            <span class="p-4">Upvotes | Downvotes</span>
+          </div>
+          
+          <div class="card-body">
+            <h2 class="card-title">{{mentor.name}}</h2>
+            <p class="card-text">{{mentor.description}}</p>
+            <details>
+              <summary [routerLink]="['/mentors/',mentor.link]" class="btn btn-outline-info card-link">
+                Get in touch &rarr;
+              </summary>
+              <!-- <div class="guide">
+                <ul class="" id="list">
+                  <li>Tel: +233245053490</li>
+                  <li>Email: yjbdanquah@gmail.com</li>
+                  
+                </ul>
+              </div>  -->
+            </details>
+          </div>
+        </div>
+
+
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Prev</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Next &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <!-- <div class="col-md-4 sd">
+        <app-sidebar></app-sidebar>
+      </div> -->
+
+    </div>
+    <!-- /.row -->
+  </div>
+</div>
+<!-- /.container -->

@@ -16,6 +16,6 @@ export class EbookPostComponent {
     }
     ngOnInit(){
         this.ebook = this.ebookService.getEbook(this.route.snapshot.params['link'])
-        
+        window.scrollTo(0,0);
     }
 }

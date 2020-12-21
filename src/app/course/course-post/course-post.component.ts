@@ -16,6 +16,6 @@ export class CoursePostComponent {
     }
     ngOnInit(){
         this.course = this.courseService.getCourse(this.route.snapshot.params['link'])
-        
+        window.scrollTo(0,0);
     }
 }

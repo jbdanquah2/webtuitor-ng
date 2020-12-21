@@ -12,6 +12,7 @@ import { HowtoComponent } from './howto/howto.component';
 import { WebtuitorComponent } from './webtuitor/webtuitor.component';
 import { EbookRouteActivator } from './ebook/ebook-post/ebook-route-activator.service';
 import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.service';
+import { MentorComponent } from './mentor/mentor.component';
 
 
 export const appRoutes:Routes = [
@@ -21,7 +22,8 @@ export const appRoutes:Routes = [
     { path: 'howtos', component: HowtoComponent},
     { path: 'howtos/:link', component: HowtoPostComponent, canActivate: [HowtoRouteActivator]  },
     { path: 'ebooks', component: EbookComponent},
-    { path: 'ebooks/:link', component: EbookPostComponent, canActivate: [EbookRouteActivator]   },
+    { path: 'ebooks/:link', component: EbookPostComponent, canActivate: [EbookRouteActivator]   }, 
+    { path: 'mentors', component: MentorComponent },
     { path: 'admin', component: AdminComponent },
     { path: '404', component: Error404Component },
     { path: '', redirectTo: '/home', pathMatch: 'full' }

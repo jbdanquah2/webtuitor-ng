@@ -16,6 +16,6 @@ export class HowtoPostComponent {
     }
     ngOnInit(){
         this.howto = this.howtoService.getHowto(this.route.snapshot.params['link'])
-        
+        window.scrollTo(0,0);
     }
 }

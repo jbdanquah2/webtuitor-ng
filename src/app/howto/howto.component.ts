@@ -5,7 +5,7 @@ import { HowtoService } from './howto.service';
 @Component({
     selector:'app-howto',
     templateUrl:'howto.component.html',
-    styleUrls:['howto.component.css']
+    styleUrls:['howto.component.css','../shared-css/page-css.css']
 })
 export class HowtoComponent {
     title:string = 'Most Useful How-To Tutorials'
@@ -14,6 +14,7 @@ export class HowtoComponent {
 
     }
     ngOnInit(){
-        this.howtos = this.howtoService.getHowtos()  ;  
+        this.howtoService.getHowtos().subscribe(howtos => this.howtos = howtos)  ;  
+        window.scrollTo(0,0);
     }
 }

@@ -1,52 +1,51 @@
 <!-- <blog-navbar></blog-navbar> -->
 <!-- Page Content -->
 <div class="container-fluid">
-    <div class="blog-home">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <!-- Blog Entries Column -->
-        <div class="col-md-6 blog-home">
-          <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/ebooks']">Ebooks</a></p>
-          <h3 class="my-4">{{title}}
-            <small>blog.WebTuitor</small>
-          </h3>
-  
-          <!-- Blog Post -->
-          <div [routerLink]="['/ebook/',ebook.id]" *ngFor="let ebook of ebooks" class="card mb-4">
-            <img width="400" class="card-img-top" [src]="ebook.img" alt="Card image cap">
-            <div class="card-body">
-              <h2 class="card-title">{{ebook.name}}</h2>
-              <p class="card-text">{{ebook.description}}</p>
-              <a [routerLink]="['/ebook/',ebook.id]" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on {{ebook.published}} by
-              <a href="#">{{ebook.created_by}}</a>
-            </div>
+  <div class="blog-home">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <!-- Blog Entries Column -->
+      <div class="col-md-9 blog-home p-4">
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/ebooks']">Ebooks</a></p>
+        <h3 class="my-4">{{title}}
+          <small>blog.WebTuitor</small>
+        </h3>
+
+        <!-- Blog Post -->
+        <div [routerLink]="['/ebooks/',ebook.link]" *ngFor="let ebook of ebooks" class="card mb-4 wcard shadow">
+          <img  class="card-img-top wcardpic" [src]="ebook.img" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">{{ebook.name}}</h2>
+            <p class="card-text">{{concatStr.concatString(ebook.description, 100)}}</p>
+            <a [routerLink]="['/ebooks/',ebook.link]" class="btn btn-outline-info">Read More &rarr;</a>
           </div>
-  
-  
-  
-          <!-- Pagination -->
-          <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-              <a class="page-link" href="#">&larr; Prev</a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Next &rarr;</a>
-            </li>
-          </ul>
-  
+          <!-- <div class="card-footer text-muted">
+            Posted on {{ebook.published}} by
+            <a href="#">{{ebook.created_by}}</a>
+          </div> -->
         </div>
-  
-        <!-- Sidebar Widgets Column -->
-        <!-- <div class="col-md-4 sd">
+
+
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Prev</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Next &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <!-- <div class="col-md-4 sd">
           <app-sidebar></app-sidebar>
         </div> -->
-  
-      </div>
-      <!-- /.row -->
+
     </div>
+    <!-- /.row -->
   </div>
-  <!-- /.container -->
-  
+</div>
+<!-- /.container -->
