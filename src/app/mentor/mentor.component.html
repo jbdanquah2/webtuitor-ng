@@ -9,14 +9,12 @@
         <h3 class="my-4">{{title}}
           <small>blog.WebTuitor</small>
         </h3>
-
         <!-- Blog Post -->
-        <div [routerLink]="['/mentors/',mentor.link]" *ngFor="let mentor of mentors" class="car mb-4 mcard">
+        <div [routerLink]="['/mentors/',mentor.link]" *ngFor="let mentor of mentors" class="card mb-2 mcard">
           <div>
-            <img width="300" class="car-img-top mcardpic" [src]="mentor.img" alt="Card image cap">
-            <span class="p-4">Upvotes | Downvotes</span>
-          </div>
-          
+            <img class="card-img-top mcardpic img-fluid" [src]="mentor.img" alt="Card image cap"><br>
+            <span class="p-2">Upvotes | Downvotes</span>
+          </div>        
           <div class="card-body">
             <h2 class="card-title">{{mentor.name}}</h2>
             <p class="card-text">{{mentor.description}}</p>
@@ -27,16 +25,12 @@
               <!-- <div class="guide">
                 <ul class="" id="list">
                   <li>Tel: +233245053490</li>
-                  <li>Email: yjbdanquah@gmail.com</li>
-                  
+                  <li>Email: yjbdanquah@gmail.com</li>               
                 </ul>
               </div>  -->
             </details>
           </div>
         </div>
-
-
-
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
           <li class="page-item">
@@ -48,12 +42,6 @@
         </ul>
 
       </div>
-
-      <!-- Sidebar Widgets Column -->
-      <!-- <div class="col-md-4 sd">
-        <app-sidebar></app-sidebar>
-      </div> -->
-
     </div>
     <!-- /.row -->
   </div>

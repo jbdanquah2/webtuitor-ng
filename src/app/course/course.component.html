@@ -13,7 +13,7 @@
 
         <!-- Blog Post -->
         <div *ngFor="let course of courses" class="card mb-4 wcard shadow">
-          <img  class="card-img-top wcardpic" [src]="course.img" alt="card image cap">
+          <img  class="card-img-top wcardpic img-fluid" [src]="course.img" alt="card image cap">
           <div class="card-body">
             <h2 class="card-title">{{course.name}}</h2>
             <p class="card-text">{{concatStr.concatString(course.description,100)}}</p>

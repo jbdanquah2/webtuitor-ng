@@ -13,7 +13,7 @@
 
         <!-- Blog Post -->
         <div [routerLink]="['/ebooks/',ebook.link]" *ngFor="let ebook of ebooks" class="card mb-4 wcard shadow">
-          <img  class="card-img-top wcardpic" [src]="ebook.img" alt="Card image cap">
+          <img  class="card-img-top wcardpic img-fluid" [src]="ebook.img" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title">{{ebook.name}}</h2>
             <p class="card-text">{{concatStr.concatString(ebook.description, 100)}}</p>

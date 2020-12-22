@@ -1,5 +1,11 @@
+@media only screen and (min-width: 720px) {
+    .mcard {
+        width: 400px !important;
+    }
+}
+
 .mcard {
-    width: 500px !important;
+    /* width: 500px !important; */
     background-color: #f3f1f1;
     border: none;
     /* margin-right: 20px; */
@@ -14,10 +20,10 @@
     cursor: pointer;
   }
   
-  .mcardpic {
+  /* .mcardpic {
     width: 200px;
     height: 250px !important;
-  }
+  } */
   
   .mcard .card-body>a {
     margin-top: 15px;

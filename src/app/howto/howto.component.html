@@ -13,7 +13,7 @@
   
           <!-- Blog Post -->
           <div [routerLink]="['/howtos/',howto.link]" *ngFor="let howto of howtos" class="card mb-4 wcard shadow">
-            <img width="300" class="card-img-top wcardpic" [src]="howto.img" alt="Card image cap">
+            <img width="300" class="card-img-top wcardpic img-fluid" [src]="howto.img" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">{{howto.name}}</h2>
               <p class="card-text">{{howto.description}}</p>
