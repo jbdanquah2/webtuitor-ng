@@ -9,7 +9,7 @@
     <div class="col-lg-8 blog-post p-4">
       <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/ebooks']">Ebooks </a> > <a [routerLink]="['/ebooks', ebook.link]">{{ebook.name}}</a></p>
       <!-- Title -->
-      <h1 class="mt-4">{{ebook.name}}</h1>
+      <h1 class="mt-4">{{strService.capitalizeFirstLetter(ebook.name)}}</h1>
 
       <!-- Author -->
       <p class="lead">

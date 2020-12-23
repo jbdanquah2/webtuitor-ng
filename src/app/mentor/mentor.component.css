@@ -1,7 +1,11 @@
 @media only screen and (min-width: 720px) {
     .mcard {
-        width: 400px !important;
+        width: 600px !important;
     }
+    /* .mentor > img {
+        width: 150px;
+        display: inline!important;
+    } */
 }
 
 .mcard {

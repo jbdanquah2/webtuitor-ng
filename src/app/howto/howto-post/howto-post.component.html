@@ -9,21 +9,18 @@
       <!-- <div class="col-md-1"></div> -->
       <!-- Post Content Column -->
       <div class="col-lg-8 blog-post p-4">
-        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/howtos']">How-To</a> > <a [routerLink]="['/howto',howto.id]">{{howto.name}}</a></p>
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/howtos']">How-To</a> > <a [routerLink]="['/howtos',howto.link]">{{howto.name}}</a></p>
         <!-- Title -->
-        <h1 class="mt-4">{{howto.name}}</h1>
+        <h1 class="mt-4">{{strService.capitalizeFirstLetter(howto.name)}}</h1>
 
         <!-- Author -->
-        <p class="lead">
+        <span class="lead float-left" *ngIf="howto.created_by">
           by
-          <a href="#">{{howto.created_by}}</a>
-        </p>
-
+          <a href="#">{{howto.created_by}}</a> 
+        </span>
+        <span class="float-right">Posted on: <em class="text-info">{{howto.published}}</em></span>
         <hr>
-
-        <!-- Date/Time -->
-        <p>Posted on {{howto.published}}</p>
-
+        <p *ngIf="howto.related">Also see: <a [routerLink]="['/howtos/related',getRelated()[1]]">{{strService.capitalizeFirstLetter(getRelated()[0])}}</a></p>
         <hr>
 
         <!-- Preview Image -->
@@ -50,7 +47,15 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
 
         <hr>
-
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item mr-5">
+            <a class="page-link" href="#">&larr; Prev</a>
+          </li>
+          <li class="page-item disabled ml-5">
+            <a class="page-link" href="#">Next &rarr;</a>
+          </li>
+        </ul>
+        <hr>
         <!-- Comments Form -->
         <div class="card my-4">
           <h5 class="card-header">Leave a Comment:</h5>

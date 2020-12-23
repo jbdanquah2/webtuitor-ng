@@ -1,6 +1,6 @@
 @media only screen and (min-width: 720px) {
   .wcard {
-    width: 420px !important;
+    width: 420px;
     margin-right: 20px;
   }
 }

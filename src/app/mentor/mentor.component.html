@@ -5,38 +5,46 @@
       <div class="col-md-1"></div>
       <!-- Blog Entries Column -->
       <div class="col-md-6 blog-home p-4">
-          <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/mentors']">Find Mentors</a></p>
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/mentors']">Find A Mentor</a></p>
         <h3 class="my-4">{{title}}
           <small>blog.WebTuitor</small>
         </h3>
         <!-- Blog Post -->
         <div [routerLink]="['/mentors/',mentor.link]" *ngFor="let mentor of mentors" class="card mb-2 mcard">
-          <div>
-            <img class="card-img-top mcardpic img-fluid" [src]="mentor.img" alt="Card image cap"><br>
-            <span class="p-2">Upvotes | Downvotes</span>
-          </div>        
-          <div class="card-body">
-            <h2 class="card-title">{{mentor.name}}</h2>
-            <p class="card-text">{{mentor.description}}</p>
-            <details>
-              <summary [routerLink]="['/mentors/',mentor.link]" class="btn btn-outline-info card-link">
-                Get in touch &rarr;
-              </summary>
-              <!-- <div class="guide">
-                <ul class="" id="list">
-                  <li>Tel: +233245053490</li>
-                  <li>Email: yjbdanquah@gmail.com</li>               
-                </ul>
-              </div>  -->
-            </details>
+          <div class="row gx-0">
+            <div class="col-md-4">
+              <div class="mentor">
+                <img class="card-img-top mcardpic img-fluid pb-1" [src]="mentor.img" alt="Card image cap"><br>
+                <div class="text-center pb-2">
+                  <span class="text-info ">UpV</span> | <span class="text-warning"> DnV </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="card-title">{{mentor.name}}</h2>
+                <p class="card-text pb-3">{{mentor.description}}</p>
+                <details>
+                  <summary [routerLink]="['/mentors/',mentor.link]" class="btn btn-outline-info card-link">
+                    Get in touch &rarr;
+                  </summary>
+                  <!-- <div class="guide">
+                    <ul class="" id="list">
+                      <li>Tel: +233245053490</li>
+                      <li>Email: yjbdanquah@gmail.com</li>               
+                    </ul>
+                  </div>  -->
+                </details>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
-          <li class="page-item">
+          <li class="page-item mr-5">
             <a class="page-link" href="#">&larr; Prev</a>
           </li>
-          <li class="page-item disabled">
+          <li class="page-item disabled ml-5">
             <a class="page-link" href="#">Next &rarr;</a>
           </li>
         </ul>

@@ -1,7 +1,8 @@
 .card {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    /* margin-top: 10px; */
+    cursor: pointer;
+    background-color: #eeeeee;
 }
 .card-group {
     border: 1px solid #dedede;
@@ -12,6 +13,8 @@
 }
 .card {
     border-top: none !important;
+    border:  none;
+    margin: 5px !important;
 }
 .card:hover {
     background: #d6d6d6;

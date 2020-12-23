@@ -15,7 +15,7 @@
           <div [routerLink]="['/howtos/',howto.link]" *ngFor="let howto of howtos" class="card mb-4 wcard shadow">
             <img width="300" class="card-img-top wcardpic img-fluid" [src]="howto.img" alt="Card image cap">
             <div class="card-body">
-              <h2 class="card-title">{{howto.name}}</h2>
+              <h2 class="card-title">{{strService.capitalizeFirstLetter(howto.name)}}</h2>
               <p class="card-text">{{howto.description}}</p>
               <a [routerLink]="['/howtos/',howto.link]" class="btn btn-outline-info">Read More &rarr;</a>
             </div>
@@ -29,10 +29,10 @@
   
           <!-- Pagination -->
           <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
+            <li class="page-item mr-5">
               <a class="page-link" href="#">&larr; Prev</a>
             </li>
-            <li class="page-item disabled">
+            <li class="page-item disabled ml-5">
               <a class="page-link" href="#">Next &rarr;</a>
             </li>
           </ul>

@@ -10,13 +10,13 @@ import { StringService } from 'src/app/untility/string.service'
 })
 export class CourseComponent {
     courses:any
-    @Input() concatStr:any
-    constructor(private courseService: CourseService, private route: ActivatedRoute, private stringService:StringService) {
+    @Input() strService:any
+    constructor(private courseService: CourseService, private route: ActivatedRoute, private stringService: StringService) {
 
     }
     ngOnInit(id){
         this.courses = this.courseService.getCourses()
-        this.concatStr = this.stringService
+        this.strService = this.stringService
         window.scrollTo(0,0);
     }
 }

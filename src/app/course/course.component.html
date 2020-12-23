@@ -3,7 +3,9 @@
 <div class="container-fluid">
   <div class="blog-home">
     <div class="row">
-      <div class="col-md-1"></div>
+      <div class="col-md-1">
+       
+      </div>
       <!-- Blog Entries Column -->
       <div class="col-md-9 blog-home p-4">
         <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/courses']">Courses</a></p> 
@@ -15,8 +17,8 @@
         <div *ngFor="let course of courses" class="card mb-4 wcard shadow">
           <img  class="card-img-top wcardpic img-fluid" [src]="course.img" alt="card image cap">
           <div class="card-body">
-            <h2 class="card-title">{{course.name}}</h2>
-            <p class="card-text">{{concatStr.concatString(course.description,100)}}</p>
+            <h2 class="card-title">{{strService.capitalizeFirstLetter(course.name)}}</h2>
+            <p class="card-text">{{strService.concatString(course.description,100)}}</p>
             <a [routerLink]="['/courses/',course.link]" class="btn btn-outline-info">Read More &rarr;</a>
           </div>
           <!-- <div class="card-footer text-muted">
@@ -28,12 +30,12 @@
 
 
         <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
-          <li class="page-item">
-            <a class="page-link" href="#">&larr; Prev</a>
+        <ul class="pagination justify-content-center mb-5 mt-5">
+          <li class="page-item mr-5">
+            <a class="page-link" href="#">&larr; Previous List</a>
           </li>
-          <li class="page-item disabled">
-            <a class="page-link" href="#">Next &rarr;</a>
+          <li class="page-item disabled ml-5">
+            <a class="page-link" href="#">Next List&rarr;</a>
           </li>
         </ul>
 

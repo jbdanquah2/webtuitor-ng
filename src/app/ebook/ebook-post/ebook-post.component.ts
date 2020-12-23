@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { EbookService } from '../ebook.service';
 import { ActivatedRoute } from "@angular/router";
+import { StringService } from "src/app/untility/string.service";
 
 @Component({
     selector:'ebook-post',
@@ -11,11 +12,14 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class EbookPostComponent {
     ebook:any
-    constructor(private ebookService: EbookService, private route: ActivatedRoute) {
+    @Input() strService:any
+    constructor(private ebookService: EbookService, private route: ActivatedRoute, 
+        private stringService: StringService) {
 
     }
     ngOnInit(){
         this.ebook = this.ebookService.getEbook(this.route.snapshot.params['link'])
+        this.strService = this.stringService
         window.scrollTo(0,0);
     }
 }
