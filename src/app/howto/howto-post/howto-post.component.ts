@@ -21,10 +21,11 @@ export class HowtoPostComponent {
     ngOnInit(){
         this.howto = this.howtoService.getHowto(this.route.snapshot.params['link'])
         this.strService = this.stringService
+        this.related = this.howtoService.getRelatedHowto(this.howto.related)
         window.scrollTo(0,0);
     }
     getRelated() {
-        this.related = this.howtoService.getRelatedHowto(this.howto.related)
-        return [this.related.name, this.related.link]
+        // this.related = this.howtoService.getRelatedHowto(this.howto.related)
+        // return [this.related.name, this.related.link]
     }
 }

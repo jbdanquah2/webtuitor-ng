@@ -22,38 +22,8 @@
                   <li class="p-2">
                     <a href="#">Getting started with {{course.name}} </a>
                   </li>
-                  <li class="p-2">
-                    <a href="#">Setting environment</a>
-                  </li>
-                  <li class="p-2">
-                    <a class="" href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a class="" href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#">Next lesson</a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#">Next lesson</a>
+                  <li *ngFor="let topic of course.topics" class="p-2">
+                    <a href="#">{{topic}}</a>
                   </li>
                 </ul>
               </div>

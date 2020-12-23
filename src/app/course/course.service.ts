@@ -25,6 +25,17 @@ const Courses = [
         level:'Beginner',
         tags:'web develpment, web design, angular, frameworks, javascript, javascript frameworks',
         related:'Angular Routes',
+        topics: [
+            'Setting up environment',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson'
+        ],
         content: `Getting Started
 
         In this tutorial, we will use the Expo CLI. Expo is a set of tools and services built around React Native and native platforms that help you develop, build, deploy, and quickly iterate on iOS, Android, and web apps from the same JavaScript or TypeScript codebase. 
@@ -52,7 +63,18 @@ const Courses = [
         totalTime: '4 hours',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
         Illum maiores cum dolorum error sit odit.`,
-        content: ''
+        content: '',
+        topics: [
+            'Setting up environment',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson',
+            'Next Lesson'
+        ]
     },
     {
         id: 3,
