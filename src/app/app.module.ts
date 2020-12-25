@@ -29,6 +29,8 @@ import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.se
 import { StringService } from './untility/string.service';
 import { MentorComponent } from './mentor/mentor.component';
 import { MentorService } from './mentor/mentor.service';
+import { AboutComponent } from './about/about.component';
+import { MentorPageComponent } from './mentor/mentor-page/mentor-page.component';
 
 
 @NgModule({
@@ -51,6 +53,8 @@ import { MentorService } from './mentor/mentor.service';
     EbookTabComponent,
     Error404Component,
     MentorComponent,
+    AboutComponent,
+    MentorPageComponent,
 
   ],
   imports: [

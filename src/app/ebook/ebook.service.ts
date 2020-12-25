@@ -22,7 +22,59 @@ const Ebooks = [
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
         `,
         content: '',
-        license:'free'
+        license:'free',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
     },
     {
         id: 2,
@@ -34,7 +86,60 @@ const Ebooks = [
         totalTime: '1.45 hours read',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
         `,
-        content: ''
+        content: '',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
+
     },
     {
         id: 3,
@@ -47,7 +152,43 @@ const Ebooks = [
         description: `Lorem ipsum, dolor sit amet consectetur  
         Illum maiores cum dolorum error sit odit.`,
         content: '',
-        license:'free'
+        license:'free',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
+
     },
     {
         id: 4,
@@ -59,7 +200,46 @@ const Ebooks = [
         totalTime: '2.5 hours read',
         description: `Lorem ipsum, dolor sit amet consectetur 
      Illum maiores cum dolorum error sit odit.`,
-        content: ''
+        content: '',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                   
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+           
+        ]
+
     },
     {
         id: 5,
@@ -72,7 +252,45 @@ const Ebooks = [
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
         `,
         content: '',
-        license:'free'
+        license:'free',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+           
+        ]
+
     },
     {
         id: 6,
@@ -84,7 +302,60 @@ const Ebooks = [
         totalTime: '1.45 hours read',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
         `,
-        content: ''
+        content: '',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
+
     },
     {
         id: 7,
@@ -97,7 +368,45 @@ const Ebooks = [
         description: `Lorem ipsum, dolor sit amet consectetur  
         Illum maiores cum dolorum error sit odit.`,
         content: '',
-        license:'free'
+        license:'free',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
+
     },
     {
         id: 8,
@@ -109,7 +418,52 @@ const Ebooks = [
         totalTime: '2.5 hours read',
         description: `Lorem ipsum, dolor sit amet consectetur 
      Illum maiores cum dolorum error sit odit.`,
-        content: ''
+        content: '',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
+
     }
 
 

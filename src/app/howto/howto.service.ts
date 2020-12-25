@@ -1,20 +1,20 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 
-@Injectable() 
+@Injectable()
 export class HowtoService {
     getHowtos() {
         let subject = new Subject()
         setTimeout(() => {
             subject.next(Howtos);
             subject.complete();
-        },100)
+        }, 100)
         return subject;
     }
-    getHowto(link:string) {      
+    getHowto(link: string) {
         return Howtos.find(howto => howto.link == link)
     }
-    getRelatedHowto(id:number) {      
+    getRelatedHowto(id: number) {
         return Howtos.find(howto => howto.id == id)
     }
 }

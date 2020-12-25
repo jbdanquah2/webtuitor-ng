@@ -10,13 +10,13 @@
           <small>blog.WebTuitor</small>
         </h3>
         <!-- Blog Post -->
-        <div [routerLink]="['/mentors/',mentor.link]" *ngFor="let mentor of mentors" class="card mb-2 mcard">
+        <div [routerLink]="['/mentors/',mentor.id]" *ngFor="let mentor of mentors" class="card mb-2 mcard">
           <div class="row gx-0">
             <div class="col-md-4">
               <div class="mentor">
                 <img class="card-img-top mcardpic img-fluid pb-1" [src]="mentor.img" alt="Card image cap"><br>
                 <div class="text-center pb-2">
-                  <span class="text-info ">UpV</span> | <span class="text-warning"> DnV </span>
+                 <span> &uArr;</span><span class="text-light badge badge-info">30k</span><span> &dArr;</span><span class="text-warning badge badge-danger"> 1 </span>
                 </div>
               </div>
             </div>
@@ -25,7 +25,7 @@
                 <h2 class="card-title">{{mentor.name}}</h2>
                 <p class="card-text pb-3">{{mentor.description}}</p>
                 <details>
-                  <summary [routerLink]="['/mentors/',mentor.link]" class="btn btn-outline-info card-link">
+                  <summary [routerLink]="['/mentors/',mentor.id]" class="btn btn-outline-info card-link">
                     Get in touch &rarr;
                   </summary>
                   <!-- <div class="guide">

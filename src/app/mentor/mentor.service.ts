@@ -11,6 +11,9 @@ export class MentorService {
         },100)
         return subject; 
     }
+    getMentor(id:number) {
+        return Mentors.find(mentor => mentor.id == id)
+    }
 }
 
 
@@ -20,7 +23,7 @@ const Mentors = [
         link: 'emmanuel-osei-mensah',
         name: 'Emmanuel Osei Mensah',
         img: '../../../assets/img/passport-1.jpg',
-        field: 'Web front-end engineering',
+        field: 'Web frontend engineering',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
         Illum maiores cum dolorum error sit odit.`,
         content: ''

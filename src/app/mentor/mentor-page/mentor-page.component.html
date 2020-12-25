@@ -1,0 +1,47 @@
+
+<div class="container">
+  <p class="ml-1 mt-3"><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/mentors']">Find A
+      Mentor</a> > <a [routerLink]="['/mentors',mentor.id]">{{strService.capitalizeFirstLetter(mentor.name)}}</a></p>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="sticky-top shadow-sm">
+        <div class="card my-4 ">
+          <h3 class="bg-primary text-center p-2 text-white">
+            <span><small>Mentor:</small></span> <br><span class="font-weight-bold">{{strService.capitalizeFirstLetter(mentor.name)}}</span>
+          </h3>
+          <p class="text-center m-0 "><small><span class="text-info font-weight-bold">&uArr; </span><span>30k</span> <span class="text-danger font-weight-bold"> &dArr; </span><span>1</span></small></p>
+          <hr class="">
+          <div class="card-body px-0">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <img class="img-fluid rounded-circle" [src]="mentor.img" alt="mentor's picture">
+                <h4 class="p-2 font-weight-bold">{{strService.capitalizeFirstLetter(mentor.field)}}</h4>
+                <p class="bg-light p-3 alert">{{mentor.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-6 mb-5">
+      <div class="border rounded p-3 mt-4 bg-light shadow">
+        <h3 class="font-weight-bold text-primary">ChatBox</h3><span><small>{{strService.getDateTime()}}</small></span>
+      | <span id="cTime"></span>
+        <hr>
+        <br><br><br><br><br><br><br><br><br>
+        <div class="card my-4 ">
+          <div class="card-body">
+            <form>
+              <div class="form-group mb-1">
+                <textarea class="form-control mb-0" rows="1"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send &rarr;</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->

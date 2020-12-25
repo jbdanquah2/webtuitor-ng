@@ -52,7 +52,59 @@ const Courses = [
             
         cd LoginLayout
         
-        The project structure should look like this. `
+        The project structure should look like this. `,
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
     },
     {
         id: 2,
@@ -74,6 +126,58 @@ const Courses = [
             'Next Lesson',
             'Next Lesson',
             'Next Lesson'
+        ],
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
         ]
     },
     {
@@ -96,10 +200,62 @@ const Courses = [
         totalTime: '2.5 hours',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
      Illum maiores cum dolorum error sit odit.`,
-        content: ''
+        content: '',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
     },
     {
-        id: 1,
+        id: 5,
         link: 'getting-started-with-angular-6',
         name: 'Getting started with Angular 6',
         img: '../../../assets/img/undraw_coding_6mjf.svg',
@@ -128,10 +284,62 @@ const Courses = [
             
         cd LoginLayout
         
-        The project structure should look like this. `
+        The project structure should look like this. `,
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
     },
     {
-        id: 2,
+        id: 6,
         link: 'javaScript-es6-sis',
         name: 'JavaScript ES6 Basis',
         img: '../../../assets/img/undraw_coding_6mjf.svg',
@@ -139,10 +347,62 @@ const Courses = [
         totalTime: '4 hours',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
         Illum maiores cum dolorum error sit odit.`,
-        content: ''
+        content: '',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
     },
     {
-        id: 3,
+        id: 7,
         link: 'all-about-java-8',
         name: 'All About Java 8',
         img: '../../../assets/img/undraw_coding_6mjf.svg',
@@ -150,10 +410,62 @@ const Courses = [
         totalTime: '3.5 hours',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
         Illum maiores cum dolorum error sit odit.`,
-        content: ''
+        content: '',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
     },
     {
-        id: 4,
+        id: 8,
         link: 'working-express-nodejs-and-mongoDb',
         name: 'Working Express Nodejs and MongoDb',
         img: '../../../assets/img/undraw_coding_6mjf.svg',
@@ -161,7 +473,59 @@ const Courses = [
         totalTime: '2.5 hours',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
      Illum maiores cum dolorum error sit odit.`,
-        content: ''
+        content: '',
+        comments: [
+            {
+                id: 1,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kofi Yeboah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`,
+                subcomments: [
+                    {
+                        id: 1,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Kwame Boateng',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    },
+                    {
+                        id: 2,
+                        image: '../../../assets/img/passport-2.jpg',
+                        name: 'Sarah Osei',
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        fringilla. Donec lacinia congue felis in faucibus`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Kwame Boateng',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 3,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Sarah Osei',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            },
+            {
+                id: 4,
+                image: '../../../assets/img/passport-2.jpg',
+                name: 'Enoch Duah',
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                fringilla. Donec lacinia congue felis in faucibus`
+            }
+        ]
     }
 
 ];

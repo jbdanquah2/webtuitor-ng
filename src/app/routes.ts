@@ -13,6 +13,8 @@ import { WebtuitorComponent } from './webtuitor/webtuitor.component';
 import { EbookRouteActivator } from './ebook/ebook-post/ebook-route-activator.service';
 import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.service';
 import { MentorComponent } from './mentor/mentor.component';
+import { AboutComponent } from './about/about.component';
+import { MentorPageComponent } from './mentor/mentor-page/mentor-page.component';
 
 
 export const appRoutes:Routes = [
@@ -25,6 +27,8 @@ export const appRoutes:Routes = [
     { path: 'ebooks', component: EbookComponent},
     { path: 'ebooks/:link', component: EbookPostComponent, canActivate: [EbookRouteActivator]   }, 
     { path: 'mentors', component: MentorComponent },
+    { path: 'mentors/:id', component: MentorPageComponent },
+    { path: 'about', component: AboutComponent },
     { path: 'admin', component: AdminComponent },
     { path: '404', component: Error404Component },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
