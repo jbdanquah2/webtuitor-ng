@@ -22,8 +22,9 @@ export class MentorPageComponent implements OnInit {
     this.mentor = this.mentorService.getMentor(this.route.snapshot.params['id'])
     this.strService = this.stringService
     this.strService.getDateTime();
+    window.scrollTo(0,0)
     this.cTime = document.getElementById('cTime');
-    
+    this.time();
     setInterval(this.time,1000)
     
   }
