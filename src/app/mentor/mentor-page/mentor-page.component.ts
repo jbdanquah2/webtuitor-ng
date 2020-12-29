@@ -12,6 +12,8 @@ export class MentorPageComponent implements OnInit {
   mentor: any
   strService: any
   cTime: any
+  mouseoverlogin: any
+  chatIn: any
 
   constructor(private mentorService: MentorService, private route: ActivatedRoute,
     private stringService: StringService) {

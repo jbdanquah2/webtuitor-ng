@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     templateUrl: 'login.component.html',
@@ -6,5 +7,19 @@ import { Component } from "@angular/core";
 
 })
 export class LoginComponent {
+    mouseoverLogin
+    login 
+    userName 
+    password
+    
+
+    constructor( private route: Router) {
+
+    }
+
+
+    cancel() {
+        this.route.navigate(['/home']);
+    }
 
 }
