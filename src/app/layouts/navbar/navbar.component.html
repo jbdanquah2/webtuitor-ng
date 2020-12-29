@@ -8,7 +8,7 @@
     <span class="input-group-append m">
       <button id="search-go" class="btn btn-danger" type="button">Go!</button>
     </span>
-    <a class="nav-lin ml-auto btn btn-xs btn-outline-light" href="">Sign In </a>
+    <a [routerLink]="['/auth/user/login']" class="nav-lin ml-auto btn btn-xs btn-outline-light" >Sign In </a>
   </div>
 
 </div>
@@ -27,7 +27,7 @@
       <a [routerLink]="['/home']" routerLinkActive="Active" class="nav-link mr-4">
         Home</a>
       <div class="dropdown">
-        <a href="" [routerLink]="['/howtos']" routerLinkActive="Active" class="nav-link dropdown-toggl"
+        <a href="" [routerLink]="['/quick/howtos']" routerLinkActive="Active" class="nav-link dropdown-toggl"
           data-toggle="dropdown">
           How-To</a>
           <!-- <span class="caret"></span>
@@ -40,7 +40,7 @@
         </ul> -->
       </div>
       <div class="dropdown">
-        <a [routerLink]="['/courses']" routerLinkActive="Active" class="nav-link dropdown-toggl"
+        <a [routerLink]="['/learn/courses']" routerLinkActive="Active" class="nav-link dropdown-toggl"
           data-toggle="dropdown">Courses </a>
           <!-- <span class="caret"></span>
         <ul class="dropdown-menu">
@@ -52,7 +52,7 @@
         </ul> -->
       </div>
       <div class="dropdown">
-        <a [routerLink]="['/ebooks']" routerLinkActive="Active" class="nav-link dropdown-toggl"
+        <a [routerLink]="['/read/ebooks']" routerLinkActive="Active" class="nav-link dropdown-toggl"
           data-toggle="dropdown">eBooks </a>
           <!-- <span class="caret"></span> -->
         <!-- <ul class="dropdown-menu">
@@ -64,10 +64,10 @@
         </ul> -->
       </div>
       <div class="dropdown">
-        <a [routerLink]="['/mentors']" routerLinkActive="Active" class="nav-link dropdown-toggl">
+        <a [routerLink]="['/guidance/mentors']" routerLinkActive="Active" class="nav-link dropdown-toggl">
         Find A Mentor </a>
       </div>
-      <a [routerLink]="['/about']" routerLinkActive="Active" class="nav-link mr-4">
+      <a [routerLink]="['/us/about']" routerLinkActive="Active" class="nav-link mr-4">
         About</a>
     </div>
   </div>

@@ -7,21 +7,25 @@
     <!-- <div class="col-md-1"></div> -->
     <!-- Post Content Column -->
     <div class="col-lg-8 blog-post p-4">
-      <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/howtos']">How-To</a> > <a
-          [routerLink]="['/howtos',howto.link]">{{howto.name}}</a></p>
+      <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/quick/howtos']">How-To</a> > <a
+          [routerLink]="['/quick/howtos',howto.link]">{{howto.name}}</a></p>
       <!-- Title -->
       <h1 class="mt-4">{{strService.capitalizeFirstLetter(howto.name)}}</h1>
-
-      <!-- Author -->
-      <span class="lead " *ngIf="howto.created_by">
-        <small>By:
-          <a href="#">{{howto.created_by}}</a>
-        </small>
-      </span>
-      <span class="float-sm-right">Posted on: <small><em class="text-info">{{howto.published}}</em></small></span>
+      <div class="row">
+        <div class="col-md-6">
+          <span class="lead " *ngIf="howto.created_by">
+            <small>By:
+              <a href="#">{{howto.created_by}}</a>
+            </small>
+          </span>
+        </div>
+        <div class="col-md-6">
+          <span class="float-sm-right">Posted on: <small>{{howto.published}}</small></span>
+        </div>
+      </div>
       <hr>
       <p *ngIf="howto.related">Also see: <a
-          [routerLink]="['/howtos/related',related.link]">{{strService.capitalizeFirstLetter(related.name)}}</a></p>
+          [routerLink]="['/quick/howtos/related',related.link]">{{strService.capitalizeFirstLetter(related.name)}}</a></p>
       <hr>
 
       <!-- Preview Image -->
@@ -76,26 +80,6 @@
           </form>
         </div>
       </div>
-
-      <!-- Single Comment -->
-      <!-- <div *ngFor="let comment of howto.comments" class="media mb-4">
-        <img width="60" class="d-flex mr-3 rounded-circle" [src]="comment.image" alt="">
-        <div class="media-body">
-          <h5 class="mt-0">{{comment.name}}</h5>
-          {{comment.comment}}
-        </div>
-        <div class="media mt-4">
-          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-          <div class="media-body">
-            <h5 class="mt-0">Commenter Name</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-            vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-            lacinia congue felis in faucibus.
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Comment with nested comments -->
       <div *ngFor="let comment of howto.comments" class="media mb-4">
         <img width="50" class="d-flex mr-3 rounded-circle" [src]="comment.image" alt="">
         <div class="media-body">

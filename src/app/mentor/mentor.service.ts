@@ -8,7 +8,7 @@ export class MentorService {
         setTimeout(() => {
             subject.next(Mentors);
             subject.complete();
-        },100)
+        },10)
         return subject; 
     }
     getMentor(id:number) {

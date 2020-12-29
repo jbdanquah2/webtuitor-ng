@@ -9,12 +9,12 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./mentor-page.component.css']
 })
 export class MentorPageComponent implements OnInit {
-  mentor:any
-  strService:any
-  cTime:any
- 
+  mentor: any
+  strService: any
+  cTime: any
+
   constructor(private mentorService: MentorService, private route: ActivatedRoute,
-    private stringService:StringService) { 
+    private stringService: StringService) {
 
   }
 
@@ -22,11 +22,11 @@ export class MentorPageComponent implements OnInit {
     this.mentor = this.mentorService.getMentor(this.route.snapshot.params['id'])
     this.strService = this.stringService
     this.strService.getDateTime();
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
     this.cTime = document.getElementById('cTime');
     this.time();
-    setInterval(this.time,1000)
-    
+    setInterval(this.time, 1000)
+
   }
 
   time() {
@@ -35,6 +35,15 @@ export class MentorPageComponent implements OnInit {
     var m = d.getMinutes();
     var h = d.getHours();
     document.getElementById('cTime').innerHTML = `<small>${h}:${m}:${s}</small>`;
+  }
+
+  sendChat(chatForm) {
+
+    let p = document.createElement("p");
+    p.classList.add('alert', 'alert-primary', 'text-right', 'clearfix')
+    p.innerHTML = chatForm.chatIn + '<br><small class="float-left text-info"> [ ' + this.stringService.getDateTime() + ' | ' + this.stringService.time() + ' ]</small>';
+    document.querySelector('#chat').appendChild(p);
+
   }
 
 }

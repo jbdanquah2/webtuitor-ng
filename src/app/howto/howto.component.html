@@ -6,17 +6,17 @@
       <div class="col-md-1"></div>
       <!-- Blog Entries Column -->
       <div class="col-md-9 blog-home p-4">
-        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/howto']">How-To</a></p>
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/quick/howtos']">How-To</a></p>
         <h3 class="my-4">{{title}}
           <small>blog.WebTuitor</small>
         </h3>
         <!-- Blog Post -->
-        <div [routerLink]="['/howtos/',howto.link]" *ngFor="let howto of howtos" class="card mb-4 wcard shadow">
+        <div [routerLink]="['/quick/howtos/',howto.link]" *ngFor="let howto of howtos" class="card mb-4 wcard shadow">
           <img width="300" class="card-img-top wcardpic img-fluid" [src]="howto.img" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title">{{strService.capitalizeFirstLetter(howto.name)}}</h2>
             <p class="card-text">{{howto.description}}</p>
-            <a [routerLink]="['/howtos/',howto.link]" class="btn btn-outline-info">Read More &rarr;</a>
+            <a [routerLink]="['/quick/howtos/',howto.link]" class="btn btn-outline-info">Read More &rarr;</a>
           </div>
           <!-- <div class="card-footer text-muted">
               Posted on {{howto.published}} by

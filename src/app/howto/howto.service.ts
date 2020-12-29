@@ -8,7 +8,7 @@ export class HowtoService {
         setTimeout(() => {
             subject.next(Howtos);
             subject.complete();
-        }, 100)
+        }, 10)
         return subject;
     }
     getHowto(link: string) {
