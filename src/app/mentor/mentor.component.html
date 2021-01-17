@@ -1,5 +1,4 @@
-<!-- Page Content -->
-<div class="container-fluid">
+<div class="container-fluid min-vh-100">
   <div class="blog-home">
     <div class="row">
       <div class="col-md-1"></div>
@@ -10,11 +9,11 @@
           <small>blog.WebTuitor</small>
         </h3>
         <!-- Blog Post -->
-        <div [routerLink]="['/guidance/mentors/',mentor.id]" *ngFor="let mentor of mentors" class="card mb-2 mcard">
+        <div [routerLink]="['/guidance/mentors',mentor.login]" *ngFor="let mentor of mentors" class="card mb-2 mcard">
           <div class="row gx-0">
             <div class="col-md-4">
               <div class="mentor">
-                <img class="card-img-top mcardpic img-fluid pb-1" [src]="mentor.img" alt="Card image cap"><br>
+                <img class="card-img-top mcardpic img-fluid pb-1" [src]="mentor.avatar_url" alt="Card image cap"><br>
                 <div class="text-center pb-2">
                  <span> &uArr;</span><span class="text-light badge badge-info">30k</span><span> &dArr;</span><span class="text-warning badge badge-danger"> 1 </span>
                 </div>
@@ -22,10 +21,12 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h2 class="card-title">{{mentor.name}}</h2>
-                <p class="card-text pb-3">{{mentor.description}}</p>
+                <h2 class="card-title">{{mentor.login}}</h2>
+                <p class="card-text pb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                  Suscipit placeat dolore voluptatum! Illo 
+                </p>
                 <details>
-                  <summary [routerLink]="['/guidance/mentors/',mentor.id]" class="btn btn-outline-info card-link">
+                  <summary [routerLink]="['/guidance/mentors',mentor.login]" class="btn btn-outline-info card-link">
                     Get in touch &rarr;
                   </summary>
                   <!-- <div class="guide">
@@ -54,4 +55,3 @@
     <!-- /.row -->
   </div>
 </div>
-<!-- /.container -->

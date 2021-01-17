@@ -23,6 +23,8 @@ import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.se
 import { StringService } from './untility/string.service';
 import { MentorService } from './mentor/mentor.service';
 import { FormsModule } from '@angular/forms';
+import { MentorResolver } from './mentor/mentor-resolver.service';
+import { MentorPageResolver } from './mentor/mentor-page/mentor-page-resolver.service';
 
 
 @NgModule({
@@ -45,7 +47,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ Title,CourseService, HowtoService, EbookService, CourseRouteActivator, EbookRouteActivator, 
-    HowtoRouteActivator, StringService, MentorService],
-  bootstrap: [AppComponent]
+    HowtoRouteActivator, StringService, MentorService, MentorResolver, MentorPageResolver],
+  bootstrap: [AppComponent], 
 })
 export class AppModule { }

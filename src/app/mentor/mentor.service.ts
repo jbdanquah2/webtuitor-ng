@@ -1,18 +1,66 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 
-@Injectable() 
+@Injectable()
 export class MentorService {
+    
+    url = 'https://api.github.com/users';
+    newMentors: any;
     getMentors() {
         let subject = new Subject()
-        setTimeout(() => {
-            subject.next(Mentors);
-            subject.complete();
-        },10)
-        return subject; 
+        fetch(this.url)
+            .then(
+                function (response) {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    // Examine the text in the response
+                    response.json().then(function (data) {
+                        subject.next(data);
+                        subject.complete();
+                        console.log('John',data);
+                    });
+                }
+            )
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+                
+            });
+
+        return subject;
     }
-    getMentor(id:number) {
-        return Mentors.find(mentor => mentor.id == id)
+    getMentor(login: string) {
+        let subject = new Subject()
+        console.log('heer: '+ login + ' love');
+        
+        fetch(`${this.url}/${login}`)
+            .then(
+                function (response) {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    // Examine the text in the response
+                    response.json().then(function (data) {
+                        subject.next(data);
+                        subject.complete();
+                        // console.log('Johnny boy',data);
+                        // return data
+                    });
+                }
+            )
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+
+        return subject;
+        // return Mentors.find(mentor => mentor.id == id)
     }
 }
 
