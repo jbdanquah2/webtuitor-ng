@@ -6,12 +6,12 @@ import { StringService } from "src/app/untility/string.service";
     selector: 'ebook-tab',
     template:`
     <div class="card-group">
-        <div [routerLink]="['/read/ebooks/',ebook.link]" *ngFor="let ebook of ebooks | slice:0:4; let i=index" class="card">
+        <div [routerLink]="['/read/get-an-ebook/',ebook.link]" *ngFor="let ebook of ebooks | slice:0:4; let i=index" class="card">
         <img heigt="200" class="card-img-top" [src]="ebook.img" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">{{ebook.name}}</h5>
-            <p class="card-text">{{concatStr.concatString(ebook.description,50)}}</p>
-            <button [routerLink]="['/read/ebooks/',ebook.link]" class="btn btn-md btn-outline-info">Get it</button>&nbsp;
+            <h5 class="card-title">{{concStr.capitalizeFirstLetter(ebook.name)}}</h5>
+            <p class="card-text">{{concStr.concatString(ebook.description,50)}}</p>
+            <button [routerLink]="['/read/get-an-ebook/',ebook.link]" class="btn btn-md btn-outline-info">Get it</button>&nbsp;
             <span class="text-warning" *ngIf="ebook.license">{{ebook.license}}</span>
             
         </div>
@@ -21,12 +21,12 @@ import { StringService } from "src/app/untility/string.service";
 })
 export class EbookTabComponent {
     ebooks:any
-    @Input()concatStr:any
+    concStr:any
     constructor(private ebookService:EbookService, private stringService:StringService ) {
     }
     ngOnInit() {
         this.ebooks = this.ebookService.getEbooks();
-        this.concatStr = this.stringService;
+        this.concStr = this.stringService;
     }
    
 }

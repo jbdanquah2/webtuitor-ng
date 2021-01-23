@@ -4,12 +4,12 @@
       <div class="col-md-1"></div>
       <!-- Blog Entries Column -->
       <div class="col-md-6 blog-home p-4">
-        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/guidance/mentors']">Find A Mentor</a></p>
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/guidance/find-a-mentor']">Find A Mentor</a></p>
         <h3 class="my-4">{{title}}
           <small>blog.WebTuitor</small>
         </h3>
         <!-- Blog Post -->
-        <div [routerLink]="['/guidance/mentors',mentor.login]" *ngFor="let mentor of mentors" class="card mb-2 mcard">
+        <div [routerLink]="['/guidance/find-a-mentor',mentor.login]" *ngFor="let mentor of mentors" class="card mb-2 mcard">
           <div class="row gx-0">
             <div class="col-md-4">
               <div class="mentor">
@@ -27,7 +27,7 @@
                   Suscipit placeat dolore voluptatum! Illo 
                 </p>
                 <details>
-                  <summary [routerLink]="['/guidance/mentors',mentor.login]" class="btn btn-outline-info card-link">
+                  <summary [routerLink]="['/guidance/find-a-mentor',mentor.login]" class="btn btn-outline-info card-link">
                     Get in touch &rarr;
                   </summary>
                   <!-- <div class="guide">

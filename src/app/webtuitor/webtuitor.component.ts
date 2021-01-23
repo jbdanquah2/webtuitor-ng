@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { StringService } from "src/app/untility/string.service";
 
 @Component({
     selector: 'webtuitor-home',
@@ -7,5 +8,13 @@ import { Component } from "@angular/core";
     
 })
 export class WebtuitorComponent {
-    title ='Webtuitor | Home'
+    title ='Webtuitor | Home';
+    strService;
+    constructor(private stringService:StringService) {
+
+    }
+
+    ngOnInit() {
+        this.strService = this.stringService;
+    }
 }

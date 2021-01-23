@@ -6,19 +6,19 @@
       <div class="col-md-1"></div>
       <!-- Blog Entries Column -->
       <div class="col-md-9 blog-home p-4">
-        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/read/ebooks']">Ebooks</a></p>
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/read/get-an-ebook']">Ebooks</a></p>
         <h3 class="my-4">{{title}}
           <small>blog.WebTuitor</small>
         </h3>
 
         <!-- Blog Post -->
-        <div [routerLink]="['/read/ebooks/',ebook.link]" *ngFor="let ebook of ebooks" class="card mb-4 w-ebook wcard shadow">
+        <div [routerLink]="['/read/get-an-ebook/',ebook.link]" *ngFor="let ebook of ebooks" class="card mb-4 w-ebook wcard shadow">
           <img  class="card-img-top wcardpic img-fluid" [src]="ebook.img" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title">{{strService.capitalizeFirstLetter(ebook.name)}}</h2>
             <p class="card-text">{{strService.concatString(ebook.description, 100)}}</p>
-            <a [routerLink]="['/read/ebooks/',ebook.link]" class="btn btn-outline-info">Read More &rarr;</a>
-            <a [routerLink]="['/read/ebooks/',ebook.link]" class="btn btn-outline-info">Add to Cart &rarr;</a>
+            <a [routerLink]="['/read/get-an-ebook/',ebook.link]" class="btn btn-outline-info">Read More &rarr;</a>
+            <a [routerLink]="['/read/get-an-ebook/',ebook.link]" class="btn btn-outline-info">Add to Cart &rarr;</a>
           </div>
           <!-- <div class="card-footer text-muted">
             Posted on {{ebook.published}} by

@@ -9,7 +9,7 @@ import { StringService } from 'src/app/untility/string.service';
         <div [routerLink]="['/quick/howtos/',howto.link]" *ngFor="let howto of howtos | slice:0:4; let i=index" class="card" >
         <img heigt="200" class="card-img-top" [src]="howto.img" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">{{howto.name}}</h5>
+            <h5 class="card-title">{{concStr.capitalizeFirstLetter(howto.name)}}</h5>
             <p class="card-text">{{concStr.concatString(howto.description,50)}}</p>
             <button [routerLink]="['/quick/howtos/',howto.link]" class="btn btn-md btn-outline-info">Start</button>
             <p class="card-text">
