@@ -25,6 +25,7 @@ import { MentorService } from './mentor/mentor.service';
 import { FormsModule } from '@angular/forms';
 import { MentorResolver } from './mentor/mentor-resolver.service';
 import { MentorPageResolver } from './mentor/mentor-page/mentor-page-resolver.service';
+import { AuthService } from './user/auth.service';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { MentorPageResolver } from './mentor/mentor-page/mentor-page-resolver.se
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ Title,CourseService, HowtoService, EbookService, CourseRouteActivator, EbookRouteActivator, 
-    HowtoRouteActivator, StringService, MentorService, MentorResolver, MentorPageResolver],
+    HowtoRouteActivator, StringService, MentorService, MentorResolver, MentorPageResolver, AuthService],
   bootstrap: [AppComponent], 
 })
 export class AppModule { }

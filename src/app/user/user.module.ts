@@ -5,7 +5,6 @@ import { userRoutes } from "./user.routes";
 import { LoginComponent } from "./login/login.component";
 import { FormsModule } from "@angular/forms";
 
-
 @NgModule({
    imports: [
        CommonModule,
@@ -14,10 +13,9 @@ import { FormsModule } from "@angular/forms";
 
    ],
    declarations: [
-        LoginComponent
+        LoginComponent,
    ],
    providers: [
-
    ]
 })
 export class UserModule {

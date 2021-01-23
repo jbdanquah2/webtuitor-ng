@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { AuthService } from "../auth.service";
 
 @Component({
     templateUrl: 'login.component.html',
@@ -7,14 +8,18 @@ import { Router } from "@angular/router";
 
 })
 export class LoginComponent {
-    mouseoverLogin
-    login 
+    mouseoverLogin 
     userName 
     password
     
 
-    constructor( private route: Router) {
+    constructor( private route: Router, private authservice: AuthService) {
 
+    }
+
+    login(formValues) {
+        this.authservice.loginUser(formValues.userName, formValues.password);
+        this.route.navigate(['/home'])
     }
 
 
