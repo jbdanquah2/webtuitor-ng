@@ -9,7 +9,7 @@ import { AuthService } from "../auth.service";
 })
 export class LoginComponent {
     mouseoverLogin 
-    userName 
+    userName: any
     password
     
 

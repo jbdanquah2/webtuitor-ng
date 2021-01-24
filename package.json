@@ -28,6 +28,7 @@
     "jquery": "^3.5.1",
     "ngx-mat-markdown-text-editor": "0.0.3",
     "path": "^0.12.7",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.3.3",
     "toastr": "^2.1.4",
     "tslib": "^1.9.0",

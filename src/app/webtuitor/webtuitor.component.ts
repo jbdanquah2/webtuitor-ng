@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { StringService } from "src/app/untility/string.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { StringService } from "src/app/untility/string.service";
     
 })
 export class WebtuitorComponent {
-    title ='Webtuitor | Home';
+   @Input() title ='Webtuitor | Home';
     strService;
     constructor(private stringService:StringService) {
 

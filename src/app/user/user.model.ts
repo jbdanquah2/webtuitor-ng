@@ -4,4 +4,5 @@ export interface IUser {
     lastName: string,
     userName: string,
     password: string
+    confirmPassword: string
 }

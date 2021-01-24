@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/user/auth.service";
-import { IUser } from "src/app/user/user.model";
 
 @Component({
     selector: 'app-navbar',

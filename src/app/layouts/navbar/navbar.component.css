@@ -100,10 +100,20 @@ nav {
   text-decoration: none;
 
 }
+#dropdownMenu  {
+  /* display: block; */
+  width: 3px!important;
+  overflow: hidden!important;
+  background-color: #3a3d85!important;
+  ;
+}
+#dropdownMenu a {
+  color: #fefefe!important
+}
+#dropdownMenu a:hover {
+  color: #333!important;
+}
 
-/* .dropdown>.dropdown-toggle:active {
-  pointer-events: none;
-} */
 @media only screen and (min-width: 720px) {
   nav {
     padding: 5px 0 5px 20px;

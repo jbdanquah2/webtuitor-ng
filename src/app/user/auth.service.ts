@@ -11,7 +11,8 @@ export class AuthService {
             firstName: 'Simon',
             lastName: 'Papa',
             userName: userName,
-            password: password
+            password: password,
+            confirmPassword: password
         }
     }
     isAuthenticated() {

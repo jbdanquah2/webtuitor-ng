@@ -1,0 +1,41 @@
+<div class="container min-vh-100">
+  <h1 class="m-4">Profile</h1>
+  <hr>
+  <div class="col-lg-4 col-xs-6 m-md-5">
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)" autocomplete="off" novalidate>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <em *ngIf="firstName?.invalid && (firstName.touched ||
+          mouseoverLogin) ">required</em>
+        <input required formControlName="firstName" name="firstName" id="firstName" type="text" class="form-control"
+          placeholder="First Name..." />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <em *ngIf="lastName?.invalid && (lastName.touched ||
+          mouseoverLogin) ">required</em>
+        <input required formControlName="lastName" name="lastName" id="lastName" type="text" class="form-control"
+          placeholder="Last Name..." />
+      </div>
+      <div class="form-group">
+        <label for="userName">User Name:</label>
+        <em *ngIf="userName?.invalid && (userName.touched ||
+        mouseoverLogin) ">required</em>
+        <input required formControlName="userName" name="userName" id="userName" type="text" class="form-control"
+          placeholder="User Name..." />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <em *ngIf="password?.invalid && (password.touched || 
+        mouseoverLogin)">required</em>
+        <input required formControlName="password" name="password" id="password" type="password" class="form-control"
+          placeholder="Password..." />
+      </div>
+      <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
+        <button type="submit" [disabled]="profileForm.invalid" class="btn btn-primary">Login</button>
+      </span>
+      <button (click)="cancel()" type="button" class="btn btn-danger ml-1">Cancel</button>
+    </form>
+  </div>
+
+</div>
