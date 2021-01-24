@@ -36,6 +36,8 @@ export class ProfileComponent implements OnInit{
     }
     saveProfile(formValues) {
         console.log(formValues)
+        this.router.navigate(['/home'])
+        window.scrollTo(0,0)
     }
     cancelEdit() {
         this.router.navigate(['/home'])
