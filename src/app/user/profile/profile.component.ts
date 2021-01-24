@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit{
     password:FormControl
     confirmPassword:FormControl
     mouseoverLogin
-    
+
     constructor(private router:Router, private authService:AuthService) {
 
     }
@@ -37,7 +37,8 @@ export class ProfileComponent implements OnInit{
     saveProfile(formValues) {
         console.log(formValues)
     }
-    cancel() {
-        this.router.navigate['home']
+    cancelEdit() {
+        this.router.navigate(['/home'])
+        window.scrollTo(0,0)
     }
 }
