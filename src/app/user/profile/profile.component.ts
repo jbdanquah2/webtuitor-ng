@@ -4,19 +4,19 @@ import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
 
 @Component({
-    templateUrl:'profile.component.html',
-    styleUrls:['./profile.component.css']
+    templateUrl: 'profile.component.html',
+    styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit{
-    profileForm:FormGroup
-    firstName:FormControl
-    lastName:FormControl
-    userName:FormControl
-    password:FormControl
-    confirmPassword:FormControl
+export class ProfileComponent implements OnInit {
+    profileForm: FormGroup
+    firstName: FormControl
+    lastName: FormControl
+    userName: FormControl
+    password: FormControl
+    confirmPassword: FormControl
     mouseoverLogin
 
-    constructor(private router:Router, private authService:AuthService) {
+    constructor(private router: Router, private authService: AuthService) {
 
     }
     ngOnInit() {
@@ -36,11 +36,13 @@ export class ProfileComponent implements OnInit{
     }
     saveProfile(formValues) {
         console.log(formValues)
+        this.authService.updateCurrentUser(formValues.firstName, formValues.lastName,
+            formValues.userName, formValues.password)
         this.router.navigate(['/home'])
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
     }
     cancelEdit() {
         this.router.navigate(['/home'])
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
     }
 }

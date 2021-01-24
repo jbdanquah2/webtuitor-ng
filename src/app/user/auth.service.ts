@@ -8,8 +8,8 @@ export class AuthService {
     loginUser(userName: string, password:string) {
         this.currentUser = {
             id: 1,
-            firstName: 'Simon',
-            lastName: 'Papa',
+            firstName: '',
+            lastName: '',
             userName: userName,
             password: password,
             confirmPassword: password
@@ -18,8 +18,11 @@ export class AuthService {
     isAuthenticated() {
         return !!this.currentUser;
     }   
-    updateCurrentUser(firstName:string, lastName:string){
+    updateCurrentUser(firstName:string, lastName:string, userName:string, password:string){
         this.currentUser.firstName = firstName
         this.currentUser.lastName = lastName
+        this.currentUser.userName = userName
+        this.currentUser.password = password
+
     }
 }

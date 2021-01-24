@@ -8,12 +8,11 @@ import { AuthService } from "../auth.service";
 
 })
 export class LoginComponent {
-    mouseoverLogin 
+    mouseoverLogin
     userName: any
-    password
-    
+    password:any
 
-    constructor( private route: Router, private authservice: AuthService) {
+    constructor(private route: Router, private authservice: AuthService) {
 
     }
 
