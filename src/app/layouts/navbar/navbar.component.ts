@@ -16,8 +16,7 @@ export class NavbarComponent implements OnInit {
             const userNames = this.cookieService.get('userName');
             const passwords = this.cookieService.get('password');
             this.authService.loginUser(userNames,passwords)
-            console.log('this is from header: User: ',this.cookieService.get('userName'), ' password: ', 
-            this.cookieService.get('password'));  
+             
             this.authService.isAuthenticated = true;  
         }
     }
