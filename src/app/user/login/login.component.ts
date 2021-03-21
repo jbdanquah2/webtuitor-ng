@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
     templateUrl: 'login.component.html',
@@ -11,17 +12,35 @@ export class LoginComponent {
     mouseoverLogin
     userName: any
     password:any
-
-    constructor(private route: Router, private authservice: AuthService) {
-
+    cookieValue: any
+    constructor(private route: Router, private authservice: AuthService, 
+        private cookieService:CookieService ) {
     }
+
 
     login(formValues) {
+        let domain = 'localhost';
+        let path ='/';
+        let secure = true;
+        let expiry = new Date();
+        expiry.setDate(expiry.getDate() + 365 );
+
         this.authservice.loginUser(formValues.userName, formValues.password);
+        this.cookieService.set('userName', formValues.userName, expiry, path, domain,secure,'None');
+        this.cookieService.set('password', formValues.password, expiry, path, domain,secure,'None');
+
+        console.log('login is called!: ', formValues.userName);
+        
         this.route.navigate(['/home'])
+        
     }
-
-
+    ngOnInit() {
+        if (this.cookieService.check('userName')) { 
+            console.log(this.cookieService.get('userName'));
+            
+        }
+    }
+    
     cancel() {
         this.route.navigate(['/home']);
     }

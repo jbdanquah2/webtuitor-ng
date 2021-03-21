@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Title } from "@angular/platform-browser";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,10 @@ import { Title } from "@angular/platform-browser";
 export class AppComponent {
   // @Input() title:any = "Webtuitor"
 
-  constructor(private titleService: Title) {}
+  constructor(private titleService: Title, private cookieService:CookieService) {}
 
   public setTitle( newTitle: string) {
     this.titleService.setTitle(newTitle);
   }
+  
 }
