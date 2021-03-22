@@ -15,13 +15,12 @@ export class AuthService {
             userName: userName,
             password: password,
             confirmPassword: password
-
         }
-        this.checkAuthentication()
+        this.checkAuthentication(true)
     }
 
-    checkAuthentication() {
-        this.isAuthenticated = true;
+    checkAuthentication(state) {
+        this.isAuthenticated = state;
     }
     
 

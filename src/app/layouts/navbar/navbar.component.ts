@@ -8,23 +8,23 @@ import { AuthService } from "src/app/user/auth.service";
     styleUrls: [`navbar.component.css`]
 })
 export class NavbarComponent implements OnInit {
+    userName:string
+    password:string
+    checkCookie:boolean
     constructor(public authService: AuthService, private cookieService: CookieService) {
-
+        this.checkCookie = this.cookieService.check('userName');
     }
     ngOnInit() {
-        if (this.cookieService.check('userName')) {
-            const userNames = this.cookieService.get('userName');
-            const passwords = this.cookieService.get('password');
-            this.authService.loginUser(userNames,passwords)
-             
-            this.authService.isAuthenticated = true;  
+      
+        if (this.checkCookie) {
+            this.userName = this.cookieService.get('userName');
+            this.password = this.cookieService.get('password');
+            this.authService.loginUser(this.userName,this.password)             
         }
     }
-    logout() {
-        this.cookieService.deleteAll()
-        this.authService.isAuthenticated = false;
-        
-        
+    logout(state) {
+        this.authService.checkAuthentication(state);
+        this.cookieService.deleteAll('/','localhost');
     }
  
 }

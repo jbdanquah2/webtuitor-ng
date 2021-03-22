@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
 import { CookieService } from "ngx-cookie-service";
+import { expressionType } from "@angular/compiler/src/output/output_ast";
 
 @Component({
     templateUrl: 'login.component.html',
@@ -19,11 +20,14 @@ export class LoginComponent {
 
 
     login(formValues) {
-        let domain = 'localhost';
+        let domain = 'webtuitor.herokuapp.com/';
         let path ='/';
         let secure = true;
+        let oldDate = new Date()
         let expiry = new Date();
-        expiry.setDate(expiry.getDate() + 365 );
+        
+        expiry.setTime(oldDate.getTime() + (30 * 60 * 1000))
+        // expiry.setDate(expiry.getDate() + 1);
 
         this.authservice.loginUser(formValues.userName, formValues.password);
         this.cookieService.set('userName', formValues.userName, expiry, path, domain,secure,'None');

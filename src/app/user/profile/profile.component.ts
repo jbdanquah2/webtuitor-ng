@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { CookieService } from "ngx-cookie-service";
 import { AuthService } from "../auth.service";
 
 @Component({
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
     confirmPassword: FormControl
     mouseoverLogin
 
-    constructor(private router: Router, private authService: AuthService) {
+    constructor(private router: Router, private authService: AuthService, private cookieService:CookieService) {
 
     }
     ngOnInit() {
@@ -35,12 +36,24 @@ export class ProfileComponent implements OnInit {
         })
     }
     saveProfile(formValues) {
-        console.log(formValues)
+        // console.log(formValues)
+        let domain = 'webtuitor.herokuapp.com/';
+        let path ='/';
+        let secure = true;
+        let oldDate = new Date()
+        let expiry = new Date();
+        
+        expiry.setTime(oldDate.getTime() + (30 * 60 * 1000))
+        
+        this.cookieService.set('userName', formValues.userName, expiry, path, domain,secure,'None');
+        this.cookieService.set('password', formValues.password, expiry, path, domain,secure,'None');
+
         this.authService.updateCurrentUser(formValues.firstName, formValues.lastName,
             formValues.userName, formValues.password)
         this.router.navigate(['/home'])
         window.scrollTo(0, 0)
     }
+
     cancelEdit() {
         this.router.navigate(['/home'])
         window.scrollTo(0, 0)
