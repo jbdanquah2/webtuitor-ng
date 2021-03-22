@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
     }
     saveProfile(formValues) {
         // console.log(formValues)
-        let domain = 'webtuitor.herokuapp.com/';
+        // let domain = 'localhost';
         let path ='/';
         let secure = true;
         let oldDate = new Date()
@@ -45,8 +45,8 @@ export class ProfileComponent implements OnInit {
         
         expiry.setTime(oldDate.getTime() + (30 * 60 * 1000))
         
-        this.cookieService.set('userName', formValues.userName, expiry, path, domain,secure,'None');
-        this.cookieService.set('password', formValues.password, expiry, path, domain,secure,'None');
+        this.cookieService.set('userName', formValues.userName, expiry, path,'',secure,'None');
+        this.cookieService.set('password', formValues.password, expiry, path,'',secure,'None');
 
         this.authService.updateCurrentUser(formValues.firstName, formValues.lastName,
             formValues.userName, formValues.password)

@@ -20,7 +20,7 @@ export class LoginComponent {
 
 
     login(formValues) {
-        let domain = 'webtuitor.herokuapp.com/';
+        let domain = 'localhost';
         let path ='/';
         let secure = true;
         let oldDate = new Date()
