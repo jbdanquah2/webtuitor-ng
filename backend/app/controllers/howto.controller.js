@@ -25,7 +25,9 @@ exports.create = (req, res) => {
   howto
     .save(howto)
     .then(data => {
-      res.send(data)
+      res.send({
+        msg: 'how to has been created',
+        data})
     })
     .catch(err => {
       res.status(500).send({
@@ -41,7 +43,10 @@ exports.findAll = (req, res) => {
 
   Howto.find(condition)
     .then(data => {
-      res.send(data);
+      res.send({
+        msg:'all howtos',
+        data
+      });
     })
     .catch(err => {
       res.status(500).send({

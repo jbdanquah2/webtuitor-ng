@@ -7,5 +7,6 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.howtos = require("./howto.model.js")(mongoose);
+db.auth = require('./auth.model')(mongoose);
 // db.coachs = require("./coach.model.js")(mongoose);
 module.exports = db;

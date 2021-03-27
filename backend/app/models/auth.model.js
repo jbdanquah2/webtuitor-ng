@@ -3,7 +3,6 @@ module.exports = mongoose => {
       "auth",
       mongoose.Schema(
         { 
-          token: String,
           email: {type: String, required:true},
           password: {type: String, required:true},
           firstName: {type: String},

@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/howto.routes")(app);
-// require("./app/routes/coach.routes")(app);
+require("./app/routes/auth.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
