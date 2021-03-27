@@ -30,19 +30,11 @@ export class LoginComponent {
         // expiry.setDate(expiry.getDate() + 1);
 
         this.authservice.loginUser(formValues.userName, formValues.password);
-        this.cookieService.set('userName', formValues.userName, expiry, path, domain,secure,'None');
-        this.cookieService.set('password', formValues.password, expiry, path, domain,secure,'None');
-
-        console.log('login is called!: ', formValues.userName);
+        this.cookieService.set('currentUser', JSON.stringify(this.authservice.currentUser), expiry, path, domain,secure,'None');
+        this.cookieService.set('token', JSON.stringify(this.authservice.currentUser.password), expiry, path, domain,secure,'None');
         
         this.route.navigate(['/home'])
         
-    }
-    ngOnInit() {
-        if (this.cookieService.check('userName')) { 
-            console.log(this.cookieService.get('userName'));
-            
-        }
     }
     
     cancel() {

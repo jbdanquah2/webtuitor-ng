@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { CookieService } from "ngx-cookie-service";
 import { AuthService } from "src/app/user/auth.service";
 
@@ -8,23 +9,24 @@ import { AuthService } from "src/app/user/auth.service";
     styleUrls: [`navbar.component.css`]
 })
 export class NavbarComponent implements OnInit {
-    userName:string
+    currentUser:string
     password:string
     checkCookie:boolean
-    constructor(public authService: AuthService, private cookieService: CookieService) {
-        this.checkCookie = this.cookieService.check('userName');
+    constructor(public authService: AuthService, private cookieService: CookieService, private router: Router) {
+        this.checkCookie = this.cookieService.check('currentUser');
     }
     ngOnInit() {
       
         if (this.checkCookie) {
-            this.userName = this.cookieService.get('userName');
-            this.password = this.cookieService.get('password');
-            this.authService.loginUser(this.userName,this.password)             
+            this.currentUser = this.cookieService.get('currentUser');
+            this.authService.loginUser(JSON.parse(this.currentUser).userName,JSON.parse(this.currentUser).password)             
         }
     }
     logout(state) {
         this.authService.checkAuthentication(state);
         this.cookieService.deleteAll('/','localhost');
+        this.router.navigate(['auth/user/login'])
+        window.scrollTo(0,0);
     }
  
 }

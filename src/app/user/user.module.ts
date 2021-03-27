@@ -6,6 +6,7 @@ import { LoginComponent } from "./login/login.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProfileComponent } from "./profile/profile.component";
 import { CookieService } from "ngx-cookie-service";
+import { LoginRouteActivator } from "./login/login-route-activator.service";
 
 @NgModule({
    imports: [
@@ -19,7 +20,7 @@ import { CookieService } from "ngx-cookie-service";
         LoginComponent,
         ProfileComponent
    ],
-   providers: [ CookieService
+   providers: [ CookieService, LoginRouteActivator
    ]
 })
 export class UserModule {

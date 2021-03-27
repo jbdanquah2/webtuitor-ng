@@ -14,5 +14,5 @@ export class HowtoRouteActivator implements CanActivate {
         if (!howtoExist)
             this.router.navigate(['404'])
         return howtoExist
-    }
+    } 
 }
