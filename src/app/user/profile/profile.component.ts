@@ -26,7 +26,9 @@ export class ProfileComponent implements OnInit {
         // this.userName = new FormControl(this.authService.currentUser.userName, Validators.required)
         // this.password = new FormControl(this.authService.currentUser.password, Validators.required)
         // // this.confirmPassword = new FormControl('', Validators.required)
-
+//   ***************************************************
+//   fills profile form with current user details
+//   ***************************************************
         this.profileForm = new FormGroup({
             firstName: new FormControl(this.authService.currentUser.firstName, Validators.required),
             lastName: new FormControl(this.authService.currentUser.lastName, Validators.required),
@@ -35,6 +37,10 @@ export class ProfileComponent implements OnInit {
             confirmPassword: new FormControl(this.authService.currentUser.password, Validators.required)
         })
     }
+
+// **************************************************
+// save profile details from profile form
+// *************************************************
     saveProfile(formValues) {
         // console.log(formValues)
         // let domain = 'localhost';

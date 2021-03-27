@@ -27,6 +27,7 @@ import { MentorResolver } from './mentor/mentor-resolver.service';
 import { MentorPageResolver } from './mentor/mentor-page/mentor-page-resolver.service';
 import { AuthService } from './user/auth.service';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CookieService } from 'ngx-cookie-service';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ Title,CourseService, CookieService, HowtoService, EbookService, CourseRouteActivator, EbookRouteActivator, 
