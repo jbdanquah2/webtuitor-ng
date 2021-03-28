@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable() 
 export class AuthService {
-    private getUrl = 'localhost:8080/api/auth/login/'
+    private getUrl = 'http://localhost:8080/api/auth/login'
     currentUser:IUser
     isAuthenticated = false
 
