@@ -7,12 +7,13 @@
     <span class="input-group-append m">
       <button id="search-go" class="btn btn-danger" type="button">Go!</button>
     </span>
-    <a *ngIf="!authService.isAuthenticated" [routerLink]="['/auth/user/login']"
+    <a href="#/ms/signup/60e0e71f4efd9e000459c061" *ngIf="!authService.isAuthenticated"
       class="nav-link ml-auto btn btn-xs btn-outline-light">Sign In </a>
     <div *ngIf="authService.isAuthenticated" class="dropdown show">
-      <button class="btn btn-xs btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{authService.currentUser.firstName != ''?authService.currentUser.firstName : authService.currentUser.userName }}
-      </button>
+        <button class="btn btn-xs btn-outline-light dropdown-toggle"
+          type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{authService.currentUser.firstName != ''?authService.currentUser.firstName : authService.currentUser.userName }}
+        </button>
       <div id="dropdownMenu" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a [routerLink]="['/auth/user/profile']" class="dropdown-item">Profile</a>
         <a (click)="logout(false)" class="dropdown-item">Logout</a>
