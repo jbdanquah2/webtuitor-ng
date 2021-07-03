@@ -1,18 +1,8 @@
 //Install express server
-const sslRedirect = require('heroku-ssl-redirect');
 const express = require('express');
 const path = require('path');
 
 const app = express();
-
-app.use(sslRedirect());
-app.use(sslRedirect([
-    'other',
-    'development',
-    'production'
-])); 
-
-app.use(sslRedirect(['production'], 301));
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/webtuitor2'));
