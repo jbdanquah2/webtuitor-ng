@@ -27,7 +27,7 @@ export class AuthService {
         }
         this.checkAuthentication(true)
     }
-
+  
     checkAuthentication(state) {
         this.isAuthenticated = state;
     }
