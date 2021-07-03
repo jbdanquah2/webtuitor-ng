@@ -1,5 +1,5 @@
 //Install express server
-import sslRedirect from 'heroku-ssl-redirect';
+const sslRedirect = require('heroku-ssl-redirect');
 const express = require('express');
 const path = require('path');
 
