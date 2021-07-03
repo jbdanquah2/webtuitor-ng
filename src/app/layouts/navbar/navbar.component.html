@@ -1,5 +1,4 @@
 <!-- top search button -->
-
 <div id="top-search-box" class="card-body bg-light">
   <div class="input-group ">
     <a class="d-none d-lg-block btn btn-xs btn-outline-light mr-4">Learning is a spice of life!</a>
@@ -7,13 +6,12 @@
     <span class="input-group-append m">
       <button id="search-go" class="btn btn-danger" type="button">Go!</button>
     </span>
-    <a href="#/ms/signup/60e0e71f4efd9e000459c061" *ngIf="!authService.isAuthenticated"
+    <a *ngIf="!authService.isAuthenticated" [routerLink]="['/auth/user/login']"
       class="nav-link ml-auto btn btn-xs btn-outline-light">Sign In </a>
     <div *ngIf="authService.isAuthenticated" class="dropdown show">
-        <button class="btn btn-xs btn-outline-light dropdown-toggle"
-          type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{authService.currentUser.firstName != ''?authService.currentUser.firstName : authService.currentUser.userName }}
-        </button>
+      <button class="btn btn-xs btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{authService.currentUser.firstName != ''?authService.currentUser.firstName : authService.currentUser.username }}
+      </button>
       <div id="dropdownMenu" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a [routerLink]="['/auth/user/profile']" class="dropdown-item">Profile</a>
         <a (click)="logout(false)" class="dropdown-item">Logout</a>
