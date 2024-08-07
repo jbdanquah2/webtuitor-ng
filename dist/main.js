@@ -3470,13 +3470,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.es5.js");
+
 
 
 
 var AppComponent = /** @class */ (function () {
     // @Input() title:any = "Webtuitor"
-    function AppComponent(titleService) {
+    function AppComponent(titleService, cookieService) {
         this.titleService = titleService;
+        this.cookieService = cookieService;
     }
     AppComponent.prototype.setTitle = function (newTitle) {
         this.titleService.setTitle(newTitle);
@@ -3486,7 +3489,7 @@ var AppComponent = /** @class */ (function () {
             selector: 'app-root',
             template: "\n    <title>WebTuitor</title>\n    <app-navbar></app-navbar>\n    <router-outlet></router-outlet>\n    <app-footer></app-footer>\n  "
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"], ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -3533,6 +3536,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mentor_mentor_resolver_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./mentor/mentor-resolver.service */ "./src/app/mentor/mentor-resolver.service.ts");
 /* harmony import */ var _mentor_mentor_page_mentor_page_resolver_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./mentor/mentor-page/mentor-page-resolver.service */ "./src/app/mentor/mentor-page/mentor-page-resolver.service.ts");
 /* harmony import */ var _user_auth_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./user/auth.service */ "./src/app/user/auth.service.ts");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.es5.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
 
 
 
@@ -3582,9 +3589,10 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_24__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_29__["HttpClientModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_4__["appRoutes"])
             ],
-            providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["Title"], _course_course_service__WEBPACK_IMPORTED_MODULE_13__["CourseService"], _howto_howto_service__WEBPACK_IMPORTED_MODULE_14__["HowtoService"], _ebook_ebook_service__WEBPACK_IMPORTED_MODULE_15__["EbookService"], _course_course_post_course_route_activator_service__WEBPACK_IMPORTED_MODULE_18__["CourseRouteActivator"], _ebook_ebook_post_ebook_route_activator_service__WEBPACK_IMPORTED_MODULE_20__["EbookRouteActivator"],
+            providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["Title"], _course_course_service__WEBPACK_IMPORTED_MODULE_13__["CourseService"], ngx_cookie_service__WEBPACK_IMPORTED_MODULE_28__["CookieService"], _howto_howto_service__WEBPACK_IMPORTED_MODULE_14__["HowtoService"], _ebook_ebook_service__WEBPACK_IMPORTED_MODULE_15__["EbookService"], _course_course_post_course_route_activator_service__WEBPACK_IMPORTED_MODULE_18__["CourseRouteActivator"], _ebook_ebook_post_ebook_route_activator_service__WEBPACK_IMPORTED_MODULE_20__["EbookRouteActivator"],
                 _howto_howto_post_howto_route_activator_service__WEBPACK_IMPORTED_MODULE_21__["HowtoRouteActivator"], _untility_string_service__WEBPACK_IMPORTED_MODULE_22__["StringService"], _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_23__["MentorService"], _mentor_mentor_resolver_service__WEBPACK_IMPORTED_MODULE_25__["MentorResolver"], _mentor_mentor_page_mentor_page_resolver_service__WEBPACK_IMPORTED_MODULE_26__["MentorPageResolver"], _user_auth_service__WEBPACK_IMPORTED_MODULE_27__["AuthService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
         })
@@ -5028,7 +5036,7 @@ module.exports = ".top-header {\r\n  height: 56px;\r\n}\r\n\r\n#main-logo {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- top search button -->\r\n\r\n<div id=\"top-search-box\" class=\"card-body bg-light\">\r\n  <div class=\"input-group \">\r\n    <a class=\"d-none d-lg-block btn btn-xs btn-outline-light mr-4\">Learning is a spice of life!</a>\r\n    <input type=\"text\" class=\"form-control pl-4\" placeholder=\"Search WebTuitor...\">\r\n    <span class=\"input-group-append m\">\r\n      <button id=\"search-go\" class=\"btn btn-danger\" type=\"button\">Go!</button>\r\n    </span>\r\n    <a *ngIf=\"!authService.isAuthenticated()\" [routerLink]=\"['/auth/user/login']\"\r\n      class=\"nav-link ml-auto btn btn-xs btn-outline-light\">Sign In </a>\r\n    <div *ngIf=\"authService.isAuthenticated()\" class=\"dropdown show\">\r\n      <button class=\"btn btn-xs btn-outline-light dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n        {{authService.currentUser.firstName != ''?authService.currentUser.firstName : authService.currentUser.userName }}\r\n      </button>\r\n      <div id=\"dropdownMenu\" class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">\r\n        <a [routerLink]=\"['/auth/user/profile']\" class=\"dropdown-item\">Profile</a>\r\n        <a  href=\"#\" class=\"dropdown-item\">Logout</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- </div> -->\r\n\r\n<!-- navigation / menu -->\r\n<nav class=\"navbar navbar-expand-lg sticky-op navbar-light shadow\">\r\n  <a class=\"navbar-brand img-fluid p-0\" href=\"/\"><img width=\"100\" height=\"40\" src=\"assets/icons/WebTuitor_Logo2.png\"\r\n      alt=\"company log\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\"\r\n    aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse \" id=\"navbarNavAltMarkup\">\r\n    <div class=\"navbar-nav ml-auto\">\r\n      <a [routerLink]=\"['/home']\" routerLinkActive=\"Active\" class=\"nav-link mr-4\">\r\n        Home</a>\r\n      <div class=\"dropdown\">\r\n        <a href=\"\" [routerLink]=\"['/quick/howtos']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggl\"\r\n          data-toggle=\"dropdown\">How-To</a>\r\n        <!-- <span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul> -->\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/learn/courses']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggl\"\r\n          data-toggle=\"dropdown\">Courses </a>\r\n        <!-- <span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul> -->\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/read/get-an-ebook']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggl\"\r\n          data-toggle=\"dropdown\">eBooks </a>\r\n        <!-- <span class=\"caret\"></span> -->\r\n        <!-- <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul> -->\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/guidance/find-a-mentor']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggl\">\r\n          Find A Mentor </a>\r\n      </div>\r\n      <a [routerLink]=\"['/us/about']\" routerLinkActive=\"Active\" class=\"nav-link mr-4\">\r\n        About</a>\r\n    </div>\r\n  </div>\r\n</nav>\r\n<hr class=\"m-0 p-0\">\r\n"
+module.exports = "<!-- top search button -->\r\n\r\n<div id=\"top-search-box\" class=\"card-body bg-light\">\r\n  <div class=\"input-group \">\r\n    <a class=\"d-none d-lg-block btn btn-xs btn-outline-light mr-4\">Learning is a spice of life!</a>\r\n    <input type=\"text\" class=\"form-control pl-4\" placeholder=\"Search WebTuitor...\">\r\n    <span class=\"input-group-append m\">\r\n      <button id=\"search-go\" class=\"btn btn-danger\" type=\"button\">Go!</button>\r\n    </span>\r\n    <a href=\"#/ms/login\" *ngIf=\"!authService.isAuthenticated\" class=\"nav-link ml-auto btn btn-xs btn-outline-light\">\r\n      Sign In</a>\r\n    <div class=\"dropdown show\">\r\n      <a href=\"#/ms/profile\"> <button class=\"btn btn-xs btn-outline-light dropdown-toggle\" type=\"button\"\r\n          id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          My Profile\r\n        </button></a>\r\n      <div id=\"dropdownMenu\" class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">\r\n        <a href=\"#/ms/profile\" class=\"dropdown-item\">Profile</a>\r\n        <a href=\"#/ms/logout\" class=\"dropdown-item\">Logout</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- </div> -->\r\n\r\n<!-- navigation / menu -->\r\n<nav class=\"navbar navbar-expand-lg sticky-op navbar-light shadow\">\r\n  <a class=\"navbar-brand img-fluid p-0\" href=\"/\"><img width=\"100\" height=\"40\" src=\"assets/icons/WebTuitor_Logo2.png\"\r\n      alt=\"company log\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\"\r\n    aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse \" id=\"navbarNavAltMarkup\">\r\n    <div class=\"navbar-nav ml-auto\">\r\n      <a [routerLink]=\"['/home']\" routerLinkActive=\"Active\" class=\"nav-link mr-4\">\r\n        Home</a>\r\n      <div class=\"dropdown\">\r\n        <a href=\"\" [routerLink]=\"['/quick/howtos']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggl\"\r\n          data-toggle=\"dropdown\">How-To</a>\r\n        <!-- <span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul> -->\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/learn/courses']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggl\"\r\n          data-toggle=\"dropdown\">Courses </a>\r\n        <!-- <span class=\"caret\"></span>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul> -->\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/read/get-an-ebook']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggl\"\r\n          data-toggle=\"dropdown\">eBooks </a>\r\n        <!-- <span class=\"caret\"></span> -->\r\n        <!-- <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\">Design Illustration</a></li>\r\n          <li><a href=\"#\">Code</a></li>\r\n          <li><a href=\"#\">Web Design</a></li>\r\n          <li><a href=\"#\">Computer Skills</a></li>\r\n          <li><a href=\"#\">Microsoft Excel</a></li>\r\n        </ul> -->\r\n      </div>\r\n      <div class=\"dropdown\">\r\n        <a [routerLink]=\"['/guidance/find-a-mentor']\" routerLinkActive=\"Active\" class=\"nav-link dropdown-toggl\">\r\n          Find A Mentor </a>\r\n      </div>\r\n      <a [routerLink]=\"['/us/about']\" routerLinkActive=\"Active\" class=\"nav-link mr-4\">\r\n        About</a>\r\n    </div>\r\n  </div>\r\n</nav>\r\n<hr class=\"m-0 p-0\">\r\n"
 
 /***/ }),
 
@@ -5044,15 +5052,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_user_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/user/auth.service */ "./src/app/user/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.es5.js");
+/* harmony import */ var src_app_user_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/user/auth.service */ "./src/app/user/auth.service.ts");
+
+
 
 
 
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent(authService) {
+    function NavbarComponent(authService, cookieService, router) {
         this.authService = authService;
+        this.cookieService = cookieService;
+        this.router = router;
+        this.checkCookie = this.cookieService.check('currentUser');
     }
     NavbarComponent.prototype.ngOnInit = function () {
+        if (this.checkCookie) {
+            this.currentUser = this.cookieService.get('currentUser');
+            this.authService.loginUser(JSON.parse(this.currentUser).userName, JSON.parse(this.currentUser).password);
+        }
+    };
+    NavbarComponent.prototype.logout = function (state) {
+        this.authService.checkAuthentication(state);
+        this.cookieService.deleteAll('/', 'localhost');
+        this.router.navigate(['auth/user/login']);
+        window.scrollTo(0, 0);
     };
     NavbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -5060,7 +5085,7 @@ var NavbarComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/layouts/navbar/navbar.component.html"),
             styles: [__webpack_require__(/*! ./navbar.component.css */ "./src/app/layouts/navbar/navbar.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_user_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_user_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"], ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
@@ -5430,12 +5455,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
 
 
 var AuthService = /** @class */ (function () {
-    function AuthService() {
+    function AuthService(httpClient) {
+        this.httpClient = httpClient;
+        this.getUrl = 'http://localhost:8080/api/auth/login';
+        this.isAuthenticated = false;
     }
     AuthService.prototype.loginUser = function (userName, password) {
+        this.httpClient.get(this.getUrl + "/" + userName + "/" + password).subscribe(function (response) { return console.log(response); });
         this.currentUser = {
             id: 1,
             firstName: '',
@@ -5444,9 +5475,10 @@ var AuthService = /** @class */ (function () {
             password: password,
             confirmPassword: password
         };
+        this.checkAuthentication(true);
     };
-    AuthService.prototype.isAuthenticated = function () {
-        return !!this.currentUser;
+    AuthService.prototype.checkAuthentication = function (state) {
+        this.isAuthenticated = state;
     };
     AuthService.prototype.updateCurrentUser = function (firstName, lastName, userName, password) {
         this.currentUser.firstName = firstName;
@@ -5455,7 +5487,8 @@ var AuthService = /** @class */ (function () {
         this.currentUser.password = password;
     };
     AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], AuthService);
     return AuthService;
 }());
@@ -5823,7 +5856,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\My Code\google\new-webtuitor\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\johnd\Downloads\m_codes\webtuitor-ng\src\main.ts */"./src/main.ts");
 
 
 /***/ })

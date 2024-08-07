@@ -1,5 +1,46 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["src-app-user-user-module"],{
 
+/***/ "./src/app/user/login/login-route-activator.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/user/login/login-route-activator.service.ts ***!
+  \*************************************************************/
+/*! exports provided: LoginRouteActivator */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginRouteActivator", function() { return LoginRouteActivator; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../auth.service */ "./src/app/user/auth.service.ts");
+
+// import { Route } from '@angular/compiler/src/core';
+
+
+
+var LoginRouteActivator = /** @class */ (function () {
+    function LoginRouteActivator(router, authService) {
+        this.router = router;
+        this.authService = authService;
+    }
+    LoginRouteActivator.prototype.canActivate = function () {
+        var authenticated = this.authService.isAuthenticated;
+        if (authenticated)
+            this.router.navigate(['home']);
+        return !authenticated;
+    };
+    LoginRouteActivator = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
+    ], LoginRouteActivator);
+    return LoginRouteActivator;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/user/login/login.component.css":
 /*!************************************************!*\
   !*** ./src/app/user/login/login.component.css ***!
@@ -36,17 +77,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../auth.service */ "./src/app/user/auth.service.ts");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.es5.js");
+
 
 
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(route, authservice) {
+    function LoginComponent(route, authservice, cookieService) {
         this.route = route;
         this.authservice = authservice;
+        this.cookieService = cookieService;
     }
     LoginComponent.prototype.login = function (formValues) {
+        var domain = 'localhost';
+        var path = '/';
+        var secure = true;
+        var oldDate = new Date();
+        var expiry = new Date();
+        expiry.setTime(oldDate.getTime() + (30 * 60 * 1000));
+        // expiry.setDate(expiry.getDate() + 1);
         this.authservice.loginUser(formValues.userName, formValues.password);
+        this.cookieService.set('currentUser', JSON.stringify(this.authservice.currentUser), expiry, path, domain, secure, 'None');
+        this.cookieService.set('token', JSON.stringify(this.authservice.currentUser.password), expiry, path, domain, secure, 'None');
         this.route.navigate(['/home']);
     };
     LoginComponent.prototype.cancel = function () {
@@ -57,7 +110,8 @@ var LoginComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/user/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/user/login/login.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+            ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -84,7 +138,7 @@ module.exports = "    em {\r\n      float: right;\r\n      color: #e05c65;\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container min-vh-100\">\r\n  <h1 class=\"m-4\">Profile</h1>\r\n  <hr>\r\n  <div class=\"col-lg-4 col-xs-6 m-md-5\">\r\n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"saveProfile(profileForm.value)\" autocomplete=\"off\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"firstName\">First Name</label>\r\n        <em *ngIf=\"firstName?.invalid && (firstName.touched ||\r\n          mouseoverLogin) \">required</em>\r\n        <input required formControlName=\"firstName\" name=\"firstName\" id=\"firstName\" type=\"text\" class=\"form-control\"\r\n          placeholder=\"First Name...\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"lastName\">Last Name</label>\r\n        <em *ngIf=\"lastName?.invalid && (lastName.touched ||\r\n          mouseoverLogin) \">required</em>\r\n        <input required formControlName=\"lastName\" name=\"lastName\" id=\"lastName\" type=\"text\" class=\"form-control\"\r\n          placeholder=\"Last Name...\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"userName\">User Name:</label>\r\n        <em *ngIf=\"userName?.invalid && (userName.touched ||\r\n        mouseoverLogin) \">required</em>\r\n        <input required formControlName=\"userName\" name=\"userName\" id=\"userName\" type=\"text\" class=\"form-control\"\r\n          placeholder=\"User Name...\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password:</label>\r\n        <em *ngIf=\"password?.invalid && (password.touched || \r\n        mouseoverLogin)\">required</em>\r\n        <input required formControlName=\"password\" name=\"password\" id=\"password\" type=\"password\" class=\"form-control\"\r\n          placeholder=\"Password...\" />\r\n      </div>\r\n      <span (mouseenter)=\"mouseoverLogin=true\" (mouseleave)=\"mouseoverLogin=false\">\r\n        <button type=\"submit\" [disabled]=\"profileForm.invalid\" class=\"btn btn-outline-primary\">Save</button>\r\n      </span>\r\n      <button (click)=\"cancelEdit()\" type=\"button\" class=\"btn btn-outline-danger ml-1\">Cancel</button>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"container min-vh-100\">\r\n  <h1 class=\"m-4\">Profile</h1>\r\n  <hr>\r\n  <div class=\"col-lg-4 col-xs-6 m-md-5\">\r\n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"saveProfile(profileForm.value)\" autocomplete=\"off\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"firstName\">First Name</label>\r\n        <em *ngIf=\"firstName?.invalid && (firstName.touched ||\r\n          mouseoverLogin) \">required</em>\r\n        <input required formControlName=\"firstName\" name=\"firstName\" id=\"firstName\" type=\"text\" class=\"form-control\"\r\n          placeholder=\"First Name...\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"lastName\">Last Name</label>\r\n        <em *ngIf=\"lastName?.invalid && (lastName.touched ||\r\n          mouseoverLogin) \">required</em>\r\n        <input required formControlName=\"lastName\" name=\"lastName\" id=\"lastName\" type=\"text\" class=\"form-control\"\r\n          placeholder=\"Last Name......\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"userName\">User Name:</label>\r\n        <em *ngIf=\"userName?.invalid && (userName.touched ||\r\n        mouseoverLogin) \">required</em>\r\n        <input required formControlName=\"userName\" name=\"userName\" id=\"userName\" type=\"text\" class=\"form-control\"\r\n          placeholder=\"User Name...\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password:</label>\r\n        <em *ngIf=\"password?.invalid && (password.touched || \r\n        mouseoverLogin)\">required</em>\r\n        <input required formControlName=\"password\" name=\"password\" id=\"password\" type=\"password\" class=\"form-control\"\r\n          placeholder=\"Password...\" />\r\n      </div>\r\n      <span (mouseenter)=\"mouseoverLogin=true\" (mouseleave)=\"mouseoverLogin=false\">\r\n        <button type=\"submit\" [disabled]=\"profileForm.invalid\" class=\"btn btn-outline-primary\">Save</button>\r\n      </span>\r\n      <button (click)=\"cancelEdit()\" type=\"button\" class=\"btn btn-outline-danger ml-1\">Cancel</button>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -102,33 +156,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../auth.service */ "./src/app/user/auth.service.ts");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.es5.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../auth.service */ "./src/app/user/auth.service.ts");
+
 
 
 
 
 
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(router, authService) {
+    function ProfileComponent(router, authService, cookieService) {
         this.router = router;
         this.authService = authService;
+        this.cookieService = cookieService;
     }
     ProfileComponent.prototype.ngOnInit = function () {
-        this.firstName = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.firstName, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
-        this.lastName = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.lastName, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
-        this.userName = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.userName, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
-        this.password = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.password, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
-        // this.confirmPassword = new FormControl('', Validators.required)
+        // this.firstName = new FormControl(this.authService.currentUser.firstName, Validators.required)
+        // this.lastName = new FormControl(this.authService.currentUser.lastName, Validators.required)
+        // this.userName = new FormControl(this.authService.currentUser.userName, Validators.required)
+        // this.password = new FormControl(this.authService.currentUser.password, Validators.required)
+        // // this.confirmPassword = new FormControl('', Validators.required)
+        //   ***************************************************
+        //   fills profile form with current user details
+        //   ***************************************************
         this.profileForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
-            firstName: this.firstName,
-            lastName: this.lastName,
-            userName: this.userName,
-            password: this.password,
-            confirmPassword: this.password
+            firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.firstName, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.lastName, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            userName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.userName, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.password, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            confirmPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.authService.currentUser.password, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
         });
     };
+    // **************************************************
+    // save profile details from profile form
+    // *************************************************
     ProfileComponent.prototype.saveProfile = function (formValues) {
-        console.log(formValues);
+        // console.log(formValues)
+        // let domain = 'localhost';
+        var path = '/';
+        var secure = true;
+        var oldDate = new Date();
+        var expiry = new Date();
+        expiry.setTime(oldDate.getTime() + (30 * 60 * 1000));
+        this.cookieService.set('currentUser', JSON.stringify(this.authService.currentUser), expiry, path, '', secure, 'None');
+        this.cookieService.set('token', JSON.stringify(this.authService.currentUser.password), expiry, path, '', secure, 'None');
         this.authService.updateCurrentUser(formValues.firstName, formValues.lastName, formValues.userName, formValues.password);
         this.router.navigate(['/home']);
         window.scrollTo(0, 0);
@@ -142,7 +213,7 @@ var ProfileComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./profile.component.html */ "./src/app/user/profile/profile.component.html"),
             styles: [__webpack_require__(/*! ./profile.component.css */ "./src/app/user/profile/profile.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"], ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
@@ -169,6 +240,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./login/login.component */ "./src/app/user/login/login.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/user/profile/profile.component.ts");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.es5.js");
+/* harmony import */ var _login_login_route_activator_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./login/login-route-activator.service */ "./src/app/user/login/login-route-activator.service.ts");
+
+
 
 
 
@@ -192,7 +267,8 @@ var UserModule = /** @class */ (function () {
                 _login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"],
                 _profile_profile_component__WEBPACK_IMPORTED_MODULE_7__["ProfileComponent"]
             ],
-            providers: []
+            providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_8__["CookieService"], _login_login_route_activator_service__WEBPACK_IMPORTED_MODULE_9__["LoginRouteActivator"]
+            ]
         })
     ], UserModule);
     return UserModule;
@@ -212,13 +288,15 @@ var UserModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userRoutes", function() { return userRoutes; });
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./login/login.component */ "./src/app/user/login/login.component.ts");
-/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/user/profile/profile.component.ts");
+/* harmony import */ var _login_login_route_activator_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./login/login-route-activator.service */ "./src/app/user/login/login-route-activator.service.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login/login.component */ "./src/app/user/login/login.component.ts");
+/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/user/profile/profile.component.ts");
+
 
 
 var userRoutes = [
-    { path: 'user/login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_0__["LoginComponent"] },
-    { path: 'user/profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_1__["ProfileComponent"] }
+    { path: 'user/login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_1__["LoginComponent"], canActivate: [_login_login_route_activator_service__WEBPACK_IMPORTED_MODULE_0__["LoginRouteActivator"]] },
+    { path: 'user/profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_2__["ProfileComponent"] }
 ];
 
 
