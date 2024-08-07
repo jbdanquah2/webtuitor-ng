@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "webtuitor2"
+  "defaultProject": "webtuitor2",
+  "cli": {
+    "analytics": false
+  }
 }
