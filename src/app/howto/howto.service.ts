@@ -1,21 +1,21 @@
-import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class HowtoService {
     getHowtos() {
-        let subject = new Subject()
+        const subject = new Subject();
         setTimeout(() => {
             subject.next(Howtos);
             subject.complete();
-        }, 10)
+        }, 10);
         return subject;
     }
     getHowto(link: string) {
-        return Howtos.find(howto => howto.link == link)
+        return Howtos.find(howto => howto.link == link);
     }
     getRelatedHowto(id: number) {
-        return Howtos.find(howto => howto.id == id)
+        return Howtos.find(howto => howto.id == id);
     }
 }
 
@@ -29,7 +29,7 @@ const Howtos = [
         published: '20th Oct, 2020',
         created_by: 'Simons Gyabeng',
         totalTime: '2 hours',
-        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
+        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
         Illum maiores cum dolorum error sit odit.`,
         content: '',
         comments: [
@@ -37,24 +37,24 @@ const Howtos = [
                 id: 1,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kofi Yeboah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`,
                 subcomments: [
                     {
                         id: 1,
                         image: '../../../assets/img/passport-2.jpg',
                         name: 'Kwame Boateng',
-                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                         fringilla. Donec lacinia congue felis in faucibus`
                     },
                     {
                         id: 2,
                         image: '../../../assets/img/passport-2.jpg',
                         name: 'Sarah Osei',
-                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                        comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                         fringilla. Donec lacinia congue felis in faucibus`
                     }
                 ]
@@ -63,24 +63,24 @@ const Howtos = [
                 id: 2,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kwame Boateng',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 3,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Sarah Osei',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 4,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Enoch Duah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             }
         ]
@@ -94,7 +94,7 @@ const Howtos = [
         related: 1,
         created_by: 'Simons Gyabeng',
         totalTime: '4 hours',
-        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
+        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
         Illum maiores cum dolorum error sit odit.`,
         content: '',
         comments: [
@@ -102,32 +102,32 @@ const Howtos = [
                 id: 1,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kofi Yeboah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 2,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kwame Boateng',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 3,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Sarah Osei',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 4,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Enoch Duah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             }
         ]
@@ -141,7 +141,7 @@ const Howtos = [
         related: 1,
         created_by: 'Simons Gyabeng',
         totalTime: '3.5 hours',
-        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
+        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
         Illum maiores cum dolorum error sit odit.`,
         content: '',
         comments: [
@@ -149,32 +149,32 @@ const Howtos = [
                 id: 1,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kofi Yeboah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 2,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kwame Boateng',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 3,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Sarah Osei',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 4,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Enoch Duah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             }
         ]
@@ -188,7 +188,7 @@ const Howtos = [
         related: 8,
         created_by: 'Simons Gyabeng',
         totalTime: '2.5 hours',
-        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
+        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
      Illum maiores cum dolorum error sit odit.`,
         content: '',
         comments: [
@@ -196,32 +196,32 @@ const Howtos = [
                 id: 1,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kofi Yeboah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 2,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kwame Boateng',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 3,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Sarah Osei',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 4,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Enoch Duah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             }
         ]
@@ -235,7 +235,7 @@ const Howtos = [
         related: 3,
         created_by: 'Simons Gyabeng',
         totalTime: '2 hours',
-        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
+        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
         Illum maiores cum dolorum error sit odit.`,
         content: '',
         comments: [
@@ -243,32 +243,32 @@ const Howtos = [
                 id: 1,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kofi Yeboah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 2,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kwame Boateng',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 3,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Sarah Osei',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 4,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Enoch Duah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             }
         ]
@@ -282,7 +282,7 @@ const Howtos = [
         related: 1,
         created_by: 'Simons Gyabeng',
         totalTime: '4 hours',
-        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
+        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
         Illum maiores cum dolorum error sit odit.`,
         content: '',
         comments: [
@@ -290,32 +290,32 @@ const Howtos = [
                 id: 1,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kofi Yeboah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 2,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kwame Boateng',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 3,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Sarah Osei',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 4,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Enoch Duah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             }
         ]
@@ -329,7 +329,7 @@ const Howtos = [
         related: 2,
         created_by: 'Simons Gyabeng',
         totalTime: '3.5 hours',
-        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
+        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
         Illum maiores cum dolorum error sit odit.`,
         content: '',
         comments: [
@@ -337,32 +337,32 @@ const Howtos = [
                 id: 1,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kofi Yeboah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 2,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kwame Boateng',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 3,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Sarah Osei',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 4,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Enoch Duah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             }
         ]
@@ -376,7 +376,7 @@ const Howtos = [
         related: 4,
         created_by: 'Simons Gyabeng',
         totalTime: '2.5 hours',
-        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis? 
+        description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
      Illum maiores cum dolorum error sit odit.`,
         content: '',
         comments: [
@@ -384,32 +384,32 @@ const Howtos = [
                 id: 1,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kofi Yeboah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 2,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Kwame Boateng',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 3,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Sarah Osei',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             },
             {
                 id: 4,
                 image: '../../../assets/img/passport-2.jpg',
                 name: 'Enoch Duah',
-                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
+                comment: `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
                 fringilla. Donec lacinia congue felis in faucibus`
             }
         ]
