@@ -5,8 +5,8 @@ import { Component } from "@angular/core";
     templateUrl: 'footer.component.html',
     styles: [`
         footer {
-            // position: relative;
-            // top: 70vh!important;
+            /*position: relative;*/
+            /*top: 70vh!important;*/
         }
     `]
 })
