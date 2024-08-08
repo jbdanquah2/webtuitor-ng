@@ -1,4 +1,3 @@
-import { Route } from '@angular/compiler/src/core';
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Router, CanActivate } from '@angular/router';
 import { CourseService } from '../course.service';
