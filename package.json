@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.2.10",
+    "@angular/animations": "~15.2.10",
     "@angular/cli": "~15.2.11",
     "@angular/common": "~15.2.10",
     "@angular/compiler": "~15.2.10",
@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "heroku-ssl-redirect": "^0.1.1",
     "jquery": "^3.5.1",
+    "nave": "^3.5.2",
     "ngx-cookie-service": "^2.4.0",
     "path": "^0.12.7",
     "popper.js": "^1.16.1",
