@@ -103,6 +103,9 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     },
@@ -135,7 +138,6 @@
       }
     }
   },
-  "defaultProject": "webtuitor2",
   "cli": {
     "analytics": false
   }
