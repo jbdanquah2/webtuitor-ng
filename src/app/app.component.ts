@@ -5,7 +5,7 @@ import { CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-root',
   template: `
-    <title>WebTuitor</title>
+    <title>11WebTuitor</title>
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
@@ -19,5 +19,5 @@ export class AppComponent {
   public setTitle( newTitle: string) {
     this.titleService.setTitle(newTitle);
   }
-  
+
 }
