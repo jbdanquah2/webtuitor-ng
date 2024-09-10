@@ -9,6 +9,6 @@ export class MentorPageResolver implements Resolve<any> {
 
     }
     resolve(route:ActivatedRouteSnapshot) {
-        return this.mentorService.getMentor(route.params['login']).pipe(map(mentor => mentor))
+        return this.mentorService.getMentor(route.params['username']).pipe(map(mentor => mentor))
     }
 }

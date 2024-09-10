@@ -6,5 +6,5 @@ import { MentorComponent } from './mentor.component';
 
 export const mentorRoutes: Routes = [
     { path: 'find-a-mentor', component: MentorComponent, resolve: {mentors: MentorResolver }},
-    { path: 'find-a-mentor/:login', component: MentorPageComponent, resolve: {mentor: MentorPageResolver }},
+    { path: 'find-a-mentor/:username', component: MentorPageComponent, resolve: {mentor: MentorPageResolver }},
 ];
