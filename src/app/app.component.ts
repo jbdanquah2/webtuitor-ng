@@ -5,7 +5,7 @@ import { CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-root',
   template: `
-    <title>23WebTuitor</title>
+    <title>WebTuitor</title>
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
