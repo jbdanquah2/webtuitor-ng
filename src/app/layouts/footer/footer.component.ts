@@ -12,4 +12,13 @@ import { Component } from "@angular/core";
 })
 export class FooterComponent {
 
+  constructor() {
+  }
+
+
+  get copyRightText() {
+    return `Copyright @ WebTuitor ${new Date().getFullYear()}`;
+  }
+
+
 }

@@ -5,6 +5,7 @@
 
 /tmp
 /out-tsc
+rest-api/node_modules
 
 
 # dependencies
