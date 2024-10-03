@@ -10,54 +10,54 @@ import { AuthService } from "../auth.service";
 })
 export class ProfileComponent implements OnInit {
     profileForm: FormGroup
-    firstName: FormControl
-    lastName: FormControl
-    userName: FormControl
+    name: FormControl
+    email: FormControl
     password: FormControl
     confirmPassword: FormControl
     mouseoverLogin
 
-    constructor(private router: Router, private authService: AuthService, private cookieService: CookieService) {
+  private jwt_token: string;
+
+    constructor(
+      private router: Router,
+      private authService: AuthService,
+      private cookieService: CookieService) {
 
     }
     ngOnInit() {
-        // this.firstName = new FormControl(this.authService.currentUser.firstName, Validators.required)
-        // this.lastName = new FormControl(this.authService.currentUser.lastName, Validators.required)
-        // this.userName = new FormControl(this.authService.currentUser.userName, Validators.required)
-        // this.password = new FormControl(this.authService.currentUser.password, Validators.required)
-        // // this.confirmPassword = new FormControl('', Validators.required)
-//   ***************************************************
-//   fills profile form with current user details
-//   ***************************************************
+
+      const checkCookie = this.cookieService.check('current_user')
+
+      if (checkCookie) {
+        const cookie = this.cookieService.get('current_user');
+
+        this.jwt_token = JSON.parse(cookie).access_token;
+
+      }
+
         this.profileForm = new FormGroup({
-            firstName: new FormControl(this.authService.currentUser.firstName, Validators.required),
-            lastName: new FormControl(this.authService.currentUser.lastName, Validators.required),
-            userName: new FormControl(this.authService.currentUser.userName, Validators.required),
-            password: new FormControl(this.authService.currentUser.password, Validators.required),
-            confirmPassword: new FormControl(this.authService.currentUser.password, Validators.required)
+            name: new FormControl(this.authService.currentUser.name, Validators.required),
+            email: new FormControl(this.authService.currentUser.email, Validators.required),
+            password: new FormControl("", Validators.required),
+            // confirmPassword: new FormControl("", Validators.required)
         })
     }
 
-// **************************************************
-// save profile details from profile form
-// *************************************************
-    saveProfile(formValues) {
-        // console.log(formValues)
-        // let domain = 'localhost';
-        let path = '/';
-        let secure = true;
-        let oldDate = new Date()
-        let expiry = new Date();
+    async saveProfile(formValues: any) {
 
-        expiry.setTime(oldDate.getTime() + (30 * 60 * 1000))
+        const token = await this.authService.updateCurrentUser(formValues.name, formValues.email, formValues.password, this.jwt_token);
 
-        this.cookieService.set('currentUser', JSON.stringify(this.authService.currentUser), expiry, path, '', secure, 'None');
-        this.cookieService.set('token', JSON.stringify(this.authService.currentUser.password), expiry, path, '', secure, 'None');
+      if (token) {
+        console.log('Profile saved successfully',   token);
+        this.cookieService.set('current_user', JSON.stringify({access_token: token}), this.authService.expires, '/', '', this.authService.isSecure);
 
-        this.authService.updateCurrentUser(formValues.firstName, formValues.lastName,
-            formValues.userName, formValues.password)
-        this.router.navigate(['/home'])
-        window.scrollTo(0, 0)
+        await this.router.navigate(['/home']);
+
+        } else {
+            console.log('Profile save failed', token);
+        }
+
+        window.scrollTo(0, 0);
     }
 
     cancelEdit() {

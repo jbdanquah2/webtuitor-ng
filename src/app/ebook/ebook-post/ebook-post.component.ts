@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { EbookService } from '../ebook.service';
 import { ActivatedRoute } from "@angular/router";
-import { StringService } from "src/app/untility/string.service";
+import { StringService } from "src/app/services/string.service";
 
 @Component({
     selector:'ebook-post',
@@ -13,7 +13,7 @@ import { StringService } from "src/app/untility/string.service";
 export class EbookPostComponent {
     ebook:any
     @Input() strService:any
-    constructor(private ebookService: EbookService, private route: ActivatedRoute, 
+    constructor(private ebookService: EbookService, private route: ActivatedRoute,
         private stringService: StringService) {
 
     }

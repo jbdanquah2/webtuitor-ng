@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { HowtoService } from '../howto.service';
 import { ActivatedRoute, Router } from "@angular/router";
-import { StringService } from "src/app/untility/string.service";
+import { StringService } from "src/app/services/string.service";
 
 @Component({
     selector:'howto-post',

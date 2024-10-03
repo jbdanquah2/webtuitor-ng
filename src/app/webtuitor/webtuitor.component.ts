@@ -1,11 +1,11 @@
 import { Component, Input } from "@angular/core";
-import { StringService } from "src/app/untility/string.service";
+import { StringService } from "src/app/services/string.service";
 
 @Component({
     selector: 'webtuitor-home',
     styleUrls:['webtuitor.component.css'],
     templateUrl:'webtuitor.component.html',
-    
+
 })
 export class WebtuitorComponent {
    @Input() title ='Webtuitor | Home';

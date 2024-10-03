@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
 import { CookieService } from "ngx-cookie-service";
+import {LoadingService} from '../../services/loading.service';
 
 @Component({
     templateUrl: 'login.component.html',
@@ -9,30 +10,46 @@ import { CookieService } from "ngx-cookie-service";
 
 })
 export class LoginComponent {
+
+
     mouseoverLogin
+
     userName: any
+
     password:any
-    cookieValue: any
-    constructor(private route: Router, private authservice: AuthService,
-        private cookieService:CookieService ) {
+
+    constructor(
+      private route: Router,
+      private authservice: AuthService,
+      private cookieService:CookieService,
+      private loadingService: LoadingService) {
     }
 
 
-    login(formValues) {
-        let domain = 'localhost';
-        let path ='/';
-        let secure = true;
-        let oldDate = new Date()
-        let expiry = new Date();
+    async login(formValues: any) {
 
-        expiry.setTime(oldDate.getTime() + (30 * 60 * 1000))
-        // expiry.setDate(expiry.getDate() + 1);
+      this.loadingService.startLoading();
 
-        this.authservice.loginUser(formValues.userName, formValues.password);
-        this.cookieService.set('currentUser', JSON.stringify(this.authservice.currentUser), expiry, path, domain,secure,'None');
-        this.cookieService.set('token', JSON.stringify(this.authservice.currentUser.password), expiry, path, domain,secure,'None');
+       const token = await this.authservice.loginUser(formValues.userName, formValues.password);
 
-        this.route.navigate(['/home'])
+        if (token) {
+            console.log('Login successful, setting cookie, ');
+
+            this.cookieService.set('current_user', JSON.stringify({access_token: token}), this.authservice.expires, '/', '', this.authservice.isSecure);
+
+            await this.route.navigate(['/home']);
+
+        } else {
+
+          console.log('Login failed, deleting cookie, ');
+
+          this.cookieService.delete('current_user', '/', '');
+
+          await this.route.navigate(['/auth/user/login']);
+
+        }
+
+        this.loadingService.stopLoading();
 
     }
 

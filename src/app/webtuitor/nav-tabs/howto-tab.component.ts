@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { HowtoService } from 'src/app/howto/howto.service';
-import { StringService } from 'src/app/untility/string.service';
+import { StringService } from 'src/app/services/string.service';
 
 @Component({
     selector: 'howto-tab',
@@ -28,8 +28,8 @@ export class HowtoTabComponent {
     constructor(private howtoService:HowtoService, private stringService:StringService ) {
     }
     ngOnInit() {
-        this.howtoService.getHowtos().subscribe( howtos => this.howtos = howtos) ;        
+        this.howtoService.getHowtos().subscribe( howtos => this.howtos = howtos) ;
         this.concStr = this.stringService;
     }
-   
+
 }

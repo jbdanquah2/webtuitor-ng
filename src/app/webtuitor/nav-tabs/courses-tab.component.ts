@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { StringService } from "src/app/untility/string.service";
+import { StringService } from "src/app/services/string.service";
 import { CourseService } from '../../course/course.service';
 
 @Component({
@@ -31,12 +31,12 @@ export class CourseTabComponent {
         this.courses = this.courseService.getCourses();
         this.concStr = this.stringService
     }
-    
+
     trimDesc(s,n) {
         var cut= s.indexOf(' ', n);
         if(cut== -1) return s;
         return s.substring(0, cut)+'...'
     }
-    
+
 
 }

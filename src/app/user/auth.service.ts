@@ -1,44 +1,129 @@
 import { Injectable } from "@angular/core";
 import { IUser } from "./user.model";
-import { HttpClient } from "@angular/common/http";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
+import {jwtDecode} from 'jwt-decode';
+import {environment} from '../../environments/environment';
 
-@Injectable() 
+interface LoginResponse {
+  message: string
+  status: number
+  access_token: string
+}
+@Injectable()
 export class AuthService {
-    private getUrl = 'http://localhost:8080/api/auth/login'
+
+    milliSecondsInADay : number = 24 * 60 * 60 * 1000;
+
+    isSecure = true;
+
+    allowedDays = 30;
+
+    expires = new Date(Date.now() + this.allowedDays * this.milliSecondsInADay);
+
     currentUser:IUser
-    isAuthenticated = false
 
-    constructor(private httpClient: HttpClient) {
+    isAuthenticated = false;
+
+    jwtToken: string;
+
+    constructor(
+      private httpClient: HttpClient
+    ) {
 
     }
 
-    loginUser(userName: string, password:string) {
-        this.httpClient.get(`${this.getUrl}/${userName}/${password}`).subscribe(response => console.log(response));
-        
-        
-        
-        this.currentUser = {
-            id: 1,
-            firstName: '',
-            lastName: '',
-            userName: userName,
-            password: password,
-            confirmPassword: password
-        }
-        this.checkAuthentication(true)
+    async loginUser(email: string, password:string) {
+
+     try {
+
+       const body = {
+         email: email,
+         password: password
+       }
+
+       const login = await firstValueFrom(this.httpClient.post<LoginResponse>(environment.api.login, body))
+
+       if (login?.status === 200) {
+
+         console.log('Login successful; access_token::', login.access_token)
+
+         const decodedToken: any = jwtDecode(login.access_token);
+
+         this.currentUser = {
+           id: decodedToken.id,
+           name: decodedToken.name,
+           email: decodedToken.email,
+         }
+
+         this.setAuthentication(true);
+
+         this.jwtToken = login.access_token;
+
+         return login.access_token;
+
+       } else {
+
+         console.log('Login failed');
+
+         this.setAuthentication(false);
+
+         return null
+       }
+
+     } catch (error) {
+
+        console.log('Error logging in user', error);
+
+        return null;
+     }
     }
-  
-    checkAuthentication(state) {
+
+    setAuthentication(state) {
         this.isAuthenticated = state;
     }
-    
 
-    updateCurrentUser(firstName:string, lastName:string, userName:string, password:string){
-        
-        this.currentUser.firstName = firstName
-        this.currentUser.lastName = lastName
-        this.currentUser.userName = userName
-        this.currentUser.password = password
+
+    async updateCurrentUser(name: string, userName:string, password:string, access_token: string) {
+
+      this.jwtToken = access_token;
+
+      console.log('#jwt', this.jwtToken)
+
+      try {
+
+        const headers = new HttpHeaders({
+          'Authorization': `Bearer ${this.jwtToken}`,
+          'Content-Type': 'application/json'
+        })
+
+        this.currentUser.name = name
+        this.currentUser.email = userName
+        this.currentUser.password = password || this.currentUser.password
+
+        const update = await firstValueFrom(
+          this.httpClient.patch<any>(
+            `${environment.api.updateUser}/${this.currentUser.id}`,
+            this.currentUser,
+         {headers}
+      ))
+
+        if (update?.id) {
+          console.log('User updated successfully');
+
+          return await this.loginUser(this.currentUser.email, password);
+        } else {
+          console.log('User update failed', update);
+          return null;
+        }
+
+      } catch (error) {
+
+        console.log('Error updating user profile', error);
+
+        return null;
+
+      }
 
     }
 }

@@ -1,8 +1,6 @@
 export interface IUser {
     id: number,
-    firstName: string,
-    lastName: string,
-    userName: string,
-    password: string
-    confirmPassword: string
+    name: string,
+    email: string,
+    password?: string
 }

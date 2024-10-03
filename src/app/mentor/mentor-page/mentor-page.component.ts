@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MentorService } from "src/app/mentor/mentor.service";
-import { StringService } from "src/app/untility/string.service";
+import { StringService } from "src/app/services/string.service";
 import { ActivatedRoute, ActivatedRouteSnapshot } from "@angular/router";
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 
@@ -30,13 +30,13 @@ export class MentorPageComponent implements OnInit {
       this.strService = this.stringService
       this.strService.getDateTime();
 
-      this.cTime = document.getElementById('cTime');  
+      this.cTime = document.getElementById('cTime');
     }
 
   }
 
   time() {
-   
+
       let d = new Date();
       let s = d.getSeconds();
       let m = d.getMinutes();
@@ -45,7 +45,7 @@ export class MentorPageComponent implements OnInit {
         // console.log('hiiiiii');
         document.getElementById('cTime').innerHTML = `<small>${h}:${m}:${s}</small>`;
       }
-      
+
   }
 
   sendChat(chatForm) {
@@ -55,7 +55,7 @@ export class MentorPageComponent implements OnInit {
     if (this.mentor != 'undefined' || this.mentor != null || this.mentor != '') {
       p.innerHTML = `${chatForm.chatIn}<br><small class="float-left text-info"> [ ${this.stringService.getDateTime()} | ${this.stringService.time()} ]</small>`;
       document.querySelector('#chat').appendChild(p);
-      
+
     }
 
 

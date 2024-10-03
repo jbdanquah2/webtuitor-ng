@@ -20,14 +20,16 @@ import { CourseRouteActivator } from './course/course-post/course-route-activato
 import { HowtoTabComponent } from './webtuitor/nav-tabs/howto-tab.component';
 import { EbookRouteActivator } from './ebook/ebook-post/ebook-route-activator.service';
 import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.service';
-import { StringService } from './untility/string.service';
+import { StringService } from './services/string.service';
 import { MentorService } from './mentor/mentor.service';
 import { FormsModule } from '@angular/forms';
 import { MentorResolver } from './mentor/mentor-resolver.service';
 import { MentorPageResolver } from './mentor/mentor-page/mentor-page-resolver.service';
 import { AuthService } from './user/auth.service';
 import { CookieService } from 'ngx-cookie-service';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { LoadingComponent } from './shared/loading/loading.component';
+import {LoadingInterceptor} from './interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     CourseTabComponent,
     HowtoTabComponent,
     EbookTabComponent,
-    Error404Component
+    Error404Component,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -49,8 +52,23 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ Title,CourseService, CookieService, HowtoService, EbookService, CourseRouteActivator, EbookRouteActivator, 
-    HowtoRouteActivator, StringService, MentorService, MentorResolver, MentorPageResolver, AuthService],
-  bootstrap: [AppComponent], 
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoadingInterceptor,
+    multi: true
+  },
+    Title,CourseService,
+    CookieService,
+    HowtoService,
+    EbookService,
+    CourseRouteActivator,
+    EbookRouteActivator,
+    HowtoRouteActivator,
+    StringService,
+    MentorService,
+    MentorResolver,
+    MentorPageResolver,
+    AuthService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

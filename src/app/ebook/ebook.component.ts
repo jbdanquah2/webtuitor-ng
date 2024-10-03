@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 import { EbookService } from './ebook.service';
-import { StringService } from "src/app/untility/string.service";
+import { StringService } from "src/app/services/string.service";
 
 @Component({
     selector:'app-ebook',
@@ -16,8 +16,8 @@ export class EbookComponent {
 
     }
     ngOnInit(id){
-        this.ebooks = this.ebookService.getEbooks()  
+        this.ebooks = this.ebookService.getEbooks()
         this.strService = this.stringService
-        window.scrollTo(0,0);  
+        window.scrollTo(0,0);
     }
 }

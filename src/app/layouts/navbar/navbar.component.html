@@ -1,5 +1,3 @@
-<!-- top search button -->
-
 <div id="top-search-box" class="card-body bg-light">
   <div class="input-group ">
     <a class="d-none d-lg-block btn btn-xs btn-outline-light mr-4">Learning is a spice of life!</a>
@@ -7,25 +5,23 @@
     <span class="input-group-append m">
       <button id="search-go" class="btn btn-danger" type="button">Go!</button>
     </span>
-    <a href="#/ms/login" *ngIf="!authService.isAuthenticated" class="nav-link ml-auto btn btn-xs btn-outline-light">
+    <a [routerLink]="['/auth/user/login']" *ngIf="!authService.isAuthenticated" class="nav-link ml-auto btn btn-xs btn-outline-light">
       Sign In</a>
-    <div class="dropdown show">
-      <a href="#/ms/profile"> <button class="btn btn-xs btn-outline-light dropdown-toggle" type="button"
+    <div class="dropdown show" *ngIf="authService.isAuthenticated">
+      <a [routerLink]="['/auth/user/profile']" > <button class="btn btn-xs btn-outline-light dropdown-toggle" type="button"
           id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           My Profile
         </button></a>
       <div id="dropdownMenu" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a href="#/ms/profile" class="dropdown-item">Profile</a>
-        <a href="#/ms/logout" class="dropdown-item">Logout</a>
+        <a [routerLink]="['/auth/user/profile']" class="dropdown-item">Profile</a>
+        <a class="dropdown-item" (click)="logout(false)">Logout</a>
       </div>
     </div>
   </div>
 </div>
-<!-- </div> -->
 
-<!-- navigation / menu -->
 <nav class="navbar navbar-expand-lg sticky-op navbar-light shadow">
-  <a class="navbar-brand img-fluid p-0" href="/"><img width="100" height="40" src="assets/icons/WebTuitor_Logo2.png"
+  <a [routerLink]="['/']" class="navbar-brand img-fluid p-0" ><img width="100" height="40" src="assets/icons/WebTuitor_Logo2.png"
       alt="company log"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,38 +34,14 @@
       <div class="dropdown">
         <a href="" [routerLink]="['/quick/howtos']" routerLinkActive="Active" class="nav-link dropdown-toggl"
           data-toggle="dropdown">How-To</a>
-        <!-- <span class="caret"></span>
-        <ul class="dropdown-menu">
-          <li><a href="#">Design Illustration</a></li>
-          <li><a href="#">Code</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Computer Skills</a></li>
-          <li><a href="#">Microsoft Excel</a></li>
-        </ul> -->
       </div>
       <div class="dropdown">
         <a [routerLink]="['/learn/courses']" routerLinkActive="Active" class="nav-link dropdown-toggl"
           data-toggle="dropdown">Courses </a>
-        <!-- <span class="caret"></span>
-        <ul class="dropdown-menu">
-          <li><a href="#">Design Illustration</a></li>
-          <li><a href="#">Code</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Computer Skills</a></li>
-          <li><a href="#">Microsoft Excel</a></li>
-        </ul> -->
       </div>
       <div class="dropdown">
         <a [routerLink]="['/read/get-an-ebook']" routerLinkActive="Active" class="nav-link dropdown-toggl"
           data-toggle="dropdown">eBooks </a>
-        <!-- <span class="caret"></span> -->
-        <!-- <ul class="dropdown-menu">
-          <li><a href="#">Design Illustration</a></li>
-          <li><a href="#">Code</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Computer Skills</a></li>
-          <li><a href="#">Microsoft Excel</a></li>
-        </ul> -->
       </div>
       <div class="dropdown">
         <a [routerLink]="['/guidance/find-a-mentor']" routerLinkActive="Active" class="nav-link dropdown-toggl">

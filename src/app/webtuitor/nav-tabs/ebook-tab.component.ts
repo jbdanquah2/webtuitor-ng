@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { EbookService } from 'src/app/ebook/ebook.service';
-import { StringService } from "src/app/untility/string.service";
+import { StringService } from "src/app/services/string.service";
 
 @Component({
     selector: 'ebook-tab',
@@ -13,7 +13,7 @@ import { StringService } from "src/app/untility/string.service";
             <p class="card-text">{{concStr.concatString(ebook.description,50)}}</p>
             <button [routerLink]="['/read/get-an-ebook/',ebook.link]" class="btn btn-md btn-outline-info">Get it</button>&nbsp;
             <span class="text-warning" *ngIf="ebook.license">{{ebook.license}}</span>
-            
+
         </div>
         </div>
     </div>`,
@@ -28,5 +28,5 @@ export class EbookTabComponent {
         this.ebooks = this.ebookService.getEbooks();
         this.concStr = this.stringService;
     }
-   
+
 }

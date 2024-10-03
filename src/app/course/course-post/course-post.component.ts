@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { CourseService } from '../course.service';
 import { ActivatedRoute } from "@angular/router";
-import { StringService } from "src/app/untility/string.service";
+import { StringService } from "src/app/services/string.service";
 
 @Component({
     selector:'course-post',
