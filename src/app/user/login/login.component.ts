@@ -30,7 +30,11 @@ export class LoginComponent {
 
       this.loadingService.startLoading();
 
+      console.log('Logging in user: ', formValues);
+
        const token = await this.authservice.loginUser(formValues.userName, formValues.password);
+
+       console.log('#Token: ', token);
 
         if (token) {
             console.log('Login successful, setting cookie, ');
