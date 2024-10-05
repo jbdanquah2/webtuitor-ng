@@ -56,7 +56,7 @@ export class NavbarComponent implements OnInit {
 
         this.authService.setAuthentication(state);
 
-        this.cookieService.deleteAll('/','localhost');
+        this.cookieService.deleteAll('/');
 
         await this.router.navigateByUrl('/home');
 
