@@ -1,6 +1,8 @@
 import {Entity, PrimaryGeneratedColumn, Column, BeforeUpdate, BeforeInsert} from 'typeorm';
-import * as bcrypt from 'bcrypt';
+// import * as bcrypt from 'bcrypt';
 import {Exclude} from 'class-transformer';
+const bcrypt = require('bcryptjs');
+
 
 @Entity()
 export class User {

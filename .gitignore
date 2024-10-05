@@ -10,6 +10,7 @@ rest-api/node_modules
 rest-api/dist
 rest-api/.env
 rest-api/logs
+rest-api/fly.toml
 
 
 # dependencies

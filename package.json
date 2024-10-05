@@ -6,7 +6,7 @@
     "start:dev": "ng serve",
     "start": "node server.js",
     "build": "ng build --configuration production",
-    "server": "cd rest-api && npm run start:dev",
+    "server": "cd rest-api && npm run build && npm run start:dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -44,6 +44,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.11",
     "@angular/language-service": "~15.2.10",
+    "@flydotio/dockerfile": "^0.5.9",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",

@@ -1,11 +1,13 @@
 import { Injectable, UnauthorizedException, Inject } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { LoginUserDto } from './dto/login-user.dto';
-import * as bcrypt from 'bcrypt';
+// import * as bcrypt from 'bcrypt';
 import { JwtPayload } from './jwt-payload.interface';
 import {UsersService} from '../users/users.service';
 import { Logger as WinstonLogger } from 'winston';
 import {WINSTON_MODULE_PROVIDER} from 'nest-winston';
+const bcrypt = require('bcryptjs');
+
 
 
 @Injectable()

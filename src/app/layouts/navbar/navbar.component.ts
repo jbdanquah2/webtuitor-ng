@@ -58,7 +58,7 @@ export class NavbarComponent implements OnInit {
 
         this.cookieService.deleteAll('/','localhost');
 
-        await this.router.navigateByUrl('/auth/user/login');
+        await this.router.navigateByUrl('/home');
 
         window.scrollTo(0,0);
     }

@@ -6,11 +6,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import * as path from 'path';
 import * as process from 'process';
 import {ConfigModule, ConfigService} from "@nestjs/config";
-import {UsersService} from './users/users.service';
 import { EbooksModule } from './ebooks/ebooks.module';
 import { HowtosModule } from './howtos/howtos.module';
 import {AuthModule} from './auth/auth.module';
-import {AuthController} from './auth/controllers/auth.controller';
 
 
 @Module({
