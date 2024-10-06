@@ -6,9 +6,9 @@ export const environment = {
   production: false,
 
   api: {
-    login: "http://localhost:3000/auth/login",
-    createUser: "http://localhost:3000/users",
-    updateUser: "http://localhost:3000/users",
+    login: "https://webtuitor-backend.fly.dev/auth/login",
+    createUser: "https://webtuitor-backend.fly.dev/users",
+    updateUser: "https://webtuitor-backend.fly.dev/users",
   }
 };
 
