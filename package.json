@@ -5,7 +5,7 @@
     "ng": "ng",
     "start:dev": "ng serve",
     "start": "node server.js",
-    "build": "ng build --configuration production",
+    "build": "ng build --configuration=production",
     "server": "cd rest-api && npm run build && npm run start:dev",
     "test": "ng test",
     "lint": "ng lint",
