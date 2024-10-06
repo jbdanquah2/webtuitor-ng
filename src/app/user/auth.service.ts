@@ -33,6 +33,40 @@ export class AuthService {
 
     }
 
+    async createUser(formValues: any) {
+
+      const {name, email, password} = formValues;
+
+      try {
+
+        const body = {
+          name: name,
+          email: email,
+          password: password,
+          role: 'student'
+        }
+
+        const user = await firstValueFrom(this.httpClient.post<any>(environment.api.createUser, body))
+
+        if (user?.id) {
+          console.log('User created successfully');
+
+          return await this.loginUser(email, password);
+
+        } else {
+          console.log('User creation failed', user);
+
+          return null;
+        }
+
+      } catch (error) {
+
+        console.log('Error creating user', error);
+
+        return null;
+      }
+    }
+
     async loginUser(email: string, password:string) {
 
      try {

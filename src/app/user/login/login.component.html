@@ -4,24 +4,21 @@
   <div class="col-lg-4 col-xs-6 m-md-5">
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" novalidate>
       <div class="form-group">
-        <label for="userName">User Name:</label>
-        <em *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName.touched ||
-      mouseoverLogin) ">required</em>
-        <input required (ngModel)="userName" name="userName" id="userName" type="text" class="form-control"
-          placeholder="User Name..." />
+        <label for="email">Email:</label>
+        <em *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName.touched) ">required</em>
+        <input required (ngModel)="email" name="email" id="email" type="text" class="form-control"
+          placeholder="Email..." />
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password.touched || 
-      mouseoverLogin)">required</em>
+        <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password.touched)">required</em>
         <input required (ngModel)="password" name="password" id="password" type="password" class="form-control"
           placeholder="Password..." />
       </div>
-      <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
-        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-outline-primary">Login</button>
-      </span>
+      <button type="submit" [disabled]="loginForm.invalid" class="btn btn-outline-primary">Login</button>
       <button (click)="cancel()" type="button" class="btn btn-outline-danger ml-1">Cancel</button>
     </form>
+    <span>No Account? <a [routerLink]="['/auth/user/signup']">Sign up!</a></span>
   </div>
 
 </div>

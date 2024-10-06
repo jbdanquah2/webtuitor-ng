@@ -12,9 +12,7 @@ import {LoadingService} from '../../services/loading.service';
 export class LoginComponent {
 
 
-    mouseoverLogin
-
-    userName: any
+    email: any
 
     password:any
 
@@ -32,7 +30,7 @@ export class LoginComponent {
 
       console.log('Logging in user: ', formValues);
 
-       const token = await this.authservice.loginUser(formValues.userName, formValues.password);
+       const token = await this.authservice.loginUser(formValues.email, formValues.password);
 
        console.log('#Token: ', token);
 
@@ -58,6 +56,7 @@ export class LoginComponent {
     }
 
     cancel() {
+
         this.route.navigate(['/home']);
     }
 

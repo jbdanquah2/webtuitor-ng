@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProfileComponent } from "./profile/profile.component";
 import { CookieService } from "ngx-cookie-service";
 import { LoginRouteActivator } from "./login/login-route-activator.service";
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
    imports: [
@@ -18,7 +19,9 @@ import { LoginRouteActivator } from "./login/login-route-activator.service";
    ],
    declarations: [
         LoginComponent,
-        ProfileComponent
+        ProfileComponent,
+        SignupComponent,
+
    ],
    providers: [ CookieService, LoginRouteActivator
    ]

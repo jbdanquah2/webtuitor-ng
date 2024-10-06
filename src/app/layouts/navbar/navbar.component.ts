@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { CookieService } from "ngx-cookie-service";
 import { AuthService } from "src/app/user/auth.service";
 import {jwtDecode} from 'jwt-decode';
+import {LoadingService} from '../../services/loading.service';
 
 @Component({
     selector: 'app-navbar',
@@ -18,7 +19,8 @@ export class NavbarComponent implements OnInit {
     constructor(
       public authService: AuthService,
       private cookieService: CookieService,
-      private router: Router) {
+      private router: Router,
+      private loadingService: LoadingService) {
 
     }
     ngOnInit() {
@@ -54,11 +56,17 @@ export class NavbarComponent implements OnInit {
     }
     async logout(state) {
 
-        this.authService.setAuthentication(state);
+        this.loadingService.startLoading();
 
-        this.cookieService.deleteAll('/');
+       setTimeout(async () => {
+         this.authService.setAuthentication(state);
 
-        await this.router.navigateByUrl('/home');
+         this.cookieService.deleteAll('/');
+
+         await this.router.navigateByUrl('/home');
+
+         this.loadingService.stopLoading();
+       }, 1000);
 
         window.scrollTo(0,0);
     }

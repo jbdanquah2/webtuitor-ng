@@ -1,0 +1,32 @@
+<div class="container min-vh-100">
+  <h1 class="m-4">Sign Up</h1>
+  <hr>
+  <div class="col-lg-4 col-xs-6 m-md-5">
+    <form #signupForm="ngForm" (ngSubmit)="signUp(signupForm.value)" autocomplete="off" novalidate>
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <em *ngIf="signupForm.controls.userName?.invalid && (signupForm.controls.userName.touched) ">required</em>
+        <input required (ngModel)="name" name="name" id="name" type="text" class="form-control"
+               placeholder="Full name..." />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <em *ngIf="signupForm.controls.userName?.invalid && (signupForm.controls.userName.touched) ">required</em>
+        <input required (ngModel)="email" name="email" id="email" type="text" class="form-control"
+               placeholder="Email..." />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <em *ngIf="signupForm.controls.password?.invalid && (signupForm.controls.password.touched)">required</em>
+        <input required (ngModel)="password" name="password" id="password" type="password" class="form-control"
+               placeholder="Password..." />
+      </div>
+      <button type="submit" [disabled]="signupForm.invalid" class="btn btn-outline-primary">Submit</button>
+      <button (click)="cancel()" type="button" class="btn btn-outline-danger ml-1">Cancel</button>
+    </form>
+    <span>Have an account? <a [routerLink]="['/auth/user/login']">Sign In!</a></span>
+  </div>
+
+</div>
