@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { howtoRoutes } from "./howto.routes";
 import { HowtoComponent } from "./howto.component";
 import { HowtoPostComponent } from "./howto-post/howto-post.component";
+import { HowtoListComponent } from './howto-list/howto-list.component';
 
 @NgModule({
     imports: [
@@ -12,7 +13,8 @@ import { HowtoPostComponent } from "./howto-post/howto-post.component";
     ],
     declarations: [
         HowtoComponent,
-        HowtoPostComponent
+        HowtoPostComponent,
+        HowtoListComponent
     ],
     providers: [
 

@@ -1,0 +1,27 @@
+<div class="container-fluid min-vh-100">
+  <div class="blog-home">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <!-- Blog Entries Column -->
+      <div class="col-md-9 blog-home p-4">
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/quick/howtos']">How-To</a></p>
+        <h3 class="my-4">{{title}}
+          <small><button class="btn btn-info border-primary">Create</button></small>
+        </h3>
+
+        <howto-card [howto]="howto" *ngFor="let howto of howtos"></howto-card>
+
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item mr-5">
+            <a class="page-link" href="#">&larr; Prev</a>
+          </li>
+          <li class="page-item disabled ml-5">
+            <a class="page-link" href="#">Next &rarr;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+</div>
+<!-- /.container -->

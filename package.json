@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:dev": "ng serve",
+    "start:dev": "ng serve --configuration=development",
     "start": "node server.js",
     "build": "ng build --configuration=production",
     "server": "cd rest-api && npm run build && npm run start:dev",
@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku": "git push heroku main",
-    "postinstall": "ng build --output-path dist"
+    "postinstall": "npm run build"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
     "bootstrap": "^4.5.3",
     "core-js": "^2.5.4",
     "download": "^8.0.0",
-    "express": "^4.17.1",
+    "express": "5.0.0",
     "heroku-ssl-redirect": "^0.1.1",
     "jquery": "^3.5.1",
     "jwt-decode": "^4.0.0",

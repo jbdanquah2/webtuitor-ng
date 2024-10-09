@@ -71,6 +71,9 @@
           "configurations": {
             "production": {
               "browserTarget": "webtuitor2:build:production"
+            },
+            "development": {
+              "browserTarget": "webtuitor2:build"
             }
           }
         },
