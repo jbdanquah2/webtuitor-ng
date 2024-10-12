@@ -11,7 +11,6 @@ import { HowtosService } from './howtos.service';
 import { CreateHowtoDto } from './dto/create-howto.dto';
 import { UpdateHowtoDto } from './dto/update-howto.dto';
 import {AuthGuard} from '@nestjs/passport';
-import {jwtDecode} from 'jwt-decode';
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('howtos')
@@ -23,10 +22,6 @@ export class HowtosController {
 
     const token = authorizationHeader.split(' ')[1];
     console.log('Token', token);
-
-    const decodedToken: any = jwtDecode(token);
-
-    console.log('Decoded token: ', JSON.stringify(decodedToken, null, 2));
 
     return this.howtosService.create(createHowtoDto);
   }
