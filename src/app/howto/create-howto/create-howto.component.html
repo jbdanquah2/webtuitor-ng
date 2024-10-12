@@ -1,0 +1,37 @@
+<div class="container min-vh-100">
+  <h1 class="m-4">Create HowTo</h1>
+  <hr>
+  <div class="col-lg-6 col-xs-6 m-md-5">
+    <form [formGroup]="howtoForm"  autocomplete="off" novalidate>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <em *ngIf="howtoForm.controls.title?.invalid && (howtoForm.controls.title.touched) ">required</em>
+        <input required formControlName="title" id="title" type="text" class="form-control"
+               placeholder="Title..." />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Short Description:</label>
+        <em *ngIf="howtoForm.controls.description?.invalid && (howtoForm.controls.description.touched) ">required</em>
+        <input required  formControlName="description" id="description" type="text" class="form-control"
+               placeholder="Description..." />
+      </div>
+
+      <div class="form-group">
+        <label for="tags">Add Here:</label>
+        <em *ngIf="howtoForm.controls.tags?.invalid && (howtoForm.controls.tags.touched)">required</em>
+        <input required  formControlName="tags" id="tags" type="text" class="form-control"
+               placeholder="Tags... eg: tech,music,frontend,backend" />
+      </div>
+      <div class="form-group">
+        <label for="content">Write Your HowTo In Detail:</label>
+        <em *ngIf="howtoForm.controls.content?.invalid && (howtoForm.controls.content.touched)">required</em>
+        <textarea required  formControlName="content" id="content" type="text" class="form-control"
+               placeholder="Write the content here..." > </textarea>
+      </div>
+      <button (click)="submitHowto()" type="submit" [disabled]="howtoForm.invalid" class="btn btn-outline-primary">Submit</button>
+      <button (click)="cancel()" type="button" class="btn btn-outline-danger ml-1">Cancel</button>
+    </form>
+  </div>
+
+</div>

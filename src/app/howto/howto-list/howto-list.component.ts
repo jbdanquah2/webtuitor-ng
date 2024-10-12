@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HowtoService} from '../howto.service';
-import {ActivatedRoute} from '@angular/router';
-import {StringService} from '../../services/string.service';
 
 @Component({
   selector: 'app-howto-list',

@@ -1,22 +1,61 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import {firstValueFrom, Subject} from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../environments/environment';
+import {AuthService} from '../user/auth.service';
 
 @Injectable()
 export class HowtoService {
-    getHowtos() {
-        const subject = new Subject();
-        setTimeout(() => {
-            subject.next(Howtos);
-            subject.complete();
-        }, 10);
-        return subject;
+
+  constructor(private httpClient: HttpClient,
+              private authService: AuthService) {
+
+  }
+
+  async createHowto(howto: any) {
+    try {
+      const body = {
+
+        title: howto.title,
+        description: howto.description,
+        content: howto.content,
+        tags: howto.tags,
+        user: this.authService.currentUser.id
+      }
+
+      const response = await firstValueFrom(this.httpClient.post<any>(environment.api.createHowto, body));
+
+      if (response?.id) {
+        console.log('Howto created successfully');
+
+        return response;
+      } else {
+        console.log('Howto creation failed', response);
+
+        return null;
+      }
+    } catch (error) {
+      console.log('Howto creation failed', error);
+
+      return null;
     }
-    getHowto(link: string) {
-        return Howtos.find(howto => howto.link == link);
-    }
-    getRelatedHowto(id: number) {
-        return Howtos.find(howto => howto.id == id);
-    }
+  }
+
+
+  getHowtos() {
+      const subject = new Subject();
+      setTimeout(() => {
+          subject.next(Howtos);
+          subject.complete();
+      }, 10);
+      return subject;
+  }
+  getHowto(link: string) {
+      return Howtos.find(howto => howto.link == link);
+  }
+  getRelatedHowto(id: number) {
+      return Howtos.find(howto => howto.id == id);
+  }
 }
 
 const Howtos = [

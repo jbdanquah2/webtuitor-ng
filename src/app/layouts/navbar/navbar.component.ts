@@ -12,7 +12,6 @@ import {LoadingService} from '../../services/loading.service';
 })
 export class NavbarComponent implements OnInit {
 
-    currentUser:string
     password:string
     checkCookie:boolean
 
@@ -43,6 +42,8 @@ export class NavbarComponent implements OnInit {
             email: decodedToken.email,
             password: cookieObj.access_token
           }
+
+          this.authService.jwtToken = cookieObj.access_token;
 
           this.authService.setAuthentication(true);
 

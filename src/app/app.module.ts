@@ -30,6 +30,7 @@ import { CookieService } from 'ngx-cookie-service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoadingComponent } from './shared/loading/loading.component';
 import {LoadingInterceptor} from './interceptors/loading.interceptor';
+import {JwtInterceptorService} from './services/jwt-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {LoadingInterceptor} from './interceptors/loading.interceptor';
     useClass: LoadingInterceptor,
     multi: true
   },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
     Title,CourseService,
     CookieService,
     HowtoService,

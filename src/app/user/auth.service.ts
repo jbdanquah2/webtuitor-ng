@@ -126,21 +126,11 @@ export class AuthService {
 
       try {
 
-        const headers = new HttpHeaders({
-          'Authorization': `Bearer ${this.jwtToken}`,
-          'Content-Type': 'application/json'
-        })
-
         this.currentUser.name = name
         this.currentUser.email = userName
         this.currentUser.password = password || this.currentUser.password
 
-        const update = await firstValueFrom(
-          this.httpClient.patch<any>(
-            `${environment.api.updateUser}/${this.currentUser.id}`,
-            this.currentUser,
-         {headers}
-      ))
+        const update = await firstValueFrom(this.httpClient.patch<any>(`${environment.api.updateUser}/${this.currentUser.id}`, this.currentUser))
 
         if (update?.id) {
           console.log('User updated successfully');

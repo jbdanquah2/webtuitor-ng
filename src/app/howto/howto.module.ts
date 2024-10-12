@@ -5,16 +5,21 @@ import { howtoRoutes } from "./howto.routes";
 import { HowtoComponent } from "./howto.component";
 import { HowtoPostComponent } from "./howto-post/howto-post.component";
 import { HowtoListComponent } from './howto-list/howto-list.component';
+import { CreateHowtoComponent } from './create-howto/create-howto.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        RouterModule.forChild(howtoRoutes)
-    ],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(howtoRoutes),
+    FormsModule,
+    ReactiveFormsModule
+  ],
     declarations: [
         HowtoComponent,
         HowtoPostComponent,
-        HowtoListComponent
+        HowtoListComponent,
+        CreateHowtoComponent
     ],
     providers: [
 

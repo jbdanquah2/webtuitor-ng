@@ -1,6 +1,7 @@
-import {Entity, PrimaryGeneratedColumn, Column, BeforeUpdate, BeforeInsert} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, Column, BeforeUpdate, BeforeInsert, OneToMany} from 'typeorm';
 // import * as bcrypt from 'bcrypt';
 import {Exclude} from 'class-transformer';
+import {Howto} from '../../howtos/entities/howto.entity';
 const bcrypt = require('bcryptjs');
 
 
@@ -30,6 +31,9 @@ export class User {
 
   @Column({ type: 'datetime', nullable: false, default: () => 'CURRENT_TIMESTAMP' })
   updated_at: Date;
+
+  @OneToMany(() => Howto, howto => howto.user)
+  howtos: Howto[];
 
   @BeforeInsert()
   async hashPassword() {
