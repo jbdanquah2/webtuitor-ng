@@ -12,7 +12,7 @@ export class Howto {
   @Column({type: 'varchar', length: 255})
   description: string;
 
-  @Column({type: 'varchar'})
+  @Column({type: 'varchar', default: 'general'})
   category: string;
 
   @Column({type: 'text'})
