@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku": "git push heroku main",
-    "postinstall": "ng build --configuration=production --output-path dist"
+    "postinstall": "ng build --configuration=production --output-path dist && npm start"
   },
   "private": true,
   "dependencies": {
