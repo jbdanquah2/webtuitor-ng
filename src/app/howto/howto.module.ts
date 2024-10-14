@@ -7,7 +7,7 @@ import { HowtoPostComponent } from "./howto-post/howto-post.component";
 import { HowtoListComponent } from './howto-list/howto-list.component';
 import { CreateHowtoComponent } from './create-howto/create-howto.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {QuillModule} from 'ngx-quill';
+import {QuillEditorComponent} from 'ngx-quill';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import {QuillModule} from 'ngx-quill';
     RouterModule.forChild(howtoRoutes),
     FormsModule,
     ReactiveFormsModule,
-    QuillModule,
+    QuillEditorComponent,
   ],
     declarations: [
         HowtoComponent,

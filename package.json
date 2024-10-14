@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku": "git push heroku main",
-    "postinstall": "ng build --configuration=production --output-path dist && npm start"
+    "postinstall": "ng build --configuration=production --output-path dist"
   },
   "private": true,
   "dependencies": {
@@ -34,10 +34,10 @@
     "jwt-decode": "^4.0.0",
     "nave": "^3.5.2",
     "ngx-cookie-service": "^2.4.0",
-    "ngx-quill": "^14.0.0",
+    "ngx-quill": "^21.0.2",
+    "quill": "^1.3.7",
     "path": "^0.12.7",
     "popper.js": "^1.16.1",
-    "quill": "^1.3.7",
     "rxjs": "^7.8.1",
     "toastr": "^2.1.4",
     "tslib": "^1.9.0",
@@ -50,7 +50,7 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
-    "@types/quill": "^2.0.14",
+    "@types/quill": "^1.3.10",
     "angular-cli-ghpages": "^2.0.1",
     "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.99.1",

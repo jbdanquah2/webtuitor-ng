@@ -53,7 +53,6 @@ import {QuillModule} from 'ngx-quill';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-
     QuillModule.forRoot()
   ],
   providers: [ {
