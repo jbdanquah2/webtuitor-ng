@@ -7,7 +7,8 @@ import {HowtoService} from '../howto.service';
 @Component({
   selector: 'app-create-howto',
   templateUrl: './create-howto.component.html',
-  styleUrls: ['./create-howto.component.css']
+  styleUrls: ['./create-howto.component.scss'],
+
 })
 export class CreateHowtoComponent implements OnInit {
 
@@ -34,9 +35,7 @@ export class CreateHowtoComponent implements OnInit {
 
   async submitHowto() {
 
-
     const howto = this.howtoForm.value;
-
 
     const result = await this.howtoService.createHowto(howto);
 

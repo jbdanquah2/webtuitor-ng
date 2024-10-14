@@ -31,6 +31,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoadingComponent } from './shared/loading/loading.component';
 import {LoadingInterceptor} from './interceptors/loading.interceptor';
 import {JwtInterceptorService} from './services/jwt-interceptor.service';
+import {QuillModule} from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,9 @@ import {JwtInterceptorService} from './services/jwt-interceptor.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+
+    QuillModule.forRoot()
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,

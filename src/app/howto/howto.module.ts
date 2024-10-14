@@ -7,13 +7,15 @@ import { HowtoPostComponent } from "./howto-post/howto-post.component";
 import { HowtoListComponent } from './howto-list/howto-list.component';
 import { CreateHowtoComponent } from './create-howto/create-howto.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {QuillModule} from 'ngx-quill';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(howtoRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuillModule,
   ],
     declarations: [
         HowtoComponent,
