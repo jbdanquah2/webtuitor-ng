@@ -9,6 +9,8 @@ import {ConfigModule, ConfigService} from "@nestjs/config";
 import { EbooksModule } from './ebooks/ebooks.module';
 import { HowtosModule } from './howtos/howtos.module';
 import {AuthModule} from './auth/auth.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import {join} from 'path';
 
 
 @Module({
@@ -16,6 +18,10 @@ import {AuthModule} from './auth/auth.module';
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'img-uploads'), // Specify the static folder
+      serveRoot: '/img-uploads', // Expose this route
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

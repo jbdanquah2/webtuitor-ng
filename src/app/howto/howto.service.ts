@@ -12,34 +12,39 @@ export class HowtoService {
 
   }
 
-  async createHowto(howto: any) {
+  async createHowto(howto: any, file: File) {
     try {
-      const body = {
+      const formData = new FormData();
 
-        title: howto.title,
-        description: howto.description,
-        content: howto.content,
-        tags: howto.tags,
-        user: this.authService.currentUser.id
+      formData.append('title', howto.title);
+      formData.append('description', howto.description);
+      formData.append('category', howto.category);
+      formData.append('content', howto.content);
+      formData.append('tags', howto.tags);
+      formData.append('user', this.authService.currentUser.id.toString());
+
+      if (file) {
+        formData.append('file', file);
       }
 
-      const response = await firstValueFrom(this.httpClient.post<any>(environment.api.createHowto, body));
+      console.log(':::FormData', formData);
+
+      // Send the form data via POST request
+      const response = await firstValueFrom(this.httpClient.post<any>(environment.api.createHowto, formData));
 
       if (response?.id) {
         console.log('Howto created successfully');
-
         return response;
       } else {
         console.log('Howto creation failed', response);
-
         return null;
       }
     } catch (error) {
       console.log('Howto creation failed', error);
-
       return null;
     }
   }
+
 
 
   getHowtos() {

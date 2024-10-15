@@ -12,6 +12,9 @@ export class Howto {
   @Column({type: 'varchar', length: 255})
   description: string;
 
+  @Column({type: 'varchar', nullable: true})
+  imageUrl: string;
+
   @Column({type: 'varchar', default: 'general'})
   category: string;
 

@@ -8,6 +8,10 @@ export class CreateHowtoDto {
   @IsString()
   description: string;
 
+  @IsOptional()
+  @IsString()
+  imageUrl?: string;
+
   @IsString()
   content: string;
 

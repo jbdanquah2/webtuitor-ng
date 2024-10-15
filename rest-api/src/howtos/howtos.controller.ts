@@ -5,12 +5,16 @@ import {
   Body,
   Patch,
   Param,
-  Delete, UseGuards, Headers
+  Delete, UseGuards, Headers, UseInterceptors, UploadedFile
 } from '@nestjs/common';
 import { HowtosService } from './howtos.service';
 import { CreateHowtoDto } from './dto/create-howto.dto';
 import { UpdateHowtoDto } from './dto/update-howto.dto';
 import {AuthGuard} from '@nestjs/passport';
+import {FileInterceptor} from '@nestjs/platform-express';
+import {extname} from 'path';
+import { diskStorage } from 'multer';
+import {imageUploadInterceptor} from '../utils/file-upload.interceptor';
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('howtos')
@@ -18,10 +22,23 @@ export class HowtosController {
   constructor(private readonly howtosService: HowtosService) {}
 
   @Post()
-  create(@Body() createHowtoDto: CreateHowtoDto,  @Headers('authorization') authorizationHeader: string) {
+  @UseInterceptors(imageUploadInterceptor('./img-uploads'))
+  create(@Body() createHowtoDto: CreateHowtoDto,
+         @UploadedFile() file: Express.Multer.File,
+         @Headers('authorization') authorizationHeader: string) {
+
+    console.log('createHowtoDto', createHowtoDto);
+    console.log('##file', file);
 
     const token = authorizationHeader.split(' ')[1];
-    console.log('Token', token);
+    // console.log('Token', token);
+
+    if (file) {
+
+      console.log('File', file);
+      createHowtoDto.imageUrl = file.path; // Save the file path to DTO
+      console.log('Create Howto DTO', createHowtoDto);
+    }
 
     return this.howtosService.create(createHowtoDto);
   }
