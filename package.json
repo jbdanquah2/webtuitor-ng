@@ -7,6 +7,7 @@
     "start": "node server.js",
     "build": "ng build --configuration=production",
     "server": "cd rest-api && npm run build && npm run start:dev",
+    "deploy:server": "sh ./scripts/deploy-rest-api-pro.sh",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

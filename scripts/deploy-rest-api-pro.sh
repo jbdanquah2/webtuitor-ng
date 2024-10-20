@@ -2,8 +2,10 @@
 
 echo "Deploying REST API to production..."
 
+echo pwd && ls -la
+
 echo "Changing directory to rest-api..."
-cd rest-api || exit 1
+cd ./rest-api || exit 1
 
 echo pwd && ls -la
 
