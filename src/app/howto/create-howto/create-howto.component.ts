@@ -50,7 +50,7 @@ export class CreateHowtoComponent implements OnInit {
       description: ['', Validators.required],
       url: ['', Validators.required],
       category: ['', Validators.required],
-      related: ['', Validators.required],
+      related: [''],
       file: [null],
       tags: ['', Validators.required],
       totalTime: ['', Validators.required],

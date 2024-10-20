@@ -44,7 +44,7 @@
         <em class="notice" *ngIf="howtoForm.controls?.related?.invalid && (howtoForm.controls?.related?.touched)">
           required
         </em>
-        <select required formControlName="related" id="related" class="form-control">
+        <select formControlName="related" id="related" class="form-control">
           <option value="" disabled selected>related howto</option>
           <option *ngFor="let related of relatedHowto" [value]="related.id">{{ related.title }}</option>
         </select>

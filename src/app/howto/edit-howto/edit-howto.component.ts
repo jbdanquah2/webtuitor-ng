@@ -66,7 +66,7 @@ export class EditHowtoComponent implements OnInit {
         description: [this.howto.description, Validators.required],
         url: [this.howto.url, Validators.required],
         category: [this.howto.category, Validators.required],
-        related: [this.relatedHowto.title, Validators.required],
+        related: [this.relatedHowto.title],
         file: [null],
         tags: [this.howto.tags, Validators.required],
         totalTime: [this.howto.totalTime, Validators.required],
