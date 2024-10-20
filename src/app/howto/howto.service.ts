@@ -7,6 +7,8 @@ import {AuthService} from '../user/auth.service';
 @Injectable()
 export class HowtoService {
 
+  howtos: any[] = [];
+
   constructor(private httpClient: HttpClient,
               private authService: AuthService) {
 
@@ -18,9 +20,12 @@ export class HowtoService {
 
       formData.append('title', howto.title);
       formData.append('description', howto.description);
+      formData.append('url', howto.url);
       formData.append('category', howto.category);
+      formData.append('related', howto.related);
       formData.append('content', howto.content);
       formData.append('tags', howto.tags);
+      formData.append('totalTime', howto.totalTime);
       formData.append('user', this.authService.currentUser.id.toString());
 
       if (file) {
@@ -45,22 +50,86 @@ export class HowtoService {
     }
   }
 
+  async editHowto(id: any, howto: any, file: File) {
 
+    console.log('Service Howto', howto);
 
-  getHowtos() {
+    try {
+      const formData = new FormData();
+
+      formData.append('title', howto.title);
+      formData.append('description', howto.description);
+      formData.append('url', howto.url);
+      formData.append('category', howto.category);
+      formData.append('related', howto.related);
+      formData.append('content', howto.content);
+      formData.append('tags', howto.tags);
+      formData.append('totalTime', howto.totalTime);
+      formData.append('user', this.authService.currentUser.id.toString());
+
+      if (file) {
+        formData.append('file', file);
+      }
+
+      console.log(':::FormData', formData);
+
+      // Send the form data via POST request
+      const response = await firstValueFrom(this.httpClient.patch<any>(environment.api.editHowto + '/' + id, formData));
+
+      if (response?.id) {
+        console.log('Howto updated successfully');
+        return response;
+      } else {
+        console.log('Howto update failed', response);
+        return null;
+      }
+    } catch (error) {
+      console.log('Howto update failed', error);
+      return null;
+    }
+  }
+
+  async deleteHowto(id: any) {
+    try {
+      const response = await firstValueFrom(this.httpClient.delete<any>(environment.api.deleteHowto + '/' + id));
+
+      if (response?.affected == 1) {
+        console.log('Howto deleted successfully');
+        return response;
+      } else {
+        console.log('Howto deletion failed', response);
+        return null;
+      }
+    } catch (error) {
+      console.log('Howto deletion failed', error);
+      return null;
+    }
+  }
+
+  async getHowtos() {
+
+    this.howtos = await firstValueFrom(this.httpClient.get<any>(environment.api.getHowtos));
       const subject = new Subject();
-      setTimeout(() => {
-          subject.next(Howtos);
-          subject.complete();
-      }, 10);
-      return subject;
+
+      return this.howtos;
   }
-  getHowto(link: string) {
-      return Howtos.find(howto => howto.link == link);
+
+  async getHowto(id: number) {
+      const howto =  await firstValueFrom(this.httpClient.get<any>(environment.api.getHowto + '/' + id));
+
+      console.log('<><Howto', this.howtos);
+      return howto;
   }
-  getRelatedHowto(id: number) {
-      return Howtos.find(howto => howto.id == id);
+
+  async getRelatedHowto(id: number) {
+
+    if (this.howtos.length === 0) {
+      return await this.getHowto(id);
+    }
+
+    return this.howtos.find(howto => howto.id == +id);
   }
+
 }
 
 const Howtos = [
@@ -75,7 +144,7 @@ const Howtos = [
         totalTime: '2 hours',
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, perspiciatis?
         Illum maiores cum dolorum error sit odit.`,
-        content: '',
+        content:+ '',
         comments: [
             {
                 id: 1,

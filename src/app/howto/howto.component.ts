@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { HowtoService } from './howto.service';
 import { StringService } from "src/app/services/string.service";
+import {environment} from '../../environments/environment';
+import {AuthService} from '../user/auth.service';
 
 @Component({
     selector:'howto-card',
@@ -13,22 +15,45 @@ import { StringService } from "src/app/services/string.service";
 })
 export class HowtoComponent implements OnInit {
 
-    title:string = 'Most Useful How-To Tutorials'
+  title:string = 'Most Useful How-To Tutorials';
 
-    @Input()
-    howto:any
+  apiUrl: string = environment.api.apiUrl;
 
-    constructor(
-      private howtoService: HowtoService,
-      private stringService:StringService) {
+  isAuthenticated: boolean = this.authService.isAuthenticated;
 
-    }
-    ngOnInit(){
-        // this.howtoService.getHowtos().subscribe(howtos => this.howtos = howtos);
-        window.scrollTo(0,0);
-    }
+  @Input()
+  howto:any
+
+  constructor(private stringService:StringService,
+              private router: Router,
+              private authService: AuthService,
+              private howtoService: HowtoService) {
+
+  }
+  ngOnInit(){
+
+    console.log('here:::',this.howto)
+    window.scrollTo(0,0);
+  }
 
   capitalizeFirstLetter(text: string) {
     return this.stringService.capitalizeFirstLetter(text);
+  }
+
+  editHowto() {
+    this.router.navigateByUrl(`/quick/howtos/edit/${this.howto.id}`);
+  }
+
+  async deleteHowto() {
+
+    const result = confirm('Are you sure you want to delete this how-to?');
+
+    if (!result) {
+      return;
+    }
+
+    await this.howtoService.deleteHowto(this.howto.id);
+
+    location.reload();
   }
 }

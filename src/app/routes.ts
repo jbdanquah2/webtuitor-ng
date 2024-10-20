@@ -13,5 +13,6 @@ export const appRoutes: Routes = [
   { path: 'read', loadChildren: () => import('src/app/ebook/ebook.module').then(m => m.EbookModule) },
   { path: 'quick', loadChildren: () => import('src/app/howto/howto.module').then(m => m.HowtoModule) },
   { path: 'guidance', loadChildren: () => import('src/app/mentor/mentor.module').then(m => m.MentorModule) },
-  { path: 'auth', loadChildren: () => import('src/app/user/user.module').then(m => m.UserModule) }
+  { path: 'auth', loadChildren: () => import('src/app/user/user.module').then(m => m.UserModule) },
+  { path: '**', redirectTo: '/home' }
 ];

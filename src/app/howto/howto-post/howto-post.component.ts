@@ -1,7 +1,7 @@
-import { Component, Input } from "@angular/core";
+import {Component, Input, OnInit} from '@angular/core';
 import { HowtoService } from '../howto.service';
 import { ActivatedRoute, Router } from "@angular/router";
-import { StringService } from "src/app/services/string.service";
+import { StringService } from "../../services/string.service";
 
 @Component({
     selector:'howto-post',
@@ -10,24 +10,45 @@ import { StringService } from "src/app/services/string.service";
 
     `]
 })
-export class HowtoPostComponent {
+export class HowtoPostComponent implements OnInit {
     howto:any
-    @Input() strService:any
+
     related:any
-    constructor(private howtoService: HowtoService, private route: ActivatedRoute,
-     private stringService: StringService, private router : Router) {
+
+    relatedUrl:string
+
+    constructor(private route: ActivatedRoute,
+                private stringService: StringService,
+                private router : Router) {
 
     }
-    ngOnInit(){
-        this.howto = this.howtoService.getHowto(this.route.snapshot.params['link'])
-        this.strService = this.stringService
-        this.related = this.howtoService.getRelatedHowto(this.howto.related)
-        window.scrollTo(0,0);
+
+    async ngOnInit(){
+
+      const data = this.route.snapshot.data['howtoData'];
+
+      this.howto = data.howto;
+
+      this.related = data.relatedHowto;
+
     }
-    // getRelated() {
-    //     // this.related = this.howtoService.getRelatedHowto(this.howto.related)
-    //     // this.router.navigate(['howto-post']);
-    //     // window.scrollTo(0,0);
-    //     return [this.related.name, this.related.link]
-    // }
+
+    determineRelatedUrl() {
+
+      if (this.router.url.includes('related')) {
+
+        return this.relatedUrl = '/quick/howtos';
+
+      } else {
+
+        return this.relatedUrl = '/quick/howtos/related';
+
+      }
+
+    }
+
+    capitalizeFirstLetter(text: string) {
+      if (!text) return '';
+      return this.stringService.capitalizeFirstLetter(text);
+    }
 }

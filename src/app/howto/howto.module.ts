@@ -8,6 +8,7 @@ import { HowtoListComponent } from './howto-list/howto-list.component';
 import { CreateHowtoComponent } from './create-howto/create-howto.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {QuillEditorComponent} from 'ngx-quill';
+import {EditHowtoComponent} from './edit-howto/edit-howto.component';
 
 @NgModule({
   imports: [
@@ -18,10 +19,11 @@ import {QuillEditorComponent} from 'ngx-quill';
     QuillEditorComponent,
   ],
     declarations: [
-        HowtoComponent,
-        HowtoPostComponent,
-        HowtoListComponent,
-        CreateHowtoComponent
+      HowtoComponent,
+      HowtoPostComponent,
+      HowtoListComponent,
+      CreateHowtoComponent,
+      EditHowtoComponent
     ],
     providers: [
 

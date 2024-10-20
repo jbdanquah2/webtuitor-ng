@@ -9,7 +9,7 @@ import {ConfigModule} from "@nestjs/config";
 
   imports: [
     TypeOrmModule.forFeature([
-      User,
+      User
     ]),
     ConfigModule
   ],

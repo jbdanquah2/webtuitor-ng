@@ -21,7 +21,7 @@ import {join} from 'path';
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'img-uploads'), // Specify the static folder
-      serveRoot: '/img-uploads', // Expose this route
+      serveRoot: '/uploads', // Expose this route
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

@@ -1,10 +1,14 @@
 
-<div [routerLink]="['/quick/howtos/',howto.link]" class="card mb-4 wcard shadow">
-  <img width="300" class="card-img-top wcardpic img-fluid" [src]="howto.img" alt="Card image cap">
+<div class="card mb-4 wcard shadow">
+  <img width="300" class="card-img-top wcardpic img-fluid" [src]="howto.imageUrl" alt="Card image cap">
   <div class="card-body">
-    <h2 class="card-title">{{capitalizeFirstLetter(howto.name)}}</h2>
+    <h2 class="card-title" [routerLink]="['/quick/howtos',howto.id]">{{capitalizeFirstLetter(howto.title)}}</h2>
+    <ng-container *ngIf="isAuthenticated">
+      <button class="btn btn-link" (click)="editHowto()">Edit</button>
+      <button class="btn btn-link text-danger" (click)="deleteHowto()">Delete</button>
+    </ng-container>
     <p class="card-text">{{howto.description}}</p>
-    <a [routerLink]="['/quick/howtos/',howto.link]" class="btn btn-outline-info">Read More &rarr;</a>
+    <a [routerLink]="['/quick/howtos',howto.id]" class="btn btn-outline-info">Read More &rarr;</a>
   </div>
 <!--  <div class="card-footer text-muted">-->
 <!--      Posted on {{howto.published}} by-->

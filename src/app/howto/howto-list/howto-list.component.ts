@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HowtoService} from '../howto.service';
+import {Router} from '@angular/router';
+import {AuthService} from '../../user/auth.service';
 
 @Component({
   selector: 'app-howto-list',
@@ -8,18 +10,30 @@ import {HowtoService} from '../howto.service';
 })
 export class HowtoListComponent implements OnInit {
 
-  title:string = 'Most Useful How-To Tutorials'
+  title:string = 'Most Useful How-To Tutorials';
+
   howtos:any
 
+  isaAuthenticated: boolean = this.authService.isAuthenticated;
+
   constructor(private howtoService: HowtoService,
+              private router: Router,
+              private authService: AuthService
               ) {
 
   }
 
-  ngOnInit(){
-    this.howtoService.getHowtos().subscribe(howtos => this.howtos = howtos);
+  async ngOnInit(){
+    this.howtos = await this.howtoService.getHowtos();
+    console.log('this.howtos:',this.howtos);
+  }
 
-    window.scrollTo(0,0);
+  openCreateHowto() {
+    if (!this.authService.isAuthenticated) {
+      alert('You must be logged in to create a how-to');
+      return this.router.navigate(['/auth/login']);
+    }
+    this.router.navigate(['/quick/howtos/create']);
   }
 
 

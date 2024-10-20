@@ -19,7 +19,6 @@ import { Error404Component } from './errors/404.component';
 import { CourseRouteActivator } from './course/course-post/course-route-activator.service';
 import { HowtoTabComponent } from './webtuitor/nav-tabs/howto-tab.component';
 import { EbookRouteActivator } from './ebook/ebook-post/ebook-route-activator.service';
-import { HowtoRouteActivator } from './howto/howto-post/howto-route-activator.service';
 import { StringService } from './services/string.service';
 import { MentorService } from './mentor/mentor.service';
 import { FormsModule } from '@angular/forms';
@@ -32,6 +31,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
 import {LoadingInterceptor} from './interceptors/loading.interceptor';
 import {JwtInterceptorService} from './services/jwt-interceptor.service';
 import {QuillModule} from 'ngx-quill';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +53,8 @@ import {QuillModule} from 'ngx-quill';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,
@@ -67,7 +68,6 @@ import {QuillModule} from 'ngx-quill';
     EbookService,
     CourseRouteActivator,
     EbookRouteActivator,
-    HowtoRouteActivator,
     StringService,
     MentorService,
     MentorResolver,

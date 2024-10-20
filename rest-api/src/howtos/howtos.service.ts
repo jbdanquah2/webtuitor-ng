@@ -19,15 +19,20 @@ export class HowtosService {
   }
 
   findAll() {
-    const data = this.howtoRepository.find();
+    const data = this.howtoRepository.find({
+      relations: ['user'],
+    });
 
     return plainToClass(Howto, data);
   }
 
   findOne(id: number) {
-    return this.howtoRepository.findOne({
+    const howto =  this.howtoRepository.findOne({
       where: { id },
+      relations: ['user']
     });
+
+    return plainToClass(Howto, howto);
   }
 
   update(id: number, updateHowtoDto: UpdateHowtoDto) {

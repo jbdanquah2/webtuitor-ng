@@ -4,7 +4,6 @@ import {Exclude} from 'class-transformer';
 import {Howto} from '../../howtos/entities/howto.entity';
 const bcrypt = require('bcryptjs');
 
-
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
@@ -37,12 +36,10 @@ export class User {
 
   @BeforeInsert()
   async hashPassword() {
-    console.log('#3hashPassword', this.password );
     if (this.password) {
       const salt = await bcrypt.genSalt(); // Generate a salt
       this.password = await bcrypt.hash(this.password, salt); // Hash the password with salt
 
-      console.log('#4hashPassword', this.password );
     }
   }
 }

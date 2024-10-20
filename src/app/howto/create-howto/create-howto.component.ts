@@ -35,22 +35,30 @@ export class CreateHowtoComponent implements OnInit {
     'entertainment',
     'pets',
     'other'
-  ]
+  ];
+
+  relatedHowto: any[] = null;
 
   constructor(private router: Router,
               private fb: FormBuilder,
               private howtoService: HowtoService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
 
     this.howtoForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
+      url: ['', Validators.required],
       category: ['', Validators.required],
-      file: [null, Validators.required],
-      content: ['', Validators.required],
-      tags: ['', Validators.required]
-    })
+      related: ['', Validators.required],
+      file: [null],
+      tags: ['', Validators.required],
+      totalTime: ['', Validators.required],
+      content: ['', Validators.required]
+    });
+
+    this.relatedHowto = await this.howtoService.getHowtos();
+    console.log('Related Howtos', this.relatedHowto);
 
   }
 
@@ -85,6 +93,11 @@ export class CreateHowtoComponent implements OnInit {
     console.log('Result', result);
 
     this.howtoForm.reset();
+    this.howtoForm.patchValue({
+      category: '',
+      related: '',
+    });
+
     this.imgPreview = '';
     this.selectedFile = null;
 
