@@ -52,7 +52,8 @@
 
 
       <div class="form-group">
-        <label for="file">Select Image (Optional):</label>
+        <label class="mb-0" for="file">Select Image (Optional):</label>
+        <p class="text-muted p-0 m-0 font-italic">If no image is selected, a default image will be used</p>
         <em class="notice" *ngIf="howtoForm.controls?.file?.invalid && (howtoForm.controls?.file?.touched) "> required</em>
         <input (change)="onFileSelected($event)" formControlName="file" id="file" type="file" accept="image/png, image/jpeg, .svg, image/svg+xml" class="form-control" />
       </div>
