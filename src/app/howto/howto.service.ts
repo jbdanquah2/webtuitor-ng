@@ -22,7 +22,7 @@ export class HowtoService {
       formData.append('description', howto.description);
       formData.append('url', howto.url);
       formData.append('category', howto.category);
-      formData.append('related', howto.related || null);
+      formData.append('related', howto.related);
       formData.append('content', howto.content);
       formData.append('tags', howto.tags);
       formData.append('totalTime', howto.totalTime);
