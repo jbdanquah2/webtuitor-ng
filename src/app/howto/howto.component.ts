@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { HowtoService } from './howto.service';
 import { StringService } from "src/app/services/string.service";
@@ -23,6 +23,9 @@ export class HowtoComponent implements OnInit {
 
   @Input()
   howto:any
+
+  @Output()
+  deletedHowto: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private stringService:StringService,
               private router: Router,
@@ -54,6 +57,8 @@ export class HowtoComponent implements OnInit {
 
     await this.howtoService.deleteHowto(this.howto.id);
 
-    location.reload();
+    this.deletedHowto.emit(this.howto);
+
+    // location.reload();
   }
 }

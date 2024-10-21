@@ -37,4 +37,8 @@ export class HowtoListComponent implements OnInit {
   }
 
 
+  onDelete(deletedHowto:any) {
+    console.log('deleted howto:',deletedHowto);
+    this.howtos = this.howtos.filter((howto:any) => howto.id !== deletedHowto.id);
+  }
 }

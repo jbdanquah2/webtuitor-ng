@@ -9,7 +9,7 @@
           <small *ngIf="isaAuthenticated"><button (click)="openCreateHowto()" class="btn btn-info border-primary">Create</button></small>
         </h3>
 
-        <howto-card [howto]="howto" *ngFor="let howto of howtos"></howto-card>
+        <howto-card [howto]="howto" *ngFor="let howto of howtos" (deletedHowto)="onDelete($event)"></howto-card>
 
         <ul class="pagination justify-content-center mb-4">
           <li class="page-item mr-5">
