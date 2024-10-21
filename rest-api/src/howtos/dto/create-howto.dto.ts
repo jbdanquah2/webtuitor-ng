@@ -1,7 +1,6 @@
 import {IsArray, IsDate, IsInt, IsOptional, IsString} from 'class-validator';
 import {Type} from 'class-transformer';
 import {User} from '../../users/entities/user.entity';
-import {Howto} from '../entities/howto.entity';
 
 export class CreateHowtoDto {
   @IsString()

@@ -53,24 +53,24 @@ export class EditHowtoComponent implements OnInit {
 
    this.route.data.subscribe(async (data) => {
 
-      console.log(':::###Data:', data.howtoData);
-      this.howto = data.howtoData.howto;
-      this.relatedHowto = data.howtoData.relatedHowto;
-      this.imgPreview = this.howto.imageUrl;
+      console.log(':::###Data:', data?.howtoData);
+      this.howto = data.howtoData?.howto;
+      this.relatedHowto = data.howtoData?.relatedHowto;
+      this.imgPreview = this.howto?.imageUrl;
 
       this.relatedHowtos = await this.howtoService.getHowtos();
-      this.relatedHowtos = this.relatedHowtos.filter((howto:any) => howto.id !== this.howto.id);
+      this.relatedHowtos = this.relatedHowtos.filter((howto:any) => howto?.id !== this.howto?.id);
 
       this.editHowtoForm = this.fb.group({
-        title: [this.howto.title, Validators.required],
-        description: [this.howto.description, Validators.required],
-        url: [this.howto.url, Validators.required],
-        category: [this.howto.category, Validators.required],
-        related: [this.relatedHowto.title],
+        title: [this.howto?.title, Validators.required],
+        description: [this.howto?.description, Validators.required],
+        url: [this.howto?.url, Validators.required],
+        category: [this.howto?.category, Validators.required],
+        related: [''],
         file: [null],
-        tags: [this.howto.tags, Validators.required],
-        totalTime: [this.howto.totalTime, Validators.required],
-        content: [this.howto.content, Validators.required]
+        tags: [this.howto?.tags, Validators.required],
+        totalTime: [this.howto?.totalTime, Validators.required],
+        content: [this.howto?.content, Validators.required]
       });
 
     })

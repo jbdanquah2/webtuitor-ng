@@ -82,7 +82,9 @@ export class CreateHowtoComponent implements OnInit {
 
   }
 
-  async submitHowto() {
+  async submitHowto(event: any) {
+
+    event.preventDefault();
 
     if (this.howtoForm.invalid) {
       console.log('Invalid form');
@@ -100,6 +102,8 @@ export class CreateHowtoComponent implements OnInit {
 
     this.imgPreview = '';
     this.selectedFile = null;
+
+    this.router.navigate(['/quick/howtos/']);
 
   }
 
