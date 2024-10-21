@@ -30,7 +30,7 @@ export class Howto {
   @Column({type: 'simple-array'})
   tags: string;
 
-  @Column({type: 'int', nullable: true})
+  @Column({type: 'int', nullable: true, default : 0})
   related: number;
 
   @ManyToOne(() => User, user => user.howtos)
