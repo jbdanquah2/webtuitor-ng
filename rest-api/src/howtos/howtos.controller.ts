@@ -19,8 +19,6 @@ import {WINSTON_MODULE_PROVIDER, WinstonLogger} from 'nest-winston';
 @Controller('howtos')
 export class HowtosController {
 
-  API_URL = this.configService.get('API_URL');
-
   constructor(private readonly howtosService: HowtosService,
               private configService: ConfigService,
               @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: WinstonLogger) {}
@@ -38,10 +36,10 @@ export class HowtosController {
 
     if (file) {
       console.log('File', file);
-      createHowtoDto.imageUrl = `${this.API_URL}/uploads/${file.filename}`;
+      createHowtoDto.imageUrl = `${this.configService.get('API_URL')}/uploads/${file.filename}`;
       console.log('Create Howto DTO', createHowtoDto);
     } else {
-      createHowtoDto.imageUrl = `${this.API_URL}/uploads/1729373808784-750486698.svg`;
+      createHowtoDto.imageUrl = `${this.configService.get('API_URL')}/uploads/1729373808784-750486698.svg`;
     }
 
     console.log('Create Howto DTO', createHowtoDto);
