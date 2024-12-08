@@ -74,9 +74,6 @@ export class EditHowtoComponent implements OnInit {
       });
 
     })
-
-
-
   }
 
   onFileSelected(event: any) {
@@ -119,11 +116,11 @@ export class EditHowtoComponent implements OnInit {
     this.imgPreview = '';
     this.selectedFile = null;
 
-    this.router.navigate(['/quick/howtos/']);
+    await this.router.navigate(['/quick/howtos/']);
 
   }
 
-  cancel() {
-    this.router.navigate(['/quick/howtos/']);
+  async cancel() {
+    await this.router.navigate(['/quick/howtos/']);
   }
 }

@@ -17,8 +17,6 @@ export class HowtoComponent implements OnInit {
 
   title:string = 'Most Useful How-To Tutorials';
 
-  apiUrl: string = environment.api.apiUrl;
-
   isAuthenticated: boolean = this.authService.isAuthenticated;
 
   @Input()
