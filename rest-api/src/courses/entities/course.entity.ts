@@ -39,7 +39,7 @@ export class Course {
   related: number;
 
   @OneToMany(() => Lesson, lesson => lesson.course)
-  lessons: Lesson[]
+  lessons?: Lesson[]
 
   @ManyToOne(() => User, user => user.howtos)
   createdBy: User;

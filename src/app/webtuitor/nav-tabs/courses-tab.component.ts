@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 import { StringService } from "src/app/services/string.service";
 import { CourseService } from '../../course/course.service';
+import {capitalizeFirstLetter} from '../../../../rest-api/src/utils/string.utils';
 
 @Component({
     selector: 'course-tab',
@@ -9,7 +10,7 @@ import { CourseService } from '../../course/course.service';
         <div [routerLink]="['/learn/courses/',course.link]" *ngFor="let course of courses | slice:0:4; let i=index" class="card">
         <img heigt="200" class="card-img-top" [src]="course.img" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">{{concStr.capitalizeFirstLetter(course.name)}}</h5>
+            <h5 class="card-title">{{capitalizeFirstLetter(course.name)}}</h5>
             <p class="card-text">{{trimDesc(course.description, 100)}}</p>
             <button [routerLink]="['/learn/courses/',course.link]" class="btn btn-md btn-outline-info">Start</button>
             <p class="card-text">
@@ -21,15 +22,14 @@ import { CourseService } from '../../course/course.service';
     </div>`,
     styleUrls: ['nav-tab.component.css']
 })
-export class CourseTabComponent {
+export class CourseTabComponent implements OnInit {
     courses: any
-    concStr:any
-    constructor(private courseService: CourseService, private stringService:StringService) {
+
+    constructor(private courseService: CourseService) {
 
     }
     ngOnInit() {
         this.courses = this.courseService.getCourses();
-        this.concStr = this.stringService
     }
 
     trimDesc(s,n) {
@@ -39,4 +39,5 @@ export class CourseTabComponent {
     }
 
 
+  protected readonly capitalizeFirstLetter = capitalizeFirstLetter;
 }

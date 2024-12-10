@@ -10,10 +10,7 @@ import {Course} from '../courses/entities/course.entity';
 
   imports: [
     TypeOrmModule.forFeature([
-      Lesson,
-      User,
-      Course,
-
+      Lesson
     ])
   ],
 

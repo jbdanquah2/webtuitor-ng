@@ -38,7 +38,7 @@ export class CreateCourseDto {
 
   @IsOptional()
   @Type(() => Lesson)
-  lessons: Lesson[];
+  lessons?: Lesson[];
 
   @IsOptional()
   @Type(() => User)
