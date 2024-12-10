@@ -2,19 +2,19 @@
   <div class="blog-home">
     <div class="row">
       <div class="col-md-1">
-       
+
       </div>
       <!-- Blog Entries Column -->
       <div class="col-md-9 blog-home p-4">
-        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/learn/courses']">Courses</a></p> 
-        <h3 class="my-4">Popular 
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/learn/courses']">Courses</a></p>
+        <h3 class="my-4">Popular
           <small>Courses</small>
         </h3>
         <div *ngFor="let course of courses" class="card mb-4 wcard shadow">
           <img  class="card-img-top wcardpic img-fluid" [src]="course.img" alt="card image cap">
           <div class="card-body">
-            <h2 class="card-title">{{strService.capitalizeFirstLetter(course.name)}}</h2>
-            <p class="card-text">{{strService.concatString(course.description,100)}}</p>
+            <h2 class="card-title">{{capitalizeFirstLetter(course.name)}}</h2>
+            <p class="card-text">{{concatString(course.description,100)}}</p>
             <a [routerLink]="['/learn/courses/',course.link]" class="btn btn-outline-info">Read More &rarr;</a>
           </div>
           <!-- <div class="card-footer text-muted">

@@ -11,6 +11,8 @@ import { HowtosModule } from './howtos/howtos.module';
 import {AuthModule} from './auth/auth.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import {join} from 'path';
+import { CoursesModule } from './courses/courses.module';
+import { LessonsModule } from './lessons/lessons.module';
 
 
 @Module({
@@ -44,7 +46,9 @@ import {join} from 'path';
     AuthModule,
     UsersModule,
     EbooksModule,
-    HowtosModule
+    HowtosModule,
+    CoursesModule,
+    LessonsModule
   ],
   controllers: [AppController],
   providers: [AppService],

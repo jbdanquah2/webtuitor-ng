@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from './course.service';
 import { StringService } from 'src/app/services/string.service'
+import {capitalizeFirstLetter, concatString} from '../../../rest-api/src/utils/string.utils';
 
 @Component({
     selector:'app-course',
@@ -10,13 +11,16 @@ import { StringService } from 'src/app/services/string.service'
 })
 export class CourseComponent {
     courses:any
-    @Input() strService:any
-    constructor(private courseService: CourseService, private route: ActivatedRoute, private stringService: StringService) {
+    constructor(private courseService: CourseService,
+                private route: ActivatedRoute) {
 
     }
+
     ngOnInit(id){
         this.courses = this.courseService.getCourses()
-        this.strService = this.stringService
         window.scrollTo(0,0);
     }
+
+  protected readonly capitalizeFirstLetter = capitalizeFirstLetter;
+  protected readonly concatString = concatString;
 }

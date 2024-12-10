@@ -4,6 +4,7 @@ import { StringService } from 'src/app/services/string.service';
 import {environment} from '../../../environments/environment';
 import {AuthService} from '../../user/auth.service';
 import {Router} from '@angular/router';
+import {capitalizeFirstLetter, concatString} from '../../../../rest-api/src/utils/string.utils';
 
 @Component({
     selector: 'howto-tab',
@@ -47,12 +48,7 @@ export class HowtoTabComponent implements OnInit {
     this.router.navigateByUrl(`/quick/howtos/edit/${howto.id}`);
   }
 
-  concatString(text: string, length: number) {
-    return this.stringService.concatString(text, length);
-  }
 
-  capitalizeFirstLetter(text: string) {
-    return this.stringService.capitalizeFirstLetter(text);
-  }
-
+  protected readonly concatString = concatString;
+  protected readonly capitalizeFirstLetter = capitalizeFirstLetter;
 }

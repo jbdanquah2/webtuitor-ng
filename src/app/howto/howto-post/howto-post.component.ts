@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { HowtoService } from '../howto.service';
 import { ActivatedRoute, Router } from "@angular/router";
-import { StringService } from "../../services/string.service";
+import {capitalizeFirstLetter} from '../../../../rest-api/src/utils/string.utils';
 
 @Component({
     selector:'howto-post',
@@ -18,7 +17,6 @@ export class HowtoPostComponent implements OnInit {
     relatedUrl:string
 
     constructor(private route: ActivatedRoute,
-                private stringService: StringService,
                 private router : Router) {
 
     }
@@ -48,7 +46,9 @@ export class HowtoPostComponent implements OnInit {
     }
 
     capitalizeFirstLetter(text: string) {
-      if (!text) return '';
-      return this.stringService.capitalizeFirstLetter(text);
+      if (!text) {
+        return '';
+      }
+      return capitalizeFirstLetter(text);
     }
 }

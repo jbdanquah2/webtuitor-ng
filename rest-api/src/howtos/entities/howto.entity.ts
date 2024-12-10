@@ -3,6 +3,7 @@ import {User} from '../../users/entities/user.entity';
 
 @Entity()
 export class Howto {
+
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -25,7 +26,7 @@ export class Howto {
   content: string;
 
   @Column({type: 'int', nullable: true})
-  totalTime: number
+  totalTime: number;
 
   @Column({type: 'simple-array'})
   tags: string;
@@ -34,9 +35,9 @@ export class Howto {
   related: number;
 
   @ManyToOne(() => User, user => user.howtos)
-  user: User
+  user: User;
 
   @Column({type: 'datetime', default: () => 'CURRENT_TIMESTAMP'})
-  created_at: Date;
+  createdAt: Date;
 
 }

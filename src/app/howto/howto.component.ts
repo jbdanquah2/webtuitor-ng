@@ -4,6 +4,7 @@ import { HowtoService } from './howto.service';
 import { StringService } from "src/app/services/string.service";
 import {environment} from '../../environments/environment';
 import {AuthService} from '../user/auth.service';
+import {capitalizeFirstLetter} from '../../../rest-api/src/utils/string.utils';
 
 @Component({
     selector:'howto-card',
@@ -37,10 +38,6 @@ export class HowtoComponent implements OnInit {
     window.scrollTo(0,0);
   }
 
-  capitalizeFirstLetter(text: string) {
-    return this.stringService.capitalizeFirstLetter(text);
-  }
-
   editHowto() {
     this.router.navigateByUrl(`/quick/howtos/edit/${this.howto.id}`);
   }
@@ -59,4 +56,6 @@ export class HowtoComponent implements OnInit {
 
     // location.reload();
   }
+
+  protected readonly capitalizeFirstLetter = capitalizeFirstLetter;
 }
