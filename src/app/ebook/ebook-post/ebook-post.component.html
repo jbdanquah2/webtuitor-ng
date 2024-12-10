@@ -5,7 +5,7 @@
       <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/read/get-an-ebook']">Ebooks </a> > <a
           [routerLink]="['/read/get-an-ebook', ebook.link]">{{ebook.name}}</a></p>
       <!-- Title -->
-      <h1 class="mt-4">{{strService.capitalizeFirstLetter(ebook.name)}}</h1>
+      <h1 class="mt-4">{{capitalizeFirstLetter(ebook.name)}}</h1>
 
       <!-- Author -->
       <p class="lead">
@@ -43,7 +43,7 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam
         sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
 
-      
+
       <hr>
 
       <!-- Comments Form -->

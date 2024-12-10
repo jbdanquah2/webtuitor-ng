@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 import { CourseService } from '../course.service';
 import { ActivatedRoute } from "@angular/router";
 import { StringService } from "src/app/services/string.service";
+import {capitalizeFirstLetter} from '../../../../rest-api/src/utils/string.utils';
 
 @Component({
     selector:'course-post',
@@ -21,4 +22,6 @@ export class CoursePostComponent {
         this.strService = this.stringService
         window.scrollTo(0,0);
     }
+
+  protected readonly capitalizeFirstLetter = capitalizeFirstLetter;
 }
