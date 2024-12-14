@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HowtoService} from '../howto.service';
 
 @Component({
-  selector: 'app-create-howto',
+  selector: 'create-howto',
   templateUrl: './create-howto.component.html',
   styleUrls: ['./create-howto.component.scss'],
 

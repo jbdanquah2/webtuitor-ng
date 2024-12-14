@@ -1,0 +1,36 @@
+<div class="container-fluid min-vh-100">
+  <div class="blog-home">
+    <div class="row">
+      <div class="col-md-1">
+
+      </div>
+      <!-- Blog Entries Column -->
+      <div class="col-md-9 blog-home p-4">
+        <p><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/learn/courses']">Courses</a></p>
+        <h3 class="my-4">Popular
+          <small>Courses </small>
+          <small *ngIf="isAuthenticated"><button (click)="openCreateCourse()" class="btn btn-info border-primary"> Create</button></small>
+        </h3>
+        <course [course]="course" *ngFor="let course of courses" (deletedCourse)="onDelete($event)"></course>
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-5 mt-5">
+          <li class="page-item mr-5">
+            <a class="page-link" href="#">&larr; Prev</a>
+          </li>
+          <li class="page-item disabled ml-5">
+            <a class="page-link" href="#">Next &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <!-- <div class="col-md-4 sd">
+        <app-sidebar></app-sidebar>
+      </div> -->
+
+    </div>
+    <!-- /.row -->
+  </div>
+</div>
+<!-- /.container -->

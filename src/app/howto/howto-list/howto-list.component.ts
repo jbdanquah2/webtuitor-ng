@@ -6,7 +6,7 @@ import {AuthService} from '../../user/auth.service';
 @Component({
   selector: 'app-howto-list',
   templateUrl: './howto-list.component.html',
-  styleUrls: ['./howto-list.component.css']
+  styleUrls: ['./howto-list.component.scss']
 })
 export class HowtoListComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class HowtoListComponent implements OnInit {
 
   howtos:any
 
-  isaAuthenticated: boolean = this.authService.isAuthenticated;
+  isAuthenticated: boolean = this.authService.isAuthenticated;
 
   constructor(private howtoService: HowtoService,
               private router: Router,
@@ -29,7 +29,7 @@ export class HowtoListComponent implements OnInit {
   }
 
   openCreateHowto() {
-    if (!this.authService.isAuthenticated) {
+    if (!this.isAuthenticated) {
       alert('You must be logged in to create a how-to');
       return this.router.navigate(['/auth/login']);
     }

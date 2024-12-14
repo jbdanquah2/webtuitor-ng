@@ -8,7 +8,7 @@ import {capitalizeFirstLetter} from '../../../../rest-api/src/utils/string.utils
     template: `
     <div class="card-group">
         <div [routerLink]="['/learn/courses/',course.link]" *ngFor="let course of courses | slice:0:4; let i=index" class="card">
-        <img heigt="200" class="card-img-top" [src]="course.img" alt="Card image cap">
+        <img height="200" class="card-img-top" [src]="course.img" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{capitalizeFirstLetter(course.name)}}</h5>
             <p class="card-text">{{trimDesc(course.description, 100)}}</p>

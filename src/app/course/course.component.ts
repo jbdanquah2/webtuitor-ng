@@ -1,26 +1,51 @@
-import { Component, Input } from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from './course.service';
-import { StringService } from 'src/app/services/string.service'
 import {capitalizeFirstLetter, concatString} from '../../../rest-api/src/utils/string.utils';
+import {AuthService} from '../user/auth.service';
 
 @Component({
-    selector:'app-course',
+    selector:'course',
     templateUrl:'course.component.html',
     styleUrls:['course.component.css','../shared-css/page-css.css']
 })
-export class CourseComponent {
-    courses:any
-    constructor(private courseService: CourseService,
-                private route: ActivatedRoute) {
+export class CourseComponent implements OnInit {
 
-    }
+  courses:any
 
-    ngOnInit(id){
-        this.courses = this.courseService.getCourses()
-        window.scrollTo(0,0);
-    }
+  isAuthenticated: boolean = this.authService.isAuthenticated;
 
-  protected readonly capitalizeFirstLetter = capitalizeFirstLetter;
-  protected readonly concatString = concatString;
+  @Input()
+  course:any
+
+  @Output()
+  deletedCourse:EventEmitter<any> = new EventEmitter<any>();
+
+  constructor(private courseService: CourseService,
+              private route: ActivatedRoute,
+              private authService: AuthService) {
+
+  }
+
+  ngOnInit (){
+
+
+
+  }
+
+  capitalizeFirstLetter(str: string) {
+    return capitalizeFirstLetter(str)
+  }
+
+  concatString(string1: string, max: number) {
+    return concatString(string1, max)
+  }
+
+  editCourse() {
+
+  }
+
+  deleteCourse() {
+
+  }
 }

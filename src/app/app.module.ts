@@ -21,7 +21,7 @@ import { HowtoTabComponent } from './webtuitor/nav-tabs/howto-tab.component';
 import { EbookRouteActivator } from './ebook/ebook-post/ebook-route-activator.service';
 import { StringService } from './services/string.service';
 import { MentorService } from './mentor/mentor.service';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MentorResolver } from './mentor/mentor-resolver.service';
 import { MentorPageResolver } from './mentor/mentor-page/mentor-page-resolver.service';
 import { AuthService } from './user/auth.service';
@@ -31,6 +31,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
 import {LoadingInterceptor} from './interceptors/loading.interceptor';
 import {JwtInterceptorService} from './services/jwt-interceptor.service';
 import {QuillModule} from 'ngx-quill';
+import { CreateCourseComponent } from './course/create-course/create-course.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {QuillModule} from 'ngx-quill';
     HowtoTabComponent,
     EbookTabComponent,
     Error404Component,
-    LoadingComponent
+    LoadingComponent,
+    CreateCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,7 @@ import {QuillModule} from 'ngx-quill';
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     QuillModule.forRoot(),
+    ReactiveFormsModule,
 
   ],
   providers: [ {

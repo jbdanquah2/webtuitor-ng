@@ -35,9 +35,6 @@ export class Course {
   @Column({type: 'simple-array'})
   tags: string[];
 
-  @Column({type: 'int', nullable: true, default : 0})
-  related: number;
-
   @OneToMany(() => Lesson, lesson => lesson.course)
   lessons?: Lesson[]
 

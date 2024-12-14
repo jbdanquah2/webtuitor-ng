@@ -9,7 +9,7 @@ import {capitalizeFirstLetter} from '../../../rest-api/src/utils/string.utils';
 @Component({
     selector:'howto-card',
     templateUrl:'howto.component.html',
-    styleUrls:['howto.component.css','../shared-css/page-css.css',
+    styleUrls:['howto.component.scss','../shared-css/page-css.css',
 
 
 ]
