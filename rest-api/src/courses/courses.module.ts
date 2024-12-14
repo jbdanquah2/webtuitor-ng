@@ -5,7 +5,8 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {Course} from './entities/course.entity';
 import { User } from 'src/users/entities/user.entity';
 import {ConfigModule} from '@nestjs/config';
-import {Lesson} from '../lessons/entities/lesson.entity';
+import { LessonsModule } from './lessons/lessons.module';
+import {Lesson} from './lessons/entities/lesson.entity';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import {Lesson} from '../lessons/entities/lesson.entity';
       User,
       Lesson
     ]),
-    ConfigModule
+    ConfigModule,
+    LessonsModule
   ],
   controllers: [CoursesController],
   providers: [CoursesService],

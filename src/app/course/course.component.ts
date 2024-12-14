@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { CourseService } from './course.service';
 import {capitalizeFirstLetter, concatString} from '../../../rest-api/src/utils/string.utils';
 import {AuthService} from '../user/auth.service';
@@ -22,7 +22,7 @@ export class CourseComponent implements OnInit {
   deletedCourse:EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private courseService: CourseService,
-              private route: ActivatedRoute,
+              private router: Router,
               private authService: AuthService) {
 
   }
@@ -43,9 +43,22 @@ export class CourseComponent implements OnInit {
 
   editCourse() {
 
+    this.router.navigateByUrl(`/learn/courses/edit/${this.course.id}`);
+
   }
 
-  deleteCourse() {
+  async deleteCourse() {
+
+
+    const result = confirm('Are you sure you want to delete this how-to?');
+
+    if (!result) {
+      return;
+    }
+
+    await this.courseService.deleteCourse(this.course.id);
+
+    this.deletedCourse.emit(this.course);
 
   }
 }

@@ -1,7 +1,6 @@
 import {User} from '../../users/entities/user.entity';
 import {IsDate, IsOptional, IsString} from 'class-validator';
 import {Type} from 'class-transformer';
-import {Lesson} from '../../lessons/entities/lesson.entity';
 
 export class CreateCourseDto {
 
@@ -34,18 +33,11 @@ export class CreateCourseDto {
   tags: string[];
 
   @IsOptional()
-  related: number;
-
-  @IsOptional()
-  @Type(() => Lesson)
-  lessons?: Lesson[];
-
-  @IsOptional()
   @Type(() => User)
   createdBy: User;
 
   @IsDate()
-  created_at: Date;
+  createdAt: Date;
 
 }
 

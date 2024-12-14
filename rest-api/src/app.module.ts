@@ -12,7 +12,7 @@ import {AuthModule} from './auth/auth.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import {join} from 'path';
 import { CoursesModule } from './courses/courses.module';
-import { LessonsModule } from './lessons/lessons.module';
+import {LessonsModule} from './courses/lessons/lessons.module';
 
 
 @Module({

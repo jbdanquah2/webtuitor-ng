@@ -3,8 +3,10 @@ import { CoursePostComponent } from "./course-post/course-post.component";
 import { CourseRouteActivator } from "./course-post/course-route-activator.service";
 import {AuthGuard} from '../services/platform-guard';
 import {CourseListComponent} from './course-list/course-list.component';
-import {CreateHowtoComponent} from '../howto/create-howto/create-howto.component';
 import {CreateCourseComponent} from './create-course/create-course.component';
+import {CourseResolver} from './course.resolver';
+import {EditHowtoComponent} from '../howto/edit-howto/edit-howto.component';
+import {EditCourseComponent} from './edit-course/edit-course.component';
 
 export const courseRoutes:Routes = [
   {
@@ -17,9 +19,15 @@ export const courseRoutes:Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'courses/:link',
+    path: 'courses/:id',
     component: CoursePostComponent,
-    canActivate: [CourseRouteActivator, AuthGuard]
+    canActivate: [CourseRouteActivator, AuthGuard],
+    resolve: {courseData: CourseResolver}
+  },
+  { path: 'courses/edit/:id',
+    component: EditCourseComponent,
+    resolve: {courseData: CourseResolver},
+    canActivate: [AuthGuard]
   }
 
 ]

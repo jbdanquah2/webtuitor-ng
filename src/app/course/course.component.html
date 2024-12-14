@@ -1,13 +1,13 @@
 <div class="card mb-4 wcard shadow">
-  <img  class="card-img-top wcardpic img-fluid" [src]="course.img" alt="card image cap">
+  <img  class="card-img-top wcardpic img-fluid" [src]="course.imageUrl" alt="card image cap">
   <div class="card-body">
-    <h2 class="card-title">{{capitalizeFirstLetter(course.name)}}</h2>
+    <h2 class="card-title">{{capitalizeFirstLetter(course.title)}}</h2>
     <ng-container *ngIf="isAuthenticated">
       <button class="btn btn-link" (click)="editCourse()">Edit</button>
       <button class="btn btn-link text-danger" (click)="deleteCourse()">Delete</button>
     </ng-container>
     <p class="card-text">{{concatString(course.description,100)}}</p>
-    <a [routerLink]="['/learn/courses/',course.link]" class="btn btn-outline-info">Read More &rarr;</a>
+    <a [routerLink]="['/learn/courses/',course.id]" class="btn btn-outline-info">Read More &rarr;</a>
   </div>
   <!-- <div class="card-footer text-muted">
     Posted on {{course.published}} by

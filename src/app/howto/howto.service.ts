@@ -113,10 +113,14 @@ export class HowtoService {
   }
 
   async getHowto(id: number) {
-      const howto =  await firstValueFrom(this.httpClient.get<any>(environment.api.getHowto + '/' + id));
 
-      console.log('<><Howto', this.howtos);
-      return howto;
+    if (this.howtos.find(howto => howto.id == +id)) {
+      return this.howtos.find(howto => howto.id == +id);
+    }
+    const howto =  await firstValueFrom(this.httpClient.get<any>(environment.api.getHowto + '/' + id));
+
+    console.log('<><Howto', howto);
+    return howto;
   }
 
   async getRelatedHowto(id: number) {

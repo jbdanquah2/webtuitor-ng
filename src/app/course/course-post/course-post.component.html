@@ -1,6 +1,6 @@
 <div class="container-fluid min-vh-100">
   <p class="ml-1 mt-3"><a [routerLink]="['/home']">Home</a> > <a [routerLink]="['/learn/courses']">Courses</a> > <a
-      [routerLink]="['/learn/course',course.id]">{{course.name}}</a></p>
+      [routerLink]="['/learn/course',course?.id]">{{course?.title}}</a></p>
 
   <div class="row">
     <div class="col-md-3">
@@ -9,18 +9,17 @@
         <!-- Categories Widget -->
         <div class="card my-4 ">
           <h6 class="card-header bg-white">
-            By: Gary Brown
-            <a href="">{{course.created_by}}</a>
+            Topics
           </h6>
           <div class="card-body px-0">
             <div class="row">
               <div class="col-lg-12">
                 <ul class="list-unstyle mb-0">
                   <li class="p-2">
-                    <a href="#">Getting started with {{course.name}} </a>
+                    <a href="#">Getting started with Getting started with  Getting started with {{course?.title}} </a>
                   </li>
-                  <li *ngFor="let topic of course.topics" class="p-2">
-                    <a href="#">{{topic}}</a>
+                  <li *ngFor="let lesson of course?.lessons" class="p-2">
+                    <a href="#">{{lesson}}</a>
                   </li>
                 </ul>
               </div>
@@ -32,52 +31,28 @@
     <!-- Post Content Column -->
     <div class="col-md-6 mb-5">
       <!-- Title -->
-      <h1 class="mt-4">{{capitalizeFirstLetter(course.name)}}</h1>
+      <h1 class="mt-4">{{capitalizeFirstLetter(course?.title)}}</h1>
 
       <!-- Author -->
       <p class="lead">
         by
-        <a href="#">{{course.created_by}}</a>
+        <a href="#">{{course?.createdBy?.name}}</a>
       </p>
 
       <hr>
 
       <!-- Date/Time -->
-      <p>Posted on {{course.published}}</p>
+      <p>Posted on {{course?.publishedAt}}</p>
 
       <hr>
 
       <!-- Preview Image -->
-      <img width="400" class="img-fluid rounded" [src]="course.img" alt="image">
+      <img width="400" class="img-fluid rounded" [src]="course?.imageUrl" alt="image">
 
       <hr>
-      <div>
-        {{course.content}}
+      <div [innerHTML]="course?.content">
+
       </div>
-      <!-- Post Content -->
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error
-        quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus
-        inventore?</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum
-        rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius
-        illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-
-      <blockquote class="blockquote">
-        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <footer class="blockquote-footer">Someone famous in
-          <cite title="Source Title">Source Title</cite>
-        </footer>
-      </blockquote>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam
-        sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam
-        tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui,
-        necessitatibus, est!</p>
 
       <hr>
       <ul class="pagination justify-content-center mb-5 mt-5">
@@ -89,6 +64,7 @@
         </li>
       </ul>
       <hr>
+
       <!-- Comments Form -->
       <div class="card my-4">
         <h5 class="card-header">Leave a Comment:</h5>
@@ -102,16 +78,16 @@
         </div>
       </div>
 
-      <div *ngFor="let comment of course.comments" class="media mb-4">
-        <img width="50" class="d-flex mr-3 rounded-circle" [src]="comment.image" alt="">
+      <div *ngFor="let comment of course?.comments" class="media mb-4">
+        <img width="50" class="d-flex mr-3 rounded-circle" [src]="comment?.image" alt="">
         <div class="media-body">
-          <h5 class="mt-0">{{comment.name}}</h5>
-          {{comment.comment}}
+          <h5 class="mt-0">{{comment?.name}}</h5>
+          {{comment?.comment}}
           <div *ngFor="let subcomment of comment.subcomments" class="media mt-4">
-            <img width="60" class="d-flex mr-3 rounded-circle" [src]="subcomment.image" alt="">
+            <img width="60" class="d-flex mr-3 rounded-circle" [src]="subcomment?.image" alt="">
             <div class="media-body">
-              <h5 class="mt-0">{{subcomment.name}}</h5>
-              {{subcomment.comment}}
+              <h5 class="mt-0">{{subcomment?.name}}</h5>
+              {{subcomment?.comment}}
             </div>
           </div>
         </div>

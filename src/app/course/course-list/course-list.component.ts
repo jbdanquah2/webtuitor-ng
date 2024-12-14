@@ -17,15 +17,17 @@ export class CourseListComponent implements OnInit {
               private router: Router) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
 
-    this.courses = this.courseService.getCourses()
-    console.log('@@@this.courses:',this.courses);
-    window.scrollTo(0,0);
+    this.courses = await this.courseService.getCourses()
+    console.log('this.courses:',this.courses);
 
   }
 
-  onDelete($event: any) {
+  onDelete(deletedCourse: any) {
+
+    console.log('deleted howto:', deletedCourse);
+    this.courses = this.courses.filter((course:any) => course.id !== deletedCourse.id);
 
   }
 

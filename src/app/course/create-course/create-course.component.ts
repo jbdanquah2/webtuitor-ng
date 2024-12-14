@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {CourseService} from '../course.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'create-course',
@@ -11,8 +13,12 @@ export class CreateCourseComponent implements OnInit {
   createCourseForm: FormGroup;
   relatedCourses: any;
   categories: string[]
+  selectedFile: File | null = null;
+  levels = ['Beginner', 'Intermediate', 'Advanced'];
 
-  constructor(private fb: FormBuilder ) {
+  constructor(private fb: FormBuilder,
+              private courseService: CourseService,
+              private router: Router) {
 
   }
 
@@ -20,14 +26,13 @@ export class CreateCourseComponent implements OnInit {
 
     this.createCourseForm = this.fb.group({
       title: ['', Validators.required],
-      description: [''],
-      url: [''],
-      category: [''],
-      related: [''],
+      description: ['', Validators.required],
+      url: ['', Validators.required],
+      level: ['', Validators.required],
       file: [null],
-      tags: [''],
-      totalTime: [''],
-      content: ['']
+      tags: ['', Validators.required],
+      totalTime: ['', Validators.required],
+      content: ['', Validators.required]
     });
 
   }
@@ -36,11 +41,45 @@ export class CreateCourseComponent implements OnInit {
 
   }
 
-  submitCourse($event: MouseEvent) {
+  async submitCourse($event: MouseEvent) {
+
+    event.preventDefault();
+
+    if (this.createCourseForm.invalid) {
+      console.log('Invalid form');
+      return;
+    }
+
+    const result = await this.courseService.createCourse(this.createCourseForm.value, this.selectedFile);
+    console.log('Result', result);
+
+    this.createCourseForm.reset();
+
+
+
+    this.imgPreview = '';
+    this.selectedFile = null;
+
+    this.router.navigate(['/learn/courses/']);
+
+
 
   }
 
-  onFileSelected($event: Event) {
+  onFileSelected(event: any) {
+
+    console.log('Event', event);
+
+    if (event.target.files.length > 0) {
+      this.selectedFile = event.target.files[0];
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imgPreview = reader.result;
+      }
+      reader.readAsDataURL(this.selectedFile);
+
+    }
 
   }
 }

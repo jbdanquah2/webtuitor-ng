@@ -1,36 +1,36 @@
 <div class="container min-vh-100">
 
-  <h1 class="m-4">Create Course</h1>
+  <h1 class="m-4">Edit Course</h1>
   <hr>
   <div class="col-lg-8 col-xs-6 m-md-5">
-    <form [formGroup]="createCourseForm"  autocomplete="off" novalidate>
+    <form [formGroup]="editCourseForm"  autocomplete="off" novalidate>
       <div class="form-group">
         <img *ngIf="imgPreview" style="max-height: 350px; max-width: 700px" [src]="imgPreview" alt="selected display image">
       </div>
       <div class="form-group">
         <label for="title">Title:</label>
-        <em class="notice" *ngIf="createCourseForm.controls?.title?.invalid && (createCourseForm.controls?.title?.touched) "> required</em>
+        <em class="notice" *ngIf="editCourseForm.controls?.title?.invalid && (editCourseForm.controls?.title?.touched) "> required</em>
         <input required formControlName="title" id="title" type="text" class="form-control"
                placeholder="title..." />
       </div>
 
       <div class="form-group">
         <label for="description">Short Description:</label>
-        <em class="notice" *ngIf="createCourseForm.controls?.description?.invalid && (createCourseForm.controls?.description?.touched) "> required</em>
+        <em class="notice" *ngIf="editCourseForm.controls?.description?.invalid && (editCourseForm.controls?.description?.touched) "> required</em>
         <input required  formControlName="description" id="description" type="text" class="form-control"
                placeholder="description..." />
       </div>
 
       <div class="form-group">
         <label for="url">URL:</label>
-        <em class="notice" *ngIf="createCourseForm.controls?.url?.invalid && (createCourseForm.controls?.url?.touched) "> required</em>
+        <em class="notice" *ngIf="editCourseForm.controls?.url?.invalid && (editCourseForm.controls?.url?.touched) "> required</em>
         <input required formControlName="url" id="url" type="text" class="form-control"
                placeholder="url..." />
       </div>
 
       <div class="form-group">
-        <label for="level">Select Category:</label>
-        <em class="notice" *ngIf="createCourseForm.controls?.level?.invalid && (createCourseForm.controls?.level?.touched)">
+        <label for="level">Select Level (Optional):</label>
+        <em class="notice" *ngIf="editCourseForm.controls?.level?.invalid && (editCourseForm.controls?.level?.touched)">
           required
         </em>
         <select required formControlName="level" id="level" class="form-control">
@@ -40,33 +40,32 @@
       </div>
 
       <div class="form-group">
-        <label class="mb-0" for="file">Select Image (Optional):</label>
-        <p class="text-muted p-0 m-0 font-italic">If no image is selected, a default image will be used</p>
-        <em class="notice" *ngIf="createCourseForm.controls?.file?.invalid && (createCourseForm.controls?.file?.touched) "> required</em>
+        <label for="file">Select Image (Optional):</label>
+        <em class="notice" *ngIf="editCourseForm.controls?.file?.invalid && (editCourseForm.controls?.file?.touched) "> required</em>
         <input (change)="onFileSelected($event)" formControlName="file" id="file" type="file" accept="image/png, image/jpeg, .svg, image/svg+xml" class="form-control" />
       </div>
 
       <div class="form-group">
         <label for="tags">Tags:</label>
-        <em class="notice" *ngIf="createCourseForm.controls?.tags?.invalid && (createCourseForm.controls?.tags?.touched)"> required</em>
+        <em class="notice" *ngIf="editCourseForm.controls?.tags?.invalid && (editCourseForm.controls?.tags?.touched)"> required</em>
         <input required  formControlName="tags" id="tags" type="text" class="form-control"
                placeholder="tags... eg: tech,music,frontend,backend" />
       </div>
 
       <div class="form-group">
         <label for="tags">Total Read Time:</label>
-        <em class="notice" *ngIf="createCourseForm.controls?.totalTime?.invalid && (createCourseForm.controls?.totalTime?.touched)"> required</em>
+        <em class="notice" *ngIf="editCourseForm.controls?.totalTime?.invalid && (editCourseForm.controls?.totalTime?.touched)"> required</em>
         <input required  formControlName="totalTime" id="totalTime" type="number" class="form-control" placeholder="total read time..." />
       </div>
 
       <div class="form-group">
-        <label for="content">Write Your HowTo In Detail:</label>
-        <em class="notice" *ngIf="createCourseForm.controls?.content?.invalid && (createCourseForm.controls?.content?.touched)"> required</em>
+        <label for="content">Course Content:</label>
+        <em class="notice" *ngIf="editCourseForm.controls?.content?.invalid && (editCourseForm.controls?.content?.touched)"> required</em>
 
         <quill-editor placeholder="write the content here..." formControlName="content" id="content" [styles]="{height: '200px', resize: 'vertical', overflow: 'auto'}"></quill-editor>
 
       </div>
-      <button (click)="submitCourse($event)" type="submit" [disabled]="createCourseForm?.invalid" class="btn btn-outline-primary">Submit</button>
+      <button (click)="saveHowto()" type="submit" [disabled]="editCourseForm?.invalid" class="btn btn-outline-primary">Submit</button>
       <button (click)="cancel()" type="button" class="btn btn-outline-danger ml-1">Cancel</button>
 
     </form>

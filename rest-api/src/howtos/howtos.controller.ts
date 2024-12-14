@@ -64,7 +64,7 @@ export class HowtosController {
   @UseInterceptors(imageUploadInterceptor('./img-uploads'))
   update(@Param('id') id: string,
          @Body() updateHowtoDto: UpdateHowtoDto,
-         @UploadedFile() file: Express.Multer.File,) {
+         @UploadedFile() file: Express.Multer.File) {
 
     if (file) {
       console.log('File', file);

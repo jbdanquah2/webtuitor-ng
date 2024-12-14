@@ -15,6 +15,12 @@ export const environment = {
     getHowtos: "http://localhost:3000/howtos",
     getHowto: "http://localhost:3000/howtos",
     editHowto: "http://localhost:3000/howtos",
-    deleteHowto: "http://localhost:3000/howtos"
+    deleteHowto: "http://localhost:3000/howtos",
+
+    createCourse: "http://localhost:3000/courses",
+    getCourses: "http://localhost:3000/courses",
+    getCourse: "http://localhost:3000/courses",
+    editCourse: "http://localhost:3000/courses",
+    deleteCourse: "http://localhost:3000/courses"
   }
 };

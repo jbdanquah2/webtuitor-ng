@@ -1,5 +1,6 @@
 import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from 'typeorm';
-import {Course} from '../../courses/entities/course.entity';
+import {Course} from '../../entities/course.entity';
+import {User} from '../../../users/entities/user.entity';
 
 @Entity()
 export class Lesson {
@@ -11,7 +12,10 @@ export class Lesson {
   title: string;
 
   @Column({type: 'text'})
-  content: string
+  summary: string;
+
+  @Column({type: 'text'})
+  content: string;
 
   @Column({type: 'varchar', length: 255, nullable: true})
   url: string;
@@ -19,25 +23,19 @@ export class Lesson {
   @Column({type: 'varchar', length: 255})
   imageUrl: string;
 
-  @Column({type: 'datetime', default: () => 'CURRENT_TIMESTAMP'})
-  publishedAt: Date;
-
-  @Column({type: 'int', nullable: true})
-  totalTime: number;
-
-  @Column({type: 'text'})
-  description: string;
-
-  @Column({type: 'varchar', default: 'general'})
-  level:'beginner' | 'intermediate' | 'advanced';
-
-  @Column({type: 'simple-array'})
-  tags: string[];
+  @Column({type: 'boolean', default: false})
+  isPublished: Boolean;
 
   @ManyToOne(() => Course, course => course.lessons)
   course: Course;
 
+  @ManyToOne(() => User, user => user.howtos)
+  createdBy: User;
+
   @Column({type: 'datetime', default: () => 'CURRENT_TIMESTAMP'})
   createdAt: Date;
+
+  @Column({type: 'datetime', default: () => 'CURRENT_TIMESTAMP'})
+  updatedAt: Date;
 
 }
