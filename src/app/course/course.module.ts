@@ -8,6 +8,8 @@ import { CourseListComponent } from './course-list/course-list.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {QuillEditorComponent} from 'ngx-quill';
+import { CreateLessonComponent } from './lesson/create-lesson/create-lesson.component';
+import { EditLessonComponent } from './lesson/edit-lesson/edit-lesson.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import {QuillEditorComponent} from 'ngx-quill';
         CourseComponent,
         CoursePostComponent,
         CourseListComponent,
-        EditCourseComponent
+        EditCourseComponent,
+        CreateLessonComponent,
+        EditLessonComponent
     ],
     providers: [
 

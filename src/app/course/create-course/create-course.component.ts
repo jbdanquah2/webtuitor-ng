@@ -11,8 +11,6 @@ import {Router} from '@angular/router';
 export class CreateCourseComponent implements OnInit {
   imgPreview: string | ArrayBuffer = '';
   createCourseForm: FormGroup;
-  relatedCourses: any;
-  categories: string[]
   selectedFile: File | null = null;
   levels = ['Beginner', 'Intermediate', 'Advanced'];
 

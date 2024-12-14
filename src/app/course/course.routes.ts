@@ -7,6 +7,7 @@ import {CreateCourseComponent} from './create-course/create-course.component';
 import {CourseResolver} from './course.resolver';
 import {EditHowtoComponent} from '../howto/edit-howto/edit-howto.component';
 import {EditCourseComponent} from './edit-course/edit-course.component';
+import {CreateLessonComponent} from './lesson/create-lesson/create-lesson.component';
 
 export const courseRoutes:Routes = [
   {
@@ -26,6 +27,11 @@ export const courseRoutes:Routes = [
   },
   { path: 'courses/edit/:id',
     component: EditCourseComponent,
+    resolve: {courseData: CourseResolver},
+    canActivate: [AuthGuard]
+  },
+  { path: 'courses/lessons/create',
+    component: CreateLessonComponent,
     resolve: {courseData: CourseResolver},
     canActivate: [AuthGuard]
   }
