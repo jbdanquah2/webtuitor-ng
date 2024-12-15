@@ -8,6 +8,8 @@ import {CourseResolver} from './course.resolver';
 import {EditHowtoComponent} from '../howto/edit-howto/edit-howto.component';
 import {EditCourseComponent} from './edit-course/edit-course.component';
 import {CreateLessonComponent} from './lesson/create-lesson/create-lesson.component';
+import {LessonPostComponent} from './lesson/lesson-post/lesson-post.component';
+import {ViewCourseComponent} from './view-course/view-course.component';
 
 export const courseRoutes:Routes = [
   {
@@ -21,7 +23,7 @@ export const courseRoutes:Routes = [
   },
   {
     path: 'courses/:id',
-    component: CoursePostComponent,
+    component: ViewCourseComponent, //CoursePostComponent,
     canActivate: [CourseRouteActivator, AuthGuard],
     resolve: {courseData: CourseResolver}
   },
@@ -30,8 +32,18 @@ export const courseRoutes:Routes = [
     resolve: {courseData: CourseResolver},
     canActivate: [AuthGuard]
   },
-  { path: 'courses/lessons/create',
+  { path: 'courses/:id/lessons/add',
     component: CreateLessonComponent,
+    resolve: {courseData: CourseResolver},
+    canActivate: [AuthGuard]
+  },
+  { path: 'courses/:id/lessons/:id/edit',
+    component: CreateLessonComponent,
+    resolve: {courseData: CourseResolver},
+    canActivate: [AuthGuard]
+  },
+  { path: 'courses/:id/lessons/:lessonId',
+    component: ViewCourseComponent,
     resolve: {courseData: CourseResolver},
     canActivate: [AuthGuard]
   }

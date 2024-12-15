@@ -22,7 +22,7 @@ export class CoursesService {
 
   findAll() {
     const data = this.courseRepository.find({
-      relations: ['createdBy']
+      relations: ['createdBy', 'lessons']
     });
 
     return plainToClass(Howto, data);
@@ -31,7 +31,7 @@ export class CoursesService {
   findOne(id: number) {
     const howto =  this.courseRepository.findOne({
       where: { id },
-      relations: ['createdBy']
+      relations: ['createdBy', 'lessons']
     });
 
     return plainToClass(Howto, howto);

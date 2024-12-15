@@ -8,7 +8,7 @@ export class CourseRouteActivator implements CanActivate {
 
     }
     canActivate(route: ActivatedRouteSnapshot) {
-        const courseExist = !!this.courseService.getCourse(route.params['link'])
+        const courseExist = !!this.courseService.getCourse(route.params['id'])
 
         if (!courseExist)
             this.router.navigate(['404'])

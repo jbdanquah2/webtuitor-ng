@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { CourseService } from '../course.service';
-import { ActivatedRoute } from "@angular/router";
-import { StringService } from "src/app/services/string.service";
+import {ActivatedRoute, Router} from '@angular/router';
 import {capitalizeFirstLetter} from '../../../../rest-api/src/utils/string.utils';
+import {AuthService} from '../../user/auth.service';
 
 @Component({
     selector:'course-post',
@@ -12,15 +12,21 @@ import {capitalizeFirstLetter} from '../../../../rest-api/src/utils/string.utils
     `]
 })
 export class CoursePostComponent implements OnInit {
-    course:any
 
-    constructor(private courseService: CourseService,
-                private route: ActivatedRoute) {
+  @Input()
+  course:any
+
+  isAuthenticated: boolean = this.authService.isAuthenticated;
+
+  lessons: any[] = [];
+
+    constructor(private authService: AuthService,
+                private router: Router) {
 
     }
     async ngOnInit(){
-      const data = this.route.snapshot.data['courseData'];
-      this.course = data.course;
+
+      this.lessons = this.course?.lessons
       console.log('Course', this.course);
 
     }
@@ -28,4 +34,5 @@ export class CoursePostComponent implements OnInit {
     capitalizeFirstLetter(str: string) {
         return capitalizeFirstLetter(str)
     }
+
 }

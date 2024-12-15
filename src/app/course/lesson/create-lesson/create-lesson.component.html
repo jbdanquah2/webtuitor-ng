@@ -1,6 +1,7 @@
 <div class="container min-vh-100">
 
-  <h1 class="m-4">Create Course</h1>
+  <h1 class="m-4">Add Lesson</h1>
+  <h3>{{course?.title}}</h3>
   <hr>
   <div class="col-lg-8 col-xs-6 m-md-5">
     <form [formGroup]="createLessonForm"  autocomplete="off" novalidate>
@@ -15,10 +16,10 @@
       </div>
 
       <div class="form-group">
-        <label for="description">Short Description:</label>
-        <em class="notice" *ngIf="createLessonForm.controls?.description?.invalid && (createLessonForm.controls?.description?.touched) "> required</em>
-        <input required  formControlName="description" id="description" type="text" class="form-control"
-               placeholder="description..." />
+        <label for="summary">Short Summary:</label>
+        <em class="notice" *ngIf="createLessonForm.controls?.summary?.invalid && (createLessonForm.controls?.summary?.touched) "> required</em>
+        <input required  formControlName="summary" id="summary" type="text" class="form-control"
+               placeholder="summary..." />
       </div>
 
       <div class="form-group">
@@ -41,7 +42,7 @@
         <quill-editor placeholder="write the content here..." formControlName="content" id="content" [styles]="{height: '200px', resize: 'vertical', overflow: 'auto'}"></quill-editor>
       </div>
 
-      <button (click)="submitCourse($event)" type="submit" [disabled]="createLessonForm?.invalid" class="btn btn-outline-primary">Submit</button>
+      <button (click)="submitLesson($event)" type="submit" [disabled]="createLessonForm?.invalid" class="btn btn-outline-primary">Submit</button>
       <button (click)="cancel()" type="button" class="btn btn-outline-danger ml-1">Cancel</button>
 
     </form>

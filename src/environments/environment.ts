@@ -21,6 +21,12 @@ export const environment = {
     getCourses: "http://localhost:3000/courses",
     getCourse: "http://localhost:3000/courses",
     editCourse: "http://localhost:3000/courses",
-    deleteCourse: "http://localhost:3000/courses"
+    deleteCourse: "http://localhost:3000/courses",
+
+    createLesson: "http://localhost:3000/lessons",
+    getLessons: "http://localhost:3000/lessons",
+    getLesson: "http://localhost:3000/lessons",
+    editLesson: "http://localhost:3000/lessons",
+    deleteLesson: "http://localhost:3000/lessons"
   }
 };

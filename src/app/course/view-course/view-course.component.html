@@ -1,0 +1,28 @@
+<div class="container-fluid min-vh-100">
+  <p class="ml-1 mt-3">
+    <a [routerLink]="['/home']">Home</a> >
+    <a [routerLink]="['/learn/courses']">Courses</a> >
+    <a [routerLink]="['/learn/courses',course?.id]">{{course?.title}}</a>
+    <a *ngIf="paramCount > 1" [routerLink]="['/learn/courses',course?.id, 'lesson', lessonId]"> > {{course?.title}}</a>
+  </p>
+
+  <div class="row">
+    <div class="col-md-3">
+      <list-sidebar [course]="course"></list-sidebar>
+    </div>
+    <div class="col-md-6 mb-5">
+
+      <ng-container *ngIf="paramCount == 1; else lessonTemp">
+
+        <course-post [course]="course"></course-post>
+
+      </ng-container>
+
+      <ng-template #lessonTemp>
+        <lesson-post [lesson]="lesson"></lesson-post>
+      </ng-template>
+
+
+    </div>
+  </div>
+</div>

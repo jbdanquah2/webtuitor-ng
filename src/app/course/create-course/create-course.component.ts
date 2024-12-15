@@ -53,8 +53,6 @@ export class CreateCourseComponent implements OnInit {
 
     this.createCourseForm.reset();
 
-
-
     this.imgPreview = '';
     this.selectedFile = null;
 

@@ -7,7 +7,6 @@ export const CourseResolver = async (route: ActivatedRouteSnapshot): Promise<any
   const id = route.params['id'];
 
   const course = await courseService.getCourse(+id);
-  // const courseLessons = await courseService.getCourseLessons(course.lessons);
 
   return {course};
 }

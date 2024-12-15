@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AuthService} from '../../../user/auth.service';
+import {CourseService} from '../../course.service';
 
 @Component({
   selector: 'app-edit-lesson',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./edit-lesson.component.css']
 })
 export class EditLessonComponent {
+
+  constructor(private authService: AuthService,
+              private courseService: CourseService) {
+  }
 
 }

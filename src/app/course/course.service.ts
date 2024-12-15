@@ -115,13 +115,15 @@ export class CourseService {
    try {
 
      if (this.courses?.length) {
-       console.log('course found in cache');
+       console.log('Found course in cache');
        return this.courses.find(course => course.id == +id);
      }
 
      console.log('course NOT found in cache, id', id );
 
      const course =  await firstValueFrom(this.httpClient.get<any>(environment.api.getCourse + '/' + id));
+
+     this.courses.push(course);
 
      console.log('<><Course', course);
      return course;
@@ -133,8 +135,5 @@ export class CourseService {
 
    }
   }
-
-
-
 }
 

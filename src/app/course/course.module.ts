@@ -10,6 +10,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {QuillEditorComponent} from 'ngx-quill';
 import { CreateLessonComponent } from './lesson/create-lesson/create-lesson.component';
 import { EditLessonComponent } from './lesson/edit-lesson/edit-lesson.component';
+import {LessonService} from './lesson/lesson.service';
+import { LessonPostComponent } from './lesson/lesson-post/lesson-post.component';
+import { ListSidebarComponent } from './list-sidebar/list-sidebar.component';
+import { ViewCourseComponent } from './view-course/view-course.component';
 
 @NgModule({
   imports: [
@@ -25,9 +29,14 @@ import { EditLessonComponent } from './lesson/edit-lesson/edit-lesson.component'
         CourseListComponent,
         EditCourseComponent,
         CreateLessonComponent,
-        EditLessonComponent
+        EditLessonComponent,
+        LessonPostComponent,
+        ListSidebarComponent,
+        ViewCourseComponent
     ],
     providers: [
+
+      LessonService
 
     ]
 

@@ -14,7 +14,7 @@ export class LessonService {
 
   }
 
-  async createLesson(lesson: any, file: File) {
+  async createLesson(lesson: any, file: File, courseId: number) {
     try {
       const formData = new FormData();
 
@@ -22,8 +22,8 @@ export class LessonService {
       formData.append('summary', lesson.summary);
       formData.append('url', lesson.url);
       formData.append('content', lesson.content);
-      formData.append('isPublished', lesson.isPublished);
       formData.append('createdBy', this.authService.currentUser.id.toString());
+      formData.append(('course'), courseId.toString());
 
       if (file) {
         formData.append('file', file);
@@ -32,7 +32,7 @@ export class LessonService {
       console.log(':::FormData', formData);
 
       // Send the form data via POST request
-      const response = await firstValueFrom(this.httpClient.post<any>(environment.api.createCourse, formData));
+      const response = await firstValueFrom(this.httpClient.post<any>(environment.api.createLesson, formData));
 
       if (response?.id) {
         console.log('Course created successfully');
@@ -47,7 +47,7 @@ export class LessonService {
     }
   }
 
-  async editLesson(id: any, course: any, file: File) {
+  async editLesson(id: any, course: any, file: File, courseId: number) {
 
     console.log('Service Course', course);
 
@@ -70,7 +70,7 @@ export class LessonService {
       console.log(':::FormData', formData);
 
       // Send the form data via POST request
-      const response = await firstValueFrom(this.httpClient.patch<any>(environment.api.editCourse + '/' + id, formData));
+      const response = await firstValueFrom(this.httpClient.patch<any>(environment.api.editLesson + '/' + id, formData));
 
       if (response?.id) {
         console.log('Course updated successfully');
@@ -87,7 +87,7 @@ export class LessonService {
 
   async deleteLesson(id: any) {
     try {
-      const response = await firstValueFrom(this.httpClient.delete<any>(environment.api.deleteCourse + '/' + id));
+      const response = await firstValueFrom(this.httpClient.delete<any>(environment.api.deleteLesson + '/' + id));
 
       if (response?.affected == 1) {
         console.log('Course deleted successfully');
@@ -101,38 +101,5 @@ export class LessonService {
       return null;
     }
   }
-
-  async getLessons() {
-
-    this.courses = await firstValueFrom(this.httpClient.get<any>(environment.api.getCourses));
-    return this.courses;
-  }
-
-  async getLesson(id: number) {
-
-   try {
-
-     if (this.courses?.length) {
-       console.log('course found in cache');
-       return this.courses.find(course => course.id == +id);
-     }
-
-     console.log('course NOT found in cache, id', id );
-
-     const course =  await firstValueFrom(this.httpClient.get<any>(environment.api.getCourse + '/' + id));
-
-     console.log('<><Course', course);
-     return course;
-
-   } catch (e) {
-
-      console.log('Error fetching course', e);
-      return {};
-
-   }
-  }
-
-
-
 }
 
