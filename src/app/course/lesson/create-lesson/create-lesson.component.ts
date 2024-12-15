@@ -41,8 +41,6 @@ export class CreateLessonComponent implements OnInit {
         file: [null],
         isPublished: [false]
       });
-
-
     })
   }
 
@@ -51,6 +49,7 @@ export class CreateLessonComponent implements OnInit {
     console.log('Event..', event);
 
     if (event.target.files.length > 0) {
+
       this.selectedFile = event.target.files[0];
 
       const reader = new FileReader();
