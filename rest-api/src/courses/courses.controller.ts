@@ -15,7 +15,6 @@ export class CoursesController {
               @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: WinstonLogger) {}
 
   @Post()
-  @UseGuards(AuthGuard('jwt'))
   @UseInterceptors(imageUploadInterceptor('./img-uploads'))
   create(@Body() createCourseDto: CreateCourseDto,
          @Req() request: any,
@@ -42,6 +41,7 @@ export class CoursesController {
     return this.coursesService.findAll();
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.coursesService.findOne(+id);
@@ -65,6 +65,7 @@ export class CoursesController {
     return this.coursesService.update(+id, updateCourseDto);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.coursesService.remove(+id);

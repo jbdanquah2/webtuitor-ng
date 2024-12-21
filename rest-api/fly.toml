@@ -23,6 +23,10 @@ primary_region = 'ams'
   cpu_kind = 'shared'
   cpus = 1
 
+[mounts]
+source = "uploads"
+destination = "/uploads"
+
 [env]
   PRODUCTION = true
   PROTOCOL = 'https'

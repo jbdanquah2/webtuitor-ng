@@ -61,7 +61,7 @@ export class HowtosController {
 
   @Patch(':id')
   @UseGuards(AuthGuard('jwt'))
-  @UseInterceptors(imageUploadInterceptor('./img-uploads'))
+  @UseInterceptors(imageUploadInterceptor('./uploads'))
   update(@Param('id') id: string,
          @Body() updateHowtoDto: UpdateHowtoDto,
          @UploadedFile() file: Express.Multer.File) {

@@ -5,7 +5,7 @@ import { extname } from 'path';
 export function imageUploadInterceptor(directory: string) {
   return FileInterceptor('file', {
     storage: diskStorage({
-      destination: directory, // specify your upload directory
+      destination: directory,
       filename: (req, file, cb) => {
 
         console.log('!!###req.user', req.user);
